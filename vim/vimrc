@@ -2,9 +2,18 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+call plug#begin()
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.3' }
+Plug 'ThePrimeagen/harpoon'
+Plug 'kshenoy/vim-signature'
+call plug#end()
+
 let g:terraform_fmt_on_save=1
+let NERDTreeShowHidden=1
 
 set number
+set relativenumber
 set shiftwidth=2
 set tabstop=2     " (ts) width (in spaces) that a <tab> is displayed as
 set expandtab     " (et) expand tabs to spaces (use :retab to redo entire file)
@@ -54,3 +63,9 @@ if has('persistent_undo')
   set undodir=~/.vim/backups
   set undofile
 endif
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
