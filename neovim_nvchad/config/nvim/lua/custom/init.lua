@@ -22,6 +22,12 @@ vim.opt.incsearch = true
 
 vim.opt.updatetime = 50
 
+vim.filetype.add({
+  filename = {
+    ['sls'] = 'sls.yaml',
+  },
+})
+
 -- local autocmd = vim.api.nvim_create_autocmd
 
 -- Auto resize panes when resizing nvim window

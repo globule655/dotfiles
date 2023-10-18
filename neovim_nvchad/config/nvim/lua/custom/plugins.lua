@@ -46,6 +46,7 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
+
   {
     "hashivim/vim-terraform",
   },

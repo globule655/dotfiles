@@ -13,6 +13,9 @@ local sources = {
 
   -- cpp
   b.formatting.clang_format,
+
+  -- salt
+  b.diagnostics.saltlint,
 }
 
 null_ls.setup {
