@@ -14,8 +14,8 @@ vim.opt.scrolloff = 5
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/backups"
-vim.opt.undofile = true
+-- vim.opt.undodir = os.getenv("HOME") .. "/.vim/backups"
+-- vim.opt.undofile = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
