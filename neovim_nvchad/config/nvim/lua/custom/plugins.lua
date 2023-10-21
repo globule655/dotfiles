@@ -60,7 +60,12 @@ local plugins = {
       require("oil").setup()
     end,
     lazy = false,
-  }
+  },
+
+  {
+    "ThePrimeagen/harpoon",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
 
   -- To make a plugin not be loaded
   -- {
