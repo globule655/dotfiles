@@ -1,5 +1,1 @@
-vim.filetype.add({
-  filename = {
-    ['sls'] = 'sls.yaml',
-  },
-})
+vim.filetype.add({ extension = { sls = 'sls.yaml' } })

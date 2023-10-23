@@ -77,6 +77,10 @@ local plugins = {
       })
     end
   },
+
+  {
+    "saltstack/salt-vim",
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
