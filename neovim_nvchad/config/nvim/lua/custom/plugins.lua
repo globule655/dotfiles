@@ -84,17 +84,16 @@ local plugins = {
   },
 
   {
-<<<<<<< HEAD
     "saltstack/salt-vim",
   },
-=======
+
+  {
     "ThePrimeagen/git-worktree.nvim",
     config = function()
       require("telescope").load_extension("git_worktree")
     end,
   },
 
->>>>>>> cb0dc75 (added git-worktree plugin)
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
