@@ -95,6 +95,16 @@ local plugins = {
     end,
   },
 
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "sindrets/diffview.nvim",
+    },
+    config = function()
+      require("neogit").setup({})
+    end,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
