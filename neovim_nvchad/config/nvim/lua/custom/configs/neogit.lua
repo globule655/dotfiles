@@ -14,7 +14,7 @@ end,
   { desc = "Open neogit with kind split"})
 
 vim.keymap.set("n", "<leader>gh", function ()
-  require("neogit").open({ cwd = "~" })
+  require("neogit").open({ cwd = "%:p:h" })
 end, 
-  { desc = "neogit open home directory"})
+  { desc = "neogit open current buffer's repo"})
 
