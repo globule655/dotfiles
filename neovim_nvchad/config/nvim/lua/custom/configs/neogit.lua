@@ -1,7 +1,7 @@
 vim.keymap.set("n", "<leader>go", function ()
-  require("neogit").open()
+  require("neogit").open({ cwd = "%:p:h" })
 end, 
-  { desc = "Open neogit defaults"})
+  { desc = "Open neogit"})
 
 vim.keymap.set("n", "<leader>gc", function ()
   require("neogit").open({ "commit" })
@@ -12,9 +12,4 @@ vim.keymap.set("n", "<leader>gs", function ()
   require("neogit").open({ kind = "split" })
 end, 
   { desc = "Open neogit with kind split"})
-
-vim.keymap.set("n", "<leader>gh", function ()
-  require("neogit").open({ cwd = "%:p:h" })
-end, 
-  { desc = "neogit open current buffer's repo"})
 
