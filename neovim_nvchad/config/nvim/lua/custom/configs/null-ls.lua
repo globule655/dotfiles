@@ -16,6 +16,9 @@ local sources = {
 
   -- salt
   b.diagnostics.saltlint,
+
+  -- terraform
+  b.formatting.terraform_fmt,
 }
 
 null_ls.setup {
