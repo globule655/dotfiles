@@ -101,7 +101,11 @@ local plugins = {
       "sindrets/diffview.nvim",
     },
     config = function()
-      require("neogit").setup({})
+      require("neogit").setup({
+        integrations = {
+          diffview = true,
+        },
+      })
     end,
   },
 
