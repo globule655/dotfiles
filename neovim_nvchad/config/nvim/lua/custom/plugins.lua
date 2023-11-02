@@ -103,7 +103,7 @@ local plugins = {
     config = function()
       require("neogit").setup({
         integrations = {
-          diffview = true,
+          telescope = true,
         },
       })
     end,
