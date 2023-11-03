@@ -6,6 +6,34 @@ local plugins = {
   -- Override plugin definition options
 
   {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "debugloop/telescope-undo.nvim",
+    },
+    config = function()
+      require("telescope").setup({
+        extensions = {
+          undo = {
+            extensions = {
+              undo = {
+                side_by_side = true,
+                layout_strategy = "vertical",
+                layout_config = {
+                  preview_height = 0.8,
+                },
+              },
+            },
+          },
+        },
+      })
+      require("telescope").load_extension("undo")
+      require("telescope").load_extension("git_worktree")
+      -- optional: vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
+    end,
+  },
+
+  {
     "neovim/nvim-lspconfig",
     dependencies = {
       -- format & linting
@@ -91,7 +119,6 @@ local plugins = {
     "ThePrimeagen/git-worktree.nvim",
     config = function()
       require("git-worktree").setup({})
-      require("telescope").load_extension("git_worktree")
     end,
   },
 
