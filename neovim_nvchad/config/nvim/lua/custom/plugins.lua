@@ -12,24 +12,7 @@ local plugins = {
       "debugloop/telescope-undo.nvim",
     },
     config = function()
-      require("telescope").setup({
-        extensions = {
-          undo = {
-            extensions = {
-              undo = {
-                side_by_side = true,
-                layout_strategy = "vertical",
-                layout_config = {
-                  preview_height = 0.8,
-                },
-              },
-            },
-          },
-        },
-      })
-      require("telescope").load_extension("undo")
-      require("telescope").load_extension("git_worktree")
-      -- optional: vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
+      require("custom.configs.telescope")
     end,
   },
 
