@@ -1,3 +1,5 @@
+local overrides = require("overrides")
+
 local plugs = {
 
   {
@@ -7,7 +9,7 @@ local plugs = {
       "debugloop/telescope-undo.nvim",
     },
     config = function()
-      require("custom.configs.telescope")
+      require("configs.telescope")
     end,
   },
 
@@ -18,13 +20,12 @@ local plugs = {
       {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-          require "custom.configs.null-ls"
+          require "configs.null-ls"
         end,
       },
     },
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require "configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
 
