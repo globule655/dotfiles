@@ -23,7 +23,7 @@ local options = {
     "yaml-language-server",
   },
 
-  PATH = "prepend",
+  PATH = "append",
 
   ui = {
     icons = {
