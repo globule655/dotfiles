@@ -289,6 +289,11 @@ local plugs = {
     end,
   },
 
+  {
+    'Exafunction/codeium.vim',
+    event = 'BufEnter'
+  },
+
 }
 
 return plugs
