@@ -9,7 +9,6 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.opt.autoread = true
-vim.opt.termguicolors = true
 vim.opt.scrolloff = 5
 
 vim.opt.swapfile = false
