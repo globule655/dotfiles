@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+require("vimopts")
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 local plugins = require("plugins")
 
@@ -14,3 +17,4 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(plugins)
+require("options")
