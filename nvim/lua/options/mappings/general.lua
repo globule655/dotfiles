@@ -11,3 +11,4 @@ vim.keymap.set('n', '<leader>fm', function()
 end,
   { desc = "LSP formatting" })
 
+vim.keymap.set('n', '<leader>x', "<cmd> bdelete <CR>", { desc = "Close buffer" })
