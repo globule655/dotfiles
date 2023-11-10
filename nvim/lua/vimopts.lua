@@ -13,20 +13,20 @@ vim.opt.scrolloff = 5
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/backups"
+
+-- set backup dir depending on OS
+local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
+
+if is_windows then
+  vim.opt.backupdir = os.getenv("USERPROFILE") .. "/AppData/Local/nvim/backups"
+else
+  vim.opt.undodir = os.getenv("HOME") .. "/.vim/backups"
+end
+
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.updatetime = 50
-
--- local autocmd = vim.api.nvim_create_autocmd
-
--- Auto resize panes when resizing nvim window
--- autocmd("VimResized", {
---   pattern = "*",
---   command = "tabdo wincmd =",
--- })
-
 

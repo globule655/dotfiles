@@ -8,3 +8,10 @@ vim.keymap.set("n", "<leader>mh", function ()
 end,
   { desc = "Harpoon toggle quick menu"})
 
+vim.keymap.set('n', '<leader>,', function ()
+  require("harpoon.ui").nav_prev()
+end, { desc = "Harpoon previous mark" })
+
+vim.keymap.set('n', '<leader>;', function ()
+  require("harpoon.ui").nav_next()
+end, { desc = "Harpoon next mark" })
