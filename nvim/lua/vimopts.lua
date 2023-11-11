@@ -14,13 +14,14 @@ vim.opt.scrolloff = 5
 vim.opt.swapfile = false
 vim.opt.backup = false
 
--- set backup dir depending on OS
+-- set undo dir depending on OS
 local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
 
+local backupdir = "/.vim/backups"
 if is_windows then
-  vim.opt.backupdir = os.getenv("USERPROFILE") .. "/AppData/Local/nvim/backups"
+  vim.opt.undodir = os.getenv("USERPROFILE") .. backupdir
 else
-  vim.opt.undodir = os.getenv("HOME") .. "/.vim/backups"
+  vim.opt.undodir = os.getenv("HOME") .. backupdir
 end
 
 vim.opt.undofile = true
