@@ -152,6 +152,10 @@ local plugs = {
         end,
       },
 
+      {
+        "onsails/lspkind.nvim",
+      },
+
       -- autopairing of (){}[] etc
       {
         "windwp/nvim-autopairs",
