@@ -5,9 +5,20 @@ local plugs = {
     -- "folke/tokyonight.nvim",
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
+    -- config = function()
+    --   -- load the colorscheme here
+    --   vim.cmd.colorscheme("night-owl")
+    -- end,
+  },
+
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
     config = function()
       -- load the colorscheme here
-      vim.cmd.colorscheme("night-owl")
+      vim.cmd.colorscheme("tokyonight")
     end,
   },
 
@@ -291,8 +302,15 @@ local plugs = {
   },
 
   {
-    'Exafunction/codeium.vim',
-    event = 'BufEnter'
+    "Exafunction/codeium.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require("codeium").setup({
+      })
+    end
   },
 
 }
