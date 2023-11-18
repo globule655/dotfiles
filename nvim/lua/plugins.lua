@@ -32,10 +32,10 @@ local plugs = {
       'nvim-tree/nvim-web-devicons',
       opt = true,
     },
-    opts = function ()
-      require("configs.lualine")
+    opts = function()
+      return require("configs.lualine")
     end,
-    config = function (_, opts)
+    config = function(_, opts)
       require("lualine").setup(opts)
     end,
   },

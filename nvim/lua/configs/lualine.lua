@@ -1,7 +1,7 @@
 local lualine = {
   options = {
-    theme = "night-owl",
-  }
+    theme = "auto",
+  },
 }
 
 return lualine
