@@ -2,6 +2,8 @@ local options = {
   ensure_installed = {
     "lua-language-server",
     "stylua",
+    "markdownlint",
+    "mdformat",
     -- web dev stuff
     "css-lsp",
     "html-lsp",
