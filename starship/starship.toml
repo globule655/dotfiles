@@ -16,3 +16,15 @@ format = "[$ssh_symbol](bold red) on [$hostname](bold green) "
 [localip]
 ssh_only = true
 format = '@[$localipv4](bold red) '
+
+[git_status]
+up_to_date = '[✓](green)'
+modified = '📝[($count)](yellow)'
+staged = '[++\($count\)](green)'
+untracked = '🔍[($count)](bold red)'
+conflicted = '🚩'
+stashed = '📦'
+deleted = '🗑️'
+behind = '🐌'
+ahead = '🏎💨'
+renamed = '👅'
