@@ -1,0 +1,18 @@
+add_newline = false
+
+"$schema" = 'https://starship.rs/config-schema.json'
+format = """$directory$character"""
+right_format = """$all"""
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+vicmd_symbol = "[✓](bold green)"
+
+[hostname]
+ssh_only = true
+format = "[$ssh_symbol](bold red) on [$hostname](bold green) "
+
+[localip]
+ssh_only = true
+format = '@[$localipv4](bold red) '

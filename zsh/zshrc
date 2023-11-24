@@ -1,0 +1,7 @@
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' menu select
+zstyle ':completion:*' completer _extensions _complete _approximate
+
+eval "$(starship init zsh)"
