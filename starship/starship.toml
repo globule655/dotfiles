@@ -1,8 +1,8 @@
 add_newline = false
 
 "$schema" = 'https://starship.rs/config-schema.json'
-format = """$directory$character"""
-right_format = """$all"""
+format = """$directory$git_branch$character"""
+right_format = """$git_status$all"""
 
 [character]
 success_symbol = "[➜](bold green)"
