@@ -1,8 +1,8 @@
 add_newline = false
 
 "$schema" = 'https://starship.rs/config-schema.json'
-format = """$directory$git_branch$character"""
-right_format = """$git_status$all"""
+format = """$custom$directory$git_branch$character"""
+right_format = """$all"""
 
 [character]
 success_symbol = "[➜](bold green)"
@@ -28,3 +28,7 @@ deleted = '🗑️'
 behind = '🐌'
 ahead = '🏎💨'
 renamed = '👅'
+
+[custom.is_folder]
+format = '[ ](bold blue)'
+when = ''' test "$PWD" != "$HOME"'''
