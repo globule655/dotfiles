@@ -1,7 +1,7 @@
 add_newline = false
 
 "$schema" = 'https://starship.rs/config-schema.json'
-format = """$custom$directory$git_branch$character"""
+format = """${custom.is_folder}$directory$git_branch${custom.git_status}$character"""
 right_format = """$all"""
 
 [character]
@@ -19,6 +19,7 @@ format = '@[$localipv4](bold red) '
 
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
+disabled = true
 modified = '📝[($count)](yellow)'
 staged = '[++\($count\)](green)'
 untracked = '🔍[($count)](bold red)'
@@ -31,4 +32,25 @@ renamed = '👅'
 
 [custom.is_folder]
 format = '[ ](bold blue)'
-when = ''' test "$PWD" != "$HOME"'''
+when = ''' test "$PWD" != "$HOME" '''
+
+[custom.git_status]
+command = '''
+git_status=$(git status --porcelain)
+# Untracked or Deleted (unstaged) files - Red
+if echo ${git_status} | grep -qe '^?? ' -e '^[MARCDU ]D ' -e '^D[ UM]'; then
+    echo -n $'\e[31m● '
+fi
+
+# Modified (unstaged) and Renamed files - Yellow
+if echo ${git_status} | grep -qe '^[ MARC]M ' -e '^R[ MD] '; then
+    echo -n $'\e[33m● '
+fi
+
+# Staged files (including Deleted) - Green
+if echo ${git_status} | grep -qe '^A[ MDAU] ' -e '^M[ MD] ' -e '^UA' -e '^D '; then
+    echo -n $'\e[32m● '
+fi
+'''
+when = 'git rev-parse --is-inside-work-tree >/dev/null 2>&1'
+format = '( $output )'
