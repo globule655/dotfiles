@@ -1,6 +1,9 @@
 export CLICOLOR=1
+export EDITOR="nvim"
+
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu select
@@ -8,4 +11,4 @@ zstyle ':completion:*' completer _extensions _complete _approximate
 
 eval "$(starship init zsh)"
 
-alias ls="ls --color=auto"
+alias ls="eza"

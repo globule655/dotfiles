@@ -18,7 +18,7 @@ ssh_only = true
 format = '@[$localipv4](bold red) '
 
 [git_status]
-up_to_date = '[✓](green)'
+format = '([$all_status$ahead_behind]($style) )'
 modified = '📝[($count)](yellow)'
 staged = '[++\($count\)](green)'
 untracked = '🔍[($count)](bold red)'
