@@ -1,7 +1,7 @@
 add_newline = false
 
 "$schema" = 'https://starship.rs/config-schema.json'
-format = """${custom.is_folder}$directory$git_branch${custom.git_status}$character"""
+format = """${custom.is_home}${custom.is_folder}$directory$git_branch${custom.git_status}$character"""
 right_format = """$all"""
 
 [character]
@@ -19,9 +19,8 @@ format = '@[$localipv4](bold red) '
 
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
-disabled = true
+disabled = false
 modified = '📝[($count)](yellow)'
-staged = '[++\($count\)](green)'
 untracked = '🔍[($count)](bold red)'
 conflicted = '🚩'
 stashed = '📦'
@@ -33,6 +32,10 @@ renamed = '👅'
 [custom.is_folder]
 format = '[ ](bold blue)'
 when = ''' test "$PWD" != "$HOME" '''
+
+[custom.is_home]
+format = '[ ](bold green)'
+when = ''' test "$PWD" = "$HOME" '''
 
 [custom.git_status]
 command = '''
