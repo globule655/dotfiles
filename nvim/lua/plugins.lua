@@ -317,6 +317,24 @@ local plugs = {
     end
   },
 
+  {
+  "chentoast/marks.nvim",
+    config = function ()
+      require("marks").setup()
+    end,
+  },
+
+  {
+    "ellisonleao/glow.nvim",
+    cmd = "Glow",
+    opts = function ()
+      return require("configs.glow")
+    end,
+    config = function (_, opts)
+      require("glow").setup(opts)
+    end,
+  },
+
 }
 
 return plugs
