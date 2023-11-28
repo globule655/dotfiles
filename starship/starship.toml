@@ -34,7 +34,7 @@ format = '[ ](bold blue)'
 when = ''' test "$PWD" != "$HOME" '''
 
 [custom.is_home]
-format = '[ ](bold green)'
+format = '[ ](bold blue)'
 when = ''' test "$PWD" = "$HOME" '''
 
 [custom.git_status]
