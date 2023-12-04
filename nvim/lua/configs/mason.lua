@@ -4,6 +4,7 @@ local options = {
     "stylua",
     "markdownlint",
     "mdformat",
+    "marksman",
     -- web dev stuff
     "css-lsp",
     "html-lsp",
