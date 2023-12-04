@@ -11,6 +11,7 @@ pkgs=(
   git
   unzip
   eza
+  zsh
   )
 
 get_latest_release () {
