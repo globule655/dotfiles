@@ -33,10 +33,12 @@ find_os () {
 
 third_parties () {
   case "$(find_os)" in
-    "debian") wget -O /tmp/zellij.tar.gz https://github.com/zellij-org/zellij/releases/download/$ZELLIJ_VERSION/zellij-x86_64-unknown-linux-musl.tar.gz
-      tar -xvzf /tmp/zellij.tar.gz -C /usr/bin && chmod 755 /usr/bin/zellij
+    "debian") wget -O /tmp/zellij.tar.gz https://github.com/zellij-org/zellij/releases/download/$ZELLIJ_VERSION/zellij-x86_64-unknown-linux-musl.tar.gz \
+      && tar -xvzf /tmp/zellij.tar.gz -C /usr/bin && chmod 755 /usr/bin/zellij \
+      && curl -sS https://starship.rs/install.sh | sh -s -- -y
       ;;
-    "fedora") dnf copr enable varlad/zellij && dnf install -y zellij
+    "fedora") dnf copr enable varlad/zellij && dnf install -y zellij \
+      && curl -sS https://starship.rs/install.sh | sh -s -- -y
       ;;
     *) echo 'system not supported' && exit 1
       ;;
