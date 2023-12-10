@@ -24,6 +24,7 @@ local options = {
     "pyright",
     "texlab",
     "yaml-language-server",
+    "dot-language-server",
   },
 
   PATH = "append",

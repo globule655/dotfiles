@@ -21,6 +21,7 @@ local options = {
     "dockerfile",
     "python",
     "yaml",
+    "dot",
   },
 }
 
