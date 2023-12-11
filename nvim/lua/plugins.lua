@@ -335,6 +335,10 @@ local plugs = {
     end,
   },
 
+  {
+    "christoomey/vim-tmux-navigator",
+  },
+
 }
 
 return plugs
