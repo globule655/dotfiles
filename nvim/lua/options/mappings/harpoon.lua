@@ -3,9 +3,7 @@ vim.keymap.set("n", "<leader>mm", function ()
 end, 
   { desc = "Harpoon add mark"})
 
-vim.keymap.set("n", "<leader>mh", function ()
-  require("harpoon.ui").toggle_quick_menu()
-end,
+vim.keymap.set("n", "<leader>mh", "<CMD>Telescope harpoon marks<CR>",
   { desc = "Harpoon toggle quick menu"})
 
 vim.keymap.set('n', '<leader>,', function ()
