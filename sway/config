@@ -29,7 +29,7 @@ bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/guillaume/Images/4klandscape.jpg fill
+output * bg /home/guillaume/Images/sommet-montagne-majestueux-dans-paysage-hivernal-paisible-genere-par-ia.jpg fill
 #
 # Example configuration:
 #
