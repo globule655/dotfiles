@@ -27,9 +27,11 @@ focus output DP-1
 set $laptop eDP-1
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
+
+exec_always ~/.config/sway/clamshell.sh
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/guillaume/Images/sommet-montagne-majestueux-dans-paysage-hivernal-paisible-genere-par-ia.jpg fill
+output * bg ~/Images/sommet-montagne-majestueux-dans-paysage-hivernal-paisible-genere-par-ia.jpg fill
 #
 # Example configuration:
 #
@@ -58,6 +60,11 @@ font pango:monospace 0
 
 input * {
     xkb_layout fr
+}
+
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
 }
 
 #
@@ -101,6 +108,7 @@ input * {
 
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 #
 # Moving around:
 #
