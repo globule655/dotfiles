@@ -31,7 +31,7 @@ bindswitch --reload --locked lid:off output $laptop enable
 exec_always ~/.config/sway/clamshell.sh
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Images/sommet-montagne-majestueux-dans-paysage-hivernal-paisible-genere-par-ia.jpg fill
+output * bg ~/.config/sway/montagne.jpg fill
 #
 # Example configuration:
 #
