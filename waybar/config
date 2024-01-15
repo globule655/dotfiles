@@ -31,7 +31,7 @@
         "spacing": 10
     },
     "clock": {
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%Y-%m-%d %H:%M}"
     },
     "cpu": {
         "format": "{usage}% "
@@ -49,6 +49,8 @@
         "format": "{capacity}% {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
+        "format-charging": "{capacity}%",
+        "format-full": " full",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
