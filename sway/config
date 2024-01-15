@@ -31,10 +31,18 @@ bindswitch --reload --locked lid:off output $laptop enable
 
 exec_always ~/.config/sway/clamshell.sh
 exec "sleep 2; swaymsg workspace 1"
+
+# Config to allow flameshot to work properly
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
+
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg ~/.config/sway/montagne.jpg fill
 bindsym $mod+l exec --no-startup-id "/usr/bin/swaylock -f -i ~/.config/sway/montagne.jpg -s fill"
+
 #
 # Example configuration:
 #

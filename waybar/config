@@ -46,11 +46,11 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        "format": "{icon} {capacity}%",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-charging": "{capacity}%",
-        "format-full": " full",
+        "format-charging": "{icon} {capacity}%",
+        "format-full": "{icon} full",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
