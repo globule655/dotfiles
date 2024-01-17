@@ -122,8 +122,8 @@ input type:touchpad {
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-    bindsym XF86MonBrightnessUp exec light -A 20
-    bindsym XF86MonBrightnessDown exec light -U 20
+    bindsym XF86MonBrightnessUp exec light -A 10
+    bindsym XF86MonBrightnessDown exec light -U 10
 #
 # Moving around:
 #
