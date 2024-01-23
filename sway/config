@@ -22,6 +22,12 @@ set $term /usr/bin/wezterm
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu /usr/bin/rofi -show drun xargs swaymsg exec --
 
+# Notification Daemon
+exec swaync
+
+# Toggle control center
+bindsym $mod+Shift+n exec swaync-client -t -sw
+
 ### Output configuration
 focus output DP-1
 
