@@ -76,7 +76,7 @@ bindsym $mod+l exec --no-startup-id "/usr/bin/swaylock -f -i ~/.config/sway/mont
 
 titlebar_border_thickness 0
 titlebar_padding 0
-font pango:monospace 0
+font pango:monospace 1
 hide_edge_borders smart
 
 ### Input configuration
