@@ -49,7 +49,7 @@ local telescope_config = {
         n = { ["q"] = require("telescope.actions").close },
       },
     },
-    extensions_list = { "themes", "terms", "fzf" },
+    extensions_list = { "themes", "terms", "fzf", "ssh-config" },
     extensions = {
       fzf = {
         fuzzy = true,
@@ -73,6 +73,7 @@ local telescope_config = {
   require("telescope").load_extension("fzf"),
   require("telescope").load_extension("undo"),
   require("telescope").load_extension("harpoon"),
+  require("telescope").load_extension("ssh-config"),
 
 }
 

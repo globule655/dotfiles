@@ -46,6 +46,7 @@ local plugs = {
       "nvim-lua/plenary.nvim",
       "debugloop/telescope-undo.nvim",
       "nvim-treesitter/nvim-treesitter",
+      "jsongerber/telescope-ssh-config",
       {
         "nvim-telescope/telescope-fzf-native.nvim", build = "make"
       },
@@ -87,12 +88,12 @@ local plugs = {
     "neovim/nvim-lspconfig",
     dependencies = {
       -- format & linting
-      {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-          require "configs.null-ls"
-        end,
-      },
+      -- {
+      --   "jose-elias-alvarez/null-ls.nvim",
+      --   config = function()
+      --     require "configs.null-ls"
+      --   end,
+      -- },
     },
     config = function()
       require "configs.lspconfig"
