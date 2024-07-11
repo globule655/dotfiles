@@ -16,6 +16,8 @@ local options = {
     "clangd",
     "clang-format",
     -- devops
+    "ansible-language-server",
+    "ansible-lint",
     "terraform-ls",
     "tflint",
     "dockerfile-language-server",
