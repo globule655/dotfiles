@@ -11,6 +11,7 @@ setopt EXTENDED_HISTORY
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source <(fzf --zsh)
 
 # zsh completion to correct approximations & give select menu for multiple choices
 autoload -Uz compinit && compinit
@@ -21,3 +22,7 @@ zstyle ':completion:*' completer _extensions _complete _approximate
 eval "$(starship init zsh)"
 
 alias ls="eza"
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
