@@ -319,7 +319,7 @@ local plugs = {
   },
 
   {
-  "chentoast/marks.nvim",
+    "chentoast/marks.nvim",
     config = function ()
       require("marks").setup()
     end,
@@ -338,6 +338,38 @@ local plugs = {
 
   {
     "christoomey/vim-tmux-navigator",
+  },
+
+  {
+    "mistricky/codesnap.nvim",
+    build = "make",
+    opts = function ()
+      return require("configs.codesnap")
+    end,
+    config = function(_, opts)
+      return require("codesnap").setup(opts)
+    end,
+  },
+
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",  -- recommended, use latest release instead of latest commit
+    lazy = true,
+    ft = "markdown",
+    -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+    -- event = {
+    --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+    --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+    --   "BufReadPre path/to/my-vault/**.md",
+    --   "BufNewFile path/to/my-vault/**.md",
+    -- },
+    dependencies = {
+      -- Required.
+      "nvim-lua/plenary.nvim",
+    },
+    opts = function()
+      return require("configs.obsidian")
+    end,
   },
 
 }
