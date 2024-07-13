@@ -1,4 +1,5 @@
 local codesnap_setup = {
+  save_path = "~/Pictures",
   mac_window_bar = false,
   title = "CodeSnap.nvim",
   code_font_family = "CaskaydiaCove Nerd Font",
