@@ -23,7 +23,7 @@ zstyle ':completion:*' completer _extensions _complete _approximate
 eval "$(starship init zsh)"
 
 alias ls="eza"
-alias ov="cd $HOME/Documents/git_perso/wiki_perso.git/master"
+alias ov="cd $HOME/Documents/git_perso/doc.git/main"
 
 . "$HOME/.atuin/bin/env"
 
