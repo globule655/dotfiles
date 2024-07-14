@@ -1,1 +1,1 @@
-vim.keymap.set({ 'n', 'v' }, '<leader>on', '<CMD>ObsidianNewFromTemplate note<CR>' )
+vim.keymap.set({ 'n', 'v' }, '<leader>on', ':ObsidianTemplate note<CR>', { desc = 'Obsidian reformat file from note template'})
