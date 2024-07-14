@@ -2,7 +2,7 @@ local obsidian_opts = {
   workspaces = {
     {
       name = "perso",
-      path = "~/Documents/git_perso/wiki_perso.git/master",
+      path = "~/Documents/git_perso/doc.git/main",
     },
   },
 
