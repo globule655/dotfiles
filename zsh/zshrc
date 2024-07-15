@@ -1,6 +1,8 @@
 export CLICOLOR=1
 export EDITOR="nvim"
 export PATH=$PATH:~/.local/bin
+export VAULT_PATH="$HOME/Documents/git_perso/doc.git/main"
+export DOTFILES_PATH="$HOME/Documents/git_perso/dotfiles"
 # Allow zsh-autosuggestions to persist
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
@@ -23,7 +25,8 @@ zstyle ':completion:*' completer _extensions _complete _approximate
 eval "$(starship init zsh)"
 
 alias ls="eza"
-alias ov="cd $HOME/Documents/git_perso/doc.git/main"
+alias ov="cd $VAULT_PATH"
+alias dot="cd $DOTFILES_PATH"
 
 . "$HOME/.atuin/bin/env"
 
