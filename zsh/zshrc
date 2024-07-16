@@ -25,9 +25,10 @@ zstyle ':completion:*' completer _extensions _complete _approximate
 eval "$(starship init zsh)"
 
 alias ls="eza"
-alias ov="cd $VAULT_PATH"
-alias dot="cd $DOTFILES_PATH"
+alias ov="cd $VAULT_PATH; nvim ."
+alias dot="cd $DOTFILES_PATH; nvim ."
 
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
