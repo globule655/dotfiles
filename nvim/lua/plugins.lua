@@ -42,6 +42,7 @@ local plugs = {
 
   {
     "nvim-telescope/telescope.nvim",
+    tag = "0.1.8",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "debugloop/telescope-undo.nvim",
@@ -216,7 +217,6 @@ local plugs = {
     end,
   },
 
-  -- Install a plugin
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
