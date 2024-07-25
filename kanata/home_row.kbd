@@ -5,15 +5,10 @@
 (defcfg
   process-unmapped-keys yes
   linux-continue-if-no-devs-found yes
-  linux-dev-names-exclude (
-    "DP-1"
-    "splitkb.com Aurora Lily58 rev1"
-    "splitkb.com Aurora Lily58 rev1 Mouse"
-    "splitkb.com Aurora Lily58 rev1 Consumer Control"
-  )
+  linux-dev "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
 )
 (defsrc
-  a   s   d   f   j   k   l   ;
+  caps a   s   d   f   j   k   l   ;
 )
 (defvar
   ;; Note: consider using different time values for your different fingers.
@@ -33,5 +28,5 @@
   ; (tap-hold $tap-time $hold-time ; rmet)
 )
 (deflayer base
-  @a  @s  @d  @f  @j  @k  @l  @;
+  esc @a  @s  @d  @f  @j  @k  @l  @;
 )

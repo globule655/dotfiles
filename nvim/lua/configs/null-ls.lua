@@ -16,6 +16,9 @@ local sources = {
   -- salt
   b.diagnostics.saltlint,
 
+  -- ansible
+  b.diagnostics.ansiblelint,
+
   -- terraform
   b.formatting.terraform_fmt,
 }
