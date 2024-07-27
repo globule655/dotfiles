@@ -65,6 +65,7 @@ create_symlinks () {
   for file in $(find $SCRIPT_DIR -maxdepth 1 -type d -not -path '*.git' | awk -F/ '{print $2}'); do
     ln -sf $SCRIPT_DIR/$file $HOME/.config/$file
   done
+  ln -sf $SCRIPT_DIR/zshrc $HOME/.zshrc
   cd $HOME
 }
 
