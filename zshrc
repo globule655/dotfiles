@@ -1,5 +1,6 @@
 export CLICOLOR=1
 export EDITOR="nvim"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export PATH=$PATH:~/.local/bin
 export VAULT_PATH="$HOME/Documents/git_perso/doc.git/main"
 export DOTFILES_PATH="$HOME/Documents/git_perso/dotfiles"

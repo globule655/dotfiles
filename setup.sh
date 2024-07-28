@@ -43,7 +43,7 @@ get_latest_release () {
 ZELLIJ_VERSION=$(get_latest_release zellij-org/zellij)
 
 clone_plugs () {
-  su $SUDO_USER -c "mkdir -p $HOME/.zsh" && cd /home/$SUDO_USER
+  su $SUDO_USER -c "mkdir -p /home/$SUDO_USER/.zsh" && cd /home/$SUDO_USER/.zsh
   for repos in "${zsh_plugs[@]}"; do
     su $SUDO_USER -c "git clone $repos"
   done
@@ -59,16 +59,16 @@ find_os () {
 }
 
 create_symlinks () {
-  su $SUDO_USER -c "mkdir -p $HOME/.config"
+  su $SUDO_USER -c "mkdir -p /home/$SUDO_USER/.config"
   cd $SCRIPT_DIR
   for file in $(find $SCRIPT_DIR -maxdepth 1 -type d -not -path '*.git' | tail -n +2); do
-    su $SUDO_USER -c "ln -sf $file $HOME/.config/$(echo $file | awk -F/ '{print $NF}')"
+    su $SUDO_USER -c "ln -sf $file /home/$SUDO_USER/.config/$(echo $file | awk -F/ '{print $NF}')"
   done
-  su $SUDO_USER -c "ln -sf $SCRIPT_DIR/zshrc $HOME/.zshrc"
+  su $SUDO_USER -c "ln -sf $SCRIPT_DIR/zshrc /home/$SUDO_USER/.zshrc"
 }
 
 install_fonts () {
-  su $SUDO_USER -c "wget -qO $NERD_FONT_NAME.zip $NERD_FONT_URL && unzip -j $NERD_FONT_NAME.zip -d $HOME/.local/share/fonts"
+  su $SUDO_USER -c "wget -qO $NERD_FONT_NAME.zip $NERD_FONT_URL && unzip -j $NERD_FONT_NAME.zip -d /home/$SUDO_USER/.local/share/fonts"
   rm -f $NERD_FONT_NAME.zip
 }
 
