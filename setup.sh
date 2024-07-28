@@ -43,11 +43,10 @@ get_latest_release () {
 ZELLIJ_VERSION=$(get_latest_release zellij-org/zellij)
 
 clone_plugs () {
-  mkdir -p $HOME/.zsh && cd $_
+  su $SUDO_USER -c "mkdir -p $HOME/.zsh" && cd /home/$SUDO_USER
   for repos in "${zsh_plugs[@]}"; do
-    git clone $repos
+    su $SUDO_USER -c "git clone $repos"
   done
-  cd $HOME
 }
 
 find_os () {
@@ -60,17 +59,16 @@ find_os () {
 }
 
 create_symlinks () {
-  mkdir -p $HOME/.config
+  su $SUDO_USER -c "mkdir -p $HOME/.config"
   cd $SCRIPT_DIR
   for file in $(find $SCRIPT_DIR -maxdepth 1 -type d -not -path '*.git' | tail -n +2); do
-    ln -sf $file $HOME/.config/$(echo $file | awk -F/ '{print $NF}')
+    su $SUDO_USER -c "ln -sf $file $HOME/.config/$(echo $file | awk -F/ '{print $NF}')"
   done
-  ln -sf $SCRIPT_DIR/zshrc $HOME/.zshrc
-  cd $HOME
+  su $SUDO_USER -c "ln -sf $SCRIPT_DIR/zshrc $HOME/.zshrc"
 }
 
 install_fonts () {
-  wget -qO $NERD_FONT_NAME.zip $NERD_FONT_URL && unzip -j $NERD_FONT_NAME.zip -d $HOME/.local/share/fonts
+  su $SUDO_USER -c "wget -qO $NERD_FONT_NAME.zip $NERD_FONT_URL && unzip -j $NERD_FONT_NAME.zip -d $HOME/.local/share/fonts"
   rm -f $NERD_FONT_NAME.zip
 }
 
@@ -79,14 +77,14 @@ third_parties () {
     "debian") wget -O /tmp/zellij.tar.gz https://github.com/zellij-org/zellij/releases/download/$ZELLIJ_VERSION/zellij-x86_64-unknown-linux-musl.tar.gz \
       && tar -xvzf /tmp/zellij.tar.gz -C /usr/bin && chmod 755 /usr/bin/zellij \
       && curl -sS https://starship.rs/install.sh | sh -s -- -y \
-      && curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh \
+      && su $SUDO_USER -c "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh" \
       && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash \
       && wget -qO nvim https://github.com/neovim/neovim/releases/download/stable/nvim.appimage && mv nvim /usr/local/bin \
       && chown root:root /usr/local/bin/nvim && chmod 755 /usr/local/bin/nvim
       ;;
     "fedora") dnf copr enable varlad/zellij && dnf install -y zellij \
       && curl -sS https://starship.rs/install.sh | sh -s -- -y \
-      && curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh \
+      && su $SUDO_USER -c "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh" \
       && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash \
       && wget -qO neovim https://github.com/neovim/neovim/releases/download/stable/nvim.appimage && mv neovim /usr/local/bin/nvim \
       && chown root:root /usr/local/bin/nvim && chmod 755 /usr/local/bin/nvim
@@ -108,7 +106,8 @@ package_install () {
     "fedora") dnf install -y dnf-plugins-core \
       && dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo \
       && dnf install -y ${pkgs[@]} \
-      && dnf install -y ${docker_pkgs[@]}
+      && dnf install -y ${docker_pkgs[@]} \
+      && systemctl start docker && systemctl enable docker
       ;;
     *) echo 'system not supported' && exit 1
       ;;
