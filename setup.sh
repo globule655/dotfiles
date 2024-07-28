@@ -11,6 +11,8 @@ pkgs=(
   make
   cmake
   gcc
+  gcc-c++
+  nodejs-npm
   git
   tmux
   kitty
@@ -19,6 +21,8 @@ pkgs=(
   zsh
   zoxide
   sway
+  waybar
+  rofi
   )
 
 zsh_plugs=(
@@ -68,8 +72,10 @@ create_symlinks () {
 }
 
 install_fonts () {
+  cd /tmp
   su $SUDO_USER -c "wget -qO $NERD_FONT_NAME.zip $NERD_FONT_URL && unzip -j $NERD_FONT_NAME.zip -d /home/$SUDO_USER/.local/share/fonts"
   rm -f $NERD_FONT_NAME.zip
+  cd $HOME
 }
 
 third_parties () {
@@ -79,14 +85,14 @@ third_parties () {
       && curl -sS https://starship.rs/install.sh | sh -s -- -y \
       && su $SUDO_USER -c "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh" \
       && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash \
-      && wget -qO nvim https://github.com/neovim/neovim/releases/download/stable/nvim.appimage && mv nvim /usr/local/bin \
+      && cd /tmp && wget -qO neovim https://github.com/neovim/neovim/releases/download/stable/nvim.appimage && mv neovim /usr/local/bin/nvim \
       && chown root:root /usr/local/bin/nvim && chmod 755 /usr/local/bin/nvim
       ;;
     "fedora") dnf copr enable varlad/zellij && dnf install -y zellij \
       && curl -sS https://starship.rs/install.sh | sh -s -- -y \
       && su $SUDO_USER -c "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh" \
       && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash \
-      && wget -qO neovim https://github.com/neovim/neovim/releases/download/stable/nvim.appimage && mv neovim /usr/local/bin/nvim \
+      && cd /tmp && wget -qO neovim https://github.com/neovim/neovim/releases/download/stable/nvim.appimage && mv neovim /usr/local/bin/nvim \
       && chown root:root /usr/local/bin/nvim && chmod 755 /usr/local/bin/nvim
       ;;
     *) echo 'system not supported' && exit 1
