@@ -20,6 +20,7 @@ pkgs=(
   eza
   zsh
   zoxide
+  bat
   sway
   waybar
   rofi

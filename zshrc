@@ -26,6 +26,7 @@ zstyle ':completion:*' completer _extensions _complete _approximate
 eval "$(starship init zsh)"
 
 alias ls="eza"
+alias cat="bat --theme='base16-256'"
 alias ov="cd $VAULT_PATH; nvim ."
 alias dot="cd $DOTFILES_PATH; nvim ."
 
