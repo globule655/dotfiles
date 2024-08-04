@@ -59,6 +59,16 @@
   # plain files is through 'home.file'.
 
   programs = {
+      zsh = {
+        enable = true;
+        enableCompletion = true;
+        autosuggestion.enable = true;
+        syntaxHighlighting.enable = true;
+        shellAliases = {
+          cat = "bat";
+          ls = "eza";
+        };
+      };
       atuin = {
         enable = true;
         enableZshIntegration = true;
@@ -78,8 +88,7 @@
     # ".screenrc".source = dotfiles/screenrc;
 
     ".config/nvim".source = ./nvim;
-    ".config/starship".source = ./starship;
-    ".zshrc".source = ./zshrc;
+    ".config/starship.toml".source = ./starship/starship.toml;
     ".config/tmux".source = ./tmux;
 
     # # You can also set the file content immediately.
@@ -107,8 +116,8 @@
   #
   home.sessionVariables = {
     EDITOR = "nvim";
-    STARSHIP_CONFIG="~/.config/starship/starship.toml";
-    PATH="$PATH:$HOME/.nix-profile/bin";
+    # STARSHIP_CONFIG="~/.config/starship/starship.toml";
+    # PATH="$PATH:$HOME/.nix-profile/bin";
   };
 
   # Let Home Manager install and manage itself.
