@@ -118,6 +118,10 @@ in
     ".config/rofi".source = ./rofi;
     ".config/kitty".source = ./kitty;
 
+    ".config/environment.d/nix_path.conf".text = ''
+      PATH=$HOME/.nix-profile/bin:$PATH
+    '';
+
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
