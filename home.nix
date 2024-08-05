@@ -24,28 +24,31 @@ in
   home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    neovim
-    git
-    curl
-    wget
     atuin
-    gcc
-    cmake
-    gnumake
-    nodejs_22
-    unzip
-    tmux
-    kitty
-    zsh
-    eza
     bat
-    zoxide
-    fzf
-    ripgrep
-    starship
+    cmake
+    curl
+    eza
     fontconfig
-    waybar
+    fzf
+    gcc
+    git
+    gnumake
+    htop
+    kitty
+    ncdu
+    neovim
+    nodejs_22
+    ripgrep
     rofi
+    starship
+    tmux
+    unzip
+    waybar
+    wget
+    yazi
+    zoxide
+    zsh
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
