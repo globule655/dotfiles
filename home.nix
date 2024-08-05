@@ -35,13 +35,16 @@ in
     git
     gnumake
     htop
+    kitty
     ncdu
     neovim
     nodejs_22
     ripgrep
+    rofi
     starship
     tmux
     unzip
+    waybar
     wget
     yazi
     zoxide
