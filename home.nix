@@ -35,7 +35,6 @@ in
     git
     gnumake
     htop
-    kitty
     ncdu
     neovim
     nodejs_22
