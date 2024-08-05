@@ -1,10 +1,14 @@
 { config, pkgs, ... }:
 
+let
+  username = "globule";
+  homedir = "/home/${username}";
+in 
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "globule";
-  home.homeDirectory = "/home/globule";
+  home.username = "${username}";
+  home.homeDirectory = "${homedir}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -39,7 +43,9 @@
     fzf
     ripgrep
     starship
-
+    fontconfig
+    waybar
+    rofi
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -59,26 +65,42 @@
   # plain files is through 'home.file'.
 
   programs = {
-      zsh = {
-        enable = true;
-        enableCompletion = true;
-        autosuggestion.enable = true;
-        syntaxHighlighting.enable = true;
-        shellAliases = {
-          cat = "bat";
-          ls = "eza";
-        };
+    bash = {
+      enable = true;
+      enableCompletion = true;
+      profileExtra = ''
+        . "${homedir}/.nix-profile/etc/profile.d/nix.sh"
+        exec ${homedir}/.nix-profile/bin/zsh
+      '';
+    };
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+      shellAliases = {
+        cat = "bat";
+        ls = "eza";
       };
-      atuin = {
-        enable = true;
-        enableZshIntegration = true;
-        enableBashIntegration = true;
-      };
-      starship = {
-        enable = true;
-        enableZshIntegration = true;
-        enableBashIntegration = true;
-      };
+    };
+    atuin = {
+      enable = true;
+      enableZshIntegration = true;
+      enableBashIntegration = true;
+    };
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+      enableBashIntegration = true;
+    };
+    zoxide = {
+      enable = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      options = [
+        "--cmd cd"
+      ];
+    };
   };
 
   home.file = {
@@ -90,6 +112,11 @@
     ".config/nvim".source = ./nvim;
     ".config/starship.toml".source = ./starship/starship.toml;
     ".config/tmux".source = ./tmux;
+    ".config/kanata".source = ./kanata;
+    ".config/sway".source = ./sway;
+    ".config/waybar".source = ./waybar;
+    ".config/rofi".source = ./rofi;
+    ".config/kitty".source = ./kitty;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
