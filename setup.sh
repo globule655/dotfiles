@@ -3,7 +3,7 @@
 # Rewrite of the setup script to setup everything with nixpkgs
 
 # Install system packages
-sudo dnf install -y sway
+sudo dnf install -y sway waybar rofi
 
 # check if nix command exists
 if ! [ -x "$(command -v nix)" ]; then
