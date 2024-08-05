@@ -2,8 +2,10 @@
 
 # Rewrite of the setup script to setup everything with nixpkgs
 
-# check if nix command exists
+# Install system packages
+sudo dnf install -y sway
 
+# check if nix command exists
 if ! [ -x "$(command -v nix)" ]; then
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
 fi
