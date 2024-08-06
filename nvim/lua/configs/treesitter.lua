@@ -22,6 +22,7 @@ local options = {
     "python",
     "yaml",
     "dot",
+    "nix",
   },
 }
 
