@@ -116,6 +116,16 @@ fonts = {
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
+  security.sudo.extraRules= [
+  {  users = [ "globule" ];
+    commands = [
+       { command = "ALL" ;
+         options= [ "SETENV" "NOPASSWD" ]; # "SETENV" # Adding the following could be a good idea
+      }
+    ];
+  }
+];
+
   # home-manager.users.globule = { config, pkgs, ... }:{
   #   imports = [
   #     ./home.nix

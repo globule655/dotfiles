@@ -134,6 +134,55 @@ in
       userName = "Globule";
       userEmail = "globule655@gmail.com";
     };
+    tmux = {
+      enable = true;
+      shell = "${pkgs.zsh}/bin/zsh";
+      terminal = "tmux-256color";
+      historyLimit = 100000;
+      keyMode = "vi";
+      clock24 = true;
+      plugins = with pkgs; [
+        tmuxPlugins.yank
+        tmuxPlugins.vim-tmux-navigator
+        tmuxPlugins.sensible
+        tmuxPlugins.catppuccin
+      ];
+    extraConfig = ''
+      set-option -sa terminal-overrides ",xterm*:Tc"
+      set -g mouse on
+      bind '"' split-window -v -c "#{pane_current_path}"
+      bind '%' split-window -h -c "#{pane_current_path}"
+
+      # Allow resize with vim nav keys
+      bind -r j resize-pane -D 5
+      bind -r k resize-pane -U 5
+      bind -r l resize-pane -R 5
+      bind -r h resize-pane -L 5
+
+      bind-key -T copy-mode-vi 'v' send -X begin-selection # start selecting text with "v"
+      bind-key -T copy-mode-vi 'y' send -X copy-selection # copy text with "y"
+
+      unbind -T copy-mode-vi MouseDragEnd1Pane # don't exit copy mode when dragging with mouse
+
+      #catppuccin config
+      set -g @catppuccin_window_left_separator "█"
+      set -g @catppuccin_window_right_separator "█ "
+      set -g @catppuccin_window_number_position "right"
+      set -g @catppuccin_window_middle_separator "  █"
+
+      set -g @catppuccin_window_default_fill "number"
+
+      set -g @catppuccin_window_current_fill "number"
+      set -g @catppuccin_window_current_text "#{pane_current_path}"
+
+      set -g @catppuccin_status_modules_right "application session date_time"
+      set -g @catppuccin_status_left_separator  ""
+      set -g @catppuccin_status_right_separator ""
+      set -g @catppuccin_status_right_separator_inverse "yes"
+      set -g @catppuccin_status_fill "all"
+      set -g @catppuccin_status_connect_separator "no"
+    '';
+    };
   };
 
   wayland.windowManager.sway = {
@@ -148,7 +197,7 @@ in
 
     # ".config/nvim".source = .dotfiles/nvim;
     ".config/starship.toml".source = ./starship/starship.toml;
-    ".config/tmux".source = ./tmux;
+    # ".config/tmux".source = ./tmux;
     ".config/kanata".source = ./kanata;
     ".config/sway".source = ./sway;
     ".config/waybar".source = ./waybar;
