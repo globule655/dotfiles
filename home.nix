@@ -24,6 +24,7 @@ in
   home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
+    ansible
     atuin
     bat
     cmake
@@ -40,7 +41,9 @@ in
     nodejs_22
     ripgrep
     rofi
+    rustup
     starship
+    terraform
     tmux
     unzip
     waybar
@@ -70,16 +73,20 @@ in
     bash = {
       enable = true;
       enableCompletion = true;
-      profileExtra = ''
-        . "${homedir}/.nix-profile/etc/profile.d/nix.sh"
-        exec ${homedir}/.nix-profile/bin/zsh
-      '';
     };
     zsh = {
       enable = true;
       enableCompletion = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
+      completionInit = ''
+        autoload -Uz compinit && compinit
+      '';
+      initExtra = ''
+        zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+        zstyle ':completion:*' menu select
+        zstyle ':completion:*' completer _extensions _complete _approximate
+      '';
       shellAliases = {
         cat = "bat";
         ls = "eza";
@@ -103,6 +110,23 @@ in
         "--cmd cd"
       ];
     };
+    kitty = {
+      enable = true;
+      font = {
+        name = "JetBrainsMono Nerd Font";
+        size = 11;
+      };
+      shellIntegration.enableZshIntegration = true;
+      theme = "Default";
+      extraConfig = ''
+        background_opacity 0.8
+        '';
+    };
+    rofi = {
+      enable = true;
+      font = "JetBrainsMono Nerd Font";
+      theme = "solarized_alternate";
+    };
   };
 
   home.file = {
@@ -111,14 +135,14 @@ in
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
 
-    ".config/nvim".source = ./nvim;
+    # ".config/nvim".source = ./nvim;
     ".config/starship.toml".source = ./starship/starship.toml;
     ".config/tmux".source = ./tmux;
     ".config/kanata".source = ./kanata;
     ".config/sway".source = ./sway;
     ".config/waybar".source = ./waybar;
-    ".config/rofi".source = ./rofi;
-    ".config/kitty".source = ./kitty;
+    # ".config/rofi".source = ./rofi;
+    # ".config/kitty".source = ./kitty;
 
     ".config/environment.d/nix_path.conf".text = ''
       PATH=$HOME/.nix-profile/bin:$PATH
