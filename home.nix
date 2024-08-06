@@ -33,6 +33,7 @@ in
     eza
     fontconfig
     fzf
+    google-chrome
     gcc
     gnumake
     grim
