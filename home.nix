@@ -28,29 +28,30 @@ in
     atuin
     bat
     cmake
-    curl
+    dnsutils
+    ethtool
     eza
     fontconfig
     fzf
     gcc
-    git
     gnumake
+    grim
     htop
+    lazygit
+    jq
     ncdu
     neovim
     nodejs_22
+    p7zip
     ripgrep
     rofi
     rustup
     starship
     terraform
     tmux
-    unzip
     waybar
-    wget
     yazi
     zoxide
-    zsh
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -127,6 +128,15 @@ in
       font = "JetBrainsMono Nerd Font";
       theme = "solarized_alternate";
     };
+    git = {
+      enable = true;
+      userName = "Globule";
+      userEmail = "globule655@gmail.com";
+    };
+  };
+
+  wayland.windowManager.sway = {
+    enable = true;
   };
 
   home.file = {
@@ -135,18 +145,12 @@ in
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
 
-    # ".config/nvim".source = ./nvim;
+    # ".config/nvim".source = .dotfiles/nvim;
     ".config/starship.toml".source = ./starship/starship.toml;
     ".config/tmux".source = ./tmux;
     ".config/kanata".source = ./kanata;
     ".config/sway".source = ./sway;
     ".config/waybar".source = ./waybar;
-    # ".config/rofi".source = ./rofi;
-    # ".config/kitty".source = ./kitty;
-
-    ".config/environment.d/nix_path.conf".text = ''
-      PATH=$HOME/.nix-profile/bin:$PATH
-    '';
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
