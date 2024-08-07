@@ -5,7 +5,6 @@ local options = {
     "markdownlint",
     "mdformat",
     "marksman",
-    "nil",
     -- web dev stuff
     "css-lsp",
     "html-lsp",
