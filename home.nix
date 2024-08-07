@@ -41,6 +41,7 @@ in
     lazygit
     jq
     ncdu
+    nil
     neovim
     nodejs_22
     p7zip
