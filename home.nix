@@ -186,8 +186,14 @@ in
     };
   };
 
-  wayland.windowManager.sway = {
-    enable = true;
+  wayland.windowManager = {
+    sway = {
+      enable = true;
+    };
+    hyprland = {
+      enable = true;
+      systemd.variables = ["--all"];
+    };
   };
 
   home.file = {
