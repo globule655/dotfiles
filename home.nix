@@ -75,10 +75,8 @@ in
       enable = true;
       enableCompletion = true;
       bashrcExtra = ''
-	exec zsh
-      '';
-      profileExtra = ''
-	. ~/.nix-profile/etc/profile.d/nix.sh
+        . ~/.nix-profile/etc/profile.d/nix.sh
+        exec zsh
       '';
     };
     zsh = {
