@@ -31,6 +31,7 @@ in
     dnsutils
     ethtool
     eza
+    flameshot
     fontconfig
     fzf
     google-chrome
@@ -51,6 +52,7 @@ in
     starship
     terraform
     tmux
+    vlc
     waybar
     yazi
     zoxide
