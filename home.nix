@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  username = "globule";
+  username = "guillaume";
   homedir = "/home/${username}";
 in 
 {
@@ -33,7 +33,6 @@ in
     eza
     fontconfig
     fzf
-    google-chrome
     gcc
     gnumake
     grim
@@ -42,13 +41,13 @@ in
     jq
     ncdu
     neovim
+    nil
     nodejs_22
     p7zip
     ripgrep
     rofi
     rustup
     starship
-    terraform
     tmux
     waybar
     yazi
@@ -75,6 +74,12 @@ in
     bash = {
       enable = true;
       enableCompletion = true;
+      bashrcExtra = ''
+	exec zsh
+      '';
+      profileExtra = ''
+	. ~/.nix-profile/etc/profile.d/nix.sh
+      '';
     };
     zsh = {
       enable = true;
