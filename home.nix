@@ -49,6 +49,7 @@ in
   home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
+
     ansible
     atuin
     bat
@@ -59,22 +60,24 @@ in
     flameshot
     fontconfig
     fzf
-    google-chrome
     gcc
     gnumake
+    google-chrome
     grim
     htop
-    lazygit
     jq
+    lazygit
     ncdu
-    nil
     neovim
+    nil
     nodejs_22
     p7zip
     ripgrep
     rofi
     rustup
+    slurp
     starship
+    swappy
     terraform
     tmux
     vlc
