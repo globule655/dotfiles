@@ -19,6 +19,31 @@ in
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
+  wayland.windowManager = {
+    sway = {
+      enable = true;
+    };
+    hyprland = {
+      enable = true;
+      systemd.variables = ["--all"];
+      settings = {
+        decoration = {
+          shadow_offset = "0 5";
+          "col.shadow" = "rgba(00000099)";
+        };
+
+        "$mod" = "SUPER";
+
+        bindm = [
+          # mouse movements
+          "$mod, mouse:272, movewindow"
+          "$mod, mouse:273, resizewindow"
+          "$mod ALT, mouse:272, resizewindow"
+        ];
+      };
+    };
+  };
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -185,31 +210,6 @@ in
       set -g @catppuccin_status_fill "all"
       set -g @catppuccin_status_connect_separator "yes"
     '';
-    };
-  };
-
-  wayland.windowManager = {
-    sway = {
-      enable = true;
-    };
-    hyprland = {
-      enable = true;
-      systemd.variables = ["--all"];
-      settings = {
-        decoration = {
-          shadow_offset = "0 5";
-          "col.shadow" = "rgba(00000099)";
-        };
-
-        "$mod" = "SUPER";
-
-        bindm = [
-          # mouse movements
-          "$mod, mouse:272, movewindow"
-          "$mod, mouse:273, resizewindow"
-          "$mod ALT, mouse:272, resizewindow"
-        ];
-      };
     };
   };
 
