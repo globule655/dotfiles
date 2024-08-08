@@ -48,6 +48,8 @@ in
     rofi
     rustup
     starship
+    terraform
+    teleport_15
     tmux
     waybar
     yazi
