@@ -3,7 +3,7 @@
 
   imports = [
     ./windowManager
-    ./global
+    # ./global
     ./packages
   ];
 
