@@ -25,6 +25,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  programs.openvpn3.enable = true;
+  virtualisation.docker.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
@@ -113,7 +115,7 @@ fonts = {
   users.users.globule = {
     isNormalUser = true;
     description = "globule";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   security.sudo.extraRules= [
@@ -146,7 +148,6 @@ fonts = {
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
     };
-    openvpn3.enable = true;
   };
 
   # Allow unfree packages
