@@ -10,12 +10,14 @@
   config = lib.mkIf config.utils-packages.enable {
     home.packages = with pkgs; [
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    age # encrypt/decrypt files
     atuin
     bat
     eza
     fzf
     lazygit
-    yazi
+    termshark # wireshark in a termUI
+    yazi # Terminal file explorer
     zoxide
     ];
   };
