@@ -9,6 +9,7 @@
 
   sway-wm.enable = true;
   hyprland-wm.enable = false;
+  work-packages.enable = true;
 
   home = {
     username = "guillaume";
