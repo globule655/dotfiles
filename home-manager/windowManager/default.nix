@@ -7,8 +7,6 @@
     hyprland-wm = {
       enable = lib.mkEnableOption "Enable hyprland windowManager";
     };
-    config.sway-wm.enable = lib.mkDefault true;
-    config.hyprland-wm.enable = lib.mkDefault false;
   };
 
   config = {
