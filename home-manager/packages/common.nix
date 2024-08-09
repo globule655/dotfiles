@@ -31,6 +31,7 @@
     slurp
     starship
     swappy
+    swaynotificationcenter
     tmux
     vlc
     waybar
