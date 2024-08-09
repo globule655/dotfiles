@@ -2,7 +2,7 @@
 {
 
   imports = [
-    ./global
+    # ./global
     ./windowManager
     ./packages
   ];
