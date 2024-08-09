@@ -70,6 +70,9 @@
         cat = "bat";
         ls = "eza";
       };
+      initExtraFirst = ''
+        export SHELL=~/.nix-profile/bin/zsh
+      '';
     };
     atuin = {
       enable = true;
