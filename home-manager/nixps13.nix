@@ -7,7 +7,7 @@
     ./packages
   ];
 
-  nixpkgs.enable = false;
+  nixpkgs_conf.enable = false;
   sway-wm.enable = true;
   hyprland-wm.enable = true;
 
