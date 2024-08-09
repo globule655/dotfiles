@@ -7,15 +7,15 @@
     ./packages
   ];
 
-  hyprland-vm.enable = false;
+  hyprland-wm.enable = false;
 
   home = {
     username = "guillaume";
     stateVersion = "24.05";
     file = {
-      ".config/starship.toml".source = ./starship/starship.toml;
-      ".config/sway".source = ./sway;
-      ".config/waybar".source = ./waybar;
+      ".config/starship.toml".source = ../starship/starship.toml;
+      ".config/sway".source = ../sway;
+      ".config/waybar".source = ../waybar;
     };
     sessionVariables = {
       EDITOR = "nvim";
@@ -92,6 +92,7 @@
     };
     git = {
       enable = true;
+      userName = "gdebros";
       userEmail = "guillaume.debros@digeiz.com";
     };
     tmux = {

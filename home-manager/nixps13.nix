@@ -13,9 +13,9 @@
     username = "globule";
     stateVersion = "24.05";
     file = {
-      ".config/starship.toml".source = ./starship/starship.toml;
-      ".config/sway".source = ./sway;
-      ".config/waybar".source = ./waybar;
+      ".config/starship.toml".source = ../starship/starship.toml;
+      ".config/sway".source = ../sway;
+      ".config/waybar".source = ../waybar;
     };
     sessionVariables = {
       EDITOR = "nvim";
