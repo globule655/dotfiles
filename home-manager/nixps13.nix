@@ -10,6 +10,7 @@
   nixpkgs_conf.enable = false;
   sway-wm.enable = true;
   hyprland-wm.enable = true;
+  work-packages.enable = true;
 
   home = {
     username = "globule";
