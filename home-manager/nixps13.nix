@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, outputs, lib, config, pkgs, ... }:
 {
 
   imports = [
@@ -7,7 +7,7 @@
     ./packages
   ];
 
-  sway-vm.enable = true;
+  sway-wm.enable = true;
   hyprland-wm.enable = true;
 
   home = {
