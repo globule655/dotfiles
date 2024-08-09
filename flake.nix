@@ -71,6 +71,13 @@
             ./home-manager/dz_laptop.nix
           ];
         };
+        wsl = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            ./home-manager/wsl.nix
+          ];
+        };
       };
 
   };
