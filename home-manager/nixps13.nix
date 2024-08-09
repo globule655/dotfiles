@@ -2,8 +2,8 @@
 {
 
   imports = [
+    ./global
     ./windowManager
-    # ./global
     ./packages
   ];
 
@@ -12,6 +12,7 @@
 
   home = {
     username = "globule";
+    homeDirectory = "/home/globule";
     stateVersion = "24.05";
     file = {
       ".config/starship.toml".source = ../starship/starship.toml;
