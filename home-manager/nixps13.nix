@@ -7,6 +7,7 @@
     ./packages
   ];
 
+  sway-vm.enable = true;
   hyprland-vm.enable = true;
 
   home = {
