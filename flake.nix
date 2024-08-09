@@ -48,6 +48,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./configuration.nix
+            ./modules/services
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
