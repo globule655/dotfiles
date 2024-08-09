@@ -26,6 +26,21 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
 
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      monospace = [
+        "JetBrainsMono Nerd Font"
+        ];
+      sansSerif = [
+        "JetBrainsMono Nerd Font"
+        ];
+      serif = [
+        "JetBrainsMono Nerd Font"
+        ];
+    };
+  };
+
   programs = {
     bash = {
       enable = true;
