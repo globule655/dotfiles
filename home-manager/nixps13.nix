@@ -2,11 +2,12 @@
 {
 
   imports = [
-    # ./global
+    ./global
     ./windowManager
     ./packages
   ];
 
+  nixpkgs.enable = false;
   sway-wm.enable = true;
   hyprland-wm.enable = true;
 
