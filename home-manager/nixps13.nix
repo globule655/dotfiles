@@ -8,7 +8,7 @@
   ];
 
   sway-vm.enable = true;
-  hyprland-vm.enable = true;
+  hyprland-wm.enable = true;
 
   home = {
     username = "globule";
