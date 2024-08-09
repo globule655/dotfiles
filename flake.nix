@@ -53,6 +53,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.globule = import ./home-manager/nixps13.nix;
+              home-manager.extraSpecialArgs = { inherit inputs outputs; };
 
               # Optionally, use home-manager.extraSpecialArgs to pass
               # arguments to home.nix
