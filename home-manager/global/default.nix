@@ -3,6 +3,8 @@
   # You can import other home-manager modules here
   imports = [
     ./nixpkgs_config.nix
+    ./programs.nix
+    ./fontconfig.nix
   ];
 
   nixpkgs_conf.enable = lib.mkDefault true;
