@@ -13,6 +13,7 @@
     age # encrypt/decrypt files
     atuin
     bat
+    ddrescue
     eza
     fzf
     lazygit
