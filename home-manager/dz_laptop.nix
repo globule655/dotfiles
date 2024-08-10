@@ -12,7 +12,7 @@
   work-packages.enable = true;
 
   home = {
-    username = "guillaume";
+    username = "gdebros";
     stateVersion = "24.05";
     file = {
       ".config/starship.toml".source = ../starship/starship.toml;
@@ -49,10 +49,6 @@
     bash = {
       enable = true;
       enableCompletion = true;
-      bashrcExtra = ''
-        . ~/.nix-profile/etc/profile.d/nix.sh
-        exec zsh
-      '';
     };
     zsh = {
       enable = true;
@@ -71,9 +67,6 @@
         cat = "bat";
         ls = "eza";
       };
-      initExtraFirst = ''
-        export SHELL=~/.nix-profile/bin/zsh
-      '';
     };
     atuin = {
       enable = true;
