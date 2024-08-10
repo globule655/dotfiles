@@ -19,6 +19,7 @@
     };
     sessionVariables = {
       EDITOR = "nvim";
+      sudo = "sudo --preserve-env=PATH";
     };
   };
 
