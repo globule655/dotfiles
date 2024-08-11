@@ -25,13 +25,5 @@
   # https://nixos.wiki/wiki/Home_Manager#Usage_on_non-NixOS_Linux
   targets.genericLinux.enable = true;
 
-  programs = {
-    zsh = {
-      shellAliases = {
-        sudo = "sudo --preserve-env=PATH";
-      };
-    };
-  };
-
 }
 
