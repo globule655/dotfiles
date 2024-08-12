@@ -142,12 +142,20 @@ fonts = {
     firefox = {
       enable = true;
     };
+    vim = {
+      enable = true;
+    };
     zsh = {
       enable = true;
       enableCompletion = true;
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
     };
+  };
+
+  environment.etc."vimrc" = {
+    mode = 644;
+    source = ./vim/vimrc;
   };
 
   # Allow unfree packages
