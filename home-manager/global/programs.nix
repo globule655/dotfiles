@@ -2,18 +2,18 @@
 
   programs = {
     bash = {
-      enable = true;
-      enableCompletion = true;
+      enable = lib.mkDefault true;
+      enableCompletion = lib.mkDefault true;
     };
     zsh = {
-      enable = true;
-      enableCompletion = true;
-      autosuggestion.enable = true;
-      syntaxHighlighting.enable = true;
-      completionInit = ''
+      enable = lib.mkDefault true;
+      enableCompletion = lib.mkDefault true;
+      autosuggestion.enable = lib.mkDefault true;
+      syntaxHighlighting.enable = lib.mkDefault true;
+      completionInit = lib.mkDefault ''
         autoload -Uz compinit && compinit
       '';
-      initExtra = ''
+      initExtra = lib.mkDefault ''
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
         zstyle ':completion:*' menu select
         zstyle ':completion:*' completer _extensions _complete _approximate
@@ -25,54 +25,54 @@
       };
     };
     atuin = {
-      enable = true;
-      enableZshIntegration = true;
-      enableBashIntegration = true;
+      enable = lib.mkDefault true;
+      enableZshIntegration = lib.mkDefault true;
+      enableBashIntegration = lib.mkDefault true;
     };
     starship = {
-      enable = true;
-      enableZshIntegration = true;
-      enableBashIntegration = true;
+      enable = lib.mkDefault true;
+      enableZshIntegration = lib.mkDefault true;
+      enableBashIntegration = lib.mkDefault true;
     };
     zoxide = {
-      enable = true;
-      enableBashIntegration = true;
-      enableZshIntegration = true;
-      options = [
+      enable = lib.mkDefault true;
+      enableBashIntegration = lib.mkDefault true;
+      enableZshIntegration = lib.mkDefault true;
+      options = lib.mkDefault [
         "--cmd cd"
       ];
     };
     kitty = {
-      enable = true;
+      enable = lib.mkDefault true;
       font = {
-        name = "JetBrainsMono Nerd Font";
-        size = 11;
+        name = lib.mkDefault "JetBrainsMono Nerd Font";
+        size = lib.mkDefault 11;
       };
-      shellIntegration.enableZshIntegration = true;
-      theme = "Default";
-      extraConfig = ''
+      shellIntegration.enableZshIntegration = lib.mkDefault true;
+      theme = lib.mkDefault "Default";
+      extraConfig = lib.mkDefault ''
         background_opacity 0.8
         '';
     };
     rofi = {
-      enable = true;
-      font = "JetBrainsMono Nerd Font";
-      theme = "solarized_alternate";
+      enable = lib.mkDefault true;
+      font = lib.mkDefault "JetBrainsMono Nerd Font";
+      theme = lib.mkDefault "solarized_alternate";
     };
     git = {
-      enable = true;
+      enable = lib.mkDefault true;
       userName = lib.mkDefault "Globule";
       userEmail = lib.mkDefault "globule655@gmail.com";
     };
     tmux = {
-      enable = true;
-      shell = "${pkgs.zsh}/bin/zsh";
-      terminal = "tmux-256color";
-      historyLimit = 100000;
-      keyMode = "vi";
-      clock24 = true;
-      sensibleOnTop = true;
-      plugins = with pkgs; [
+      enable = lib.mkDefault true;
+      shell = lib.mkDefault "${pkgs.zsh}/bin/zsh";
+      terminal = lib.mkDefault "tmux-256color";
+      historyLimit = lib.mkDefault 100000;
+      keyMode = lib.mkDefault "vi";
+      clock24 = lib.mkDefault true;
+      sensibleOnTop = lib.mkDefault true;
+      plugins = with pkgs; lib.mkDefault [
         tmuxPlugins.yank
         tmuxPlugins.vim-tmux-navigator
         tmuxPlugins.sensible
@@ -99,7 +99,7 @@
         '';
         }
       ];
-    extraConfig = ''
+    extraConfig = lib.mkDefault ''
       set-option -sa terminal-overrides ",xterm*:Tc"
       set -g mouse on
       bind '"' split-window -v -c "#{pane_current_path}"
