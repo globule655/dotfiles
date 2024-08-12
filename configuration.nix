@@ -153,11 +153,6 @@ fonts = {
     };
   };
 
-  environment.etc."vimrc" = {
-    mode = 644;
-    source = builtins.readFile ./vim/vimrc;
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
