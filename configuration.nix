@@ -155,7 +155,7 @@ fonts = {
 
   environment.etc."vimrc" = {
     mode = 644;
-    source = ./vim/vimrc;
+    source = builtins.readFile ./vim/vimrc;
   };
 
   # Allow unfree packages
