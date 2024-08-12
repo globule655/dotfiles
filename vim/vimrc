@@ -1,16 +1,4 @@
-execute pathogen#infect()
 syntax on
-filetype plugin indent on
-
-call plug#begin()
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.3' }
-Plug 'ThePrimeagen/harpoon'
-Plug 'kshenoy/vim-signature'
-call plug#end()
-
-let g:terraform_fmt_on_save=1
-let NERDTreeShowHidden=1
 
 set number
 set relativenumber
@@ -32,23 +20,6 @@ set hidden
 
 set scrolloff=5 " Keep 5 lines below and above the cursor
 
-" Toggle nerdtree view on/off
-map <C-n> :NERDTreeToggle<CR>
-
-" Automatically start nerdtree when no file specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
-
-" Enable folding with the spacebar
-nnoremap <space> za
-
-" mu-complete mandatory vim setting
-set completeopt+=menuone
-
 " ================ Turn Off Swap Files ==============
 
 set noswapfile
@@ -63,9 +34,3 @@ if has('persistent_undo')
   set undodir=~/.vim/backups
   set undofile
 endif
-
-" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
