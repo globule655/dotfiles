@@ -13,6 +13,9 @@
         setup = {
           uniqueids = "yes";
         };
+        secrets = [
+          "/etc/ipsec.secrets"
+        ];
         default = {
           fragmentation = "yes";
           keyexchange = "ikev2";
