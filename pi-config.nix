@@ -76,14 +76,14 @@ fonts = {
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.alice = {
-  #   isNormalUser = true;
-  #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  #   packages = with pkgs; [
-  #     firefox
-  #     tree
-  #   ];
-  # };
+  users.users.globule = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
+    passwordHash = "$6$z4BjdQG4e2kVRogH$Cp.ila0rQvCaqXUklsJeZljydU2oonShwGkdYwtSciZtKEhE6poNwt9ns.LxH7hLtX6RuMnjvYE0ANDCfKdEa1";
+    packages = with pkgs; [
+      tree
+    ];
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
