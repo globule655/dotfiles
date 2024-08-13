@@ -61,6 +61,13 @@
             }
           ];
         };
+        nixpi4 = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./pi-config.nix
+          ];
+        };
       };
 
       homeConfigurations = {
