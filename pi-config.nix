@@ -32,7 +32,7 @@
   i18n.defaultLocale = "fr_FR.UTF-8";
   console = {
     font = "Lat2-Terminus16";
-    keyMap = "fr";
+    keyMap = lib.mkDefault "fr";
     useXkbConfig = true; # use xkb.options in tty.
   };
 
@@ -79,11 +79,16 @@ fonts = {
   users.users.globule = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
-    passwordHash = "$6$z4BjdQG4e2kVRogH$Cp.ila0rQvCaqXUklsJeZljydU2oonShwGkdYwtSciZtKEhE6poNwt9ns.LxH7hLtX6RuMnjvYE0ANDCfKdEa1";
+    hashedPassword = "$6$z4BjdQG4e2kVRogH$Cp.ila0rQvCaqXUklsJeZljydU2oonShwGkdYwtSciZtKEhE6poNwt9ns.LxH7hLtX6RuMnjvYE0ANDCfKdEa1";
+    openssh.authorizedKeys.keys = [
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCym7s4cHXGV8rSGrgn2omV0I+WtQMvF9KweCZ8gx7JExc+iFTmU2uZ0UKsWhS+tgGvkVlTN0+uCwGN+8IHcQB245J3PZRdVyXjLbvmWFCvARBODynEohodlCBIxJPNu1aHq11urgK4wUeiqMXd1GJ53EUKc/eXFkuLK12L5BoP0EbDHD+YJZ8FDwKSrkUQyErlaffdgdpi6XuuTkbGAvJkZVrX2G9JfKyXuzrLmRPPX8M5kl7L4bEuJAkmgQ8ct+IN/voSHyTbwh1btw0Tv2x2fUkBKPOY+LoPWLv1KsM9npR7bSpAS+l9FvYo0RQnQ3Ffcj1E6H2hSZerybVamXi6zvqJKomteaXJytzF4K+NvVckoyInUG/5E+r5fK/AN3UXbS0zyCriZLx+WjgIEl1KgDukPO9pIwMD444MTjolhOy4EtcxTa8E0BIreXXVKEBGKAejmfl1G7MYECIqXIkL8BKhCX7Jj2H5VKkCysTbJ8d/uEJFrREQ39RhMgAbi+0="
+    ];
     packages = with pkgs; [
       tree
     ];
   };
+
+  users.defaultUserShell = pkgs.zsh;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -95,15 +100,15 @@ fonts = {
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     curl
+    docker-compose
     file
     git
+    htop
     iftop
     iotop
     ncdu
-    pavucontrol
     pciutils # lspci
     python3
-    sway
     tmux
     tree
     unzip
@@ -111,7 +116,6 @@ fonts = {
     vim
     wget
     which
-    wl-clipboard
     xz
     zip
     zsh
@@ -130,6 +134,18 @@ fonts = {
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  programs = {
+    vim = {
+      enable = true;
+    };
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+    };
+  };
 
   # List services that you want to enable:
 
