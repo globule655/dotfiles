@@ -172,7 +172,6 @@ fonts = {
     pavucontrol
     pciutils # lspci
     python3
-    strongswan
     sway
     tmux
     tree
