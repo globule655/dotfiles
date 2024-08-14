@@ -168,9 +168,11 @@ fonts = {
     iftop
     iotop
     ncdu
+    openssl
     pavucontrol
     pciutils # lspci
     python3
+    strongswan
     sway
     tmux
     tree

@@ -12,8 +12,6 @@
       syntaxHighlighting.enable = lib.mkDefault true;
       completionInit = lib.mkDefault ''
         autoload -Uz compinit && compinit
-      '';
-      initExtra = lib.mkDefault ''
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
         zstyle ':completion:*' menu select
         zstyle ':completion:*' completer _extensions _complete _approximate

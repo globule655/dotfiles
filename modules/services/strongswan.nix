@@ -9,13 +9,19 @@
   config = lib.mkIf config.strongswan-service.enable {
     services.strongswan = {
       enable = true;
+      secrets = [
+        "/etc/ipsec.d/secrets"
+      ];
+      ca = {
+        firehack = {
+          auto = "add";
+          cacert = "/etc/ipsec.d/cacerts/ipsec-CA.crt";
+        };
+      };
       connections = {
         setup = {
           uniqueids = "yes";
         };
-        secrets = [
-          "/etc/ipsec.secrets"
-        ];
         default = {
           fragmentation = "yes";
           keyexchange = "ikev2";
@@ -42,7 +48,7 @@
           right = "78.193.216.210";
           rightid = "82.67.241.60";
           rightauth = "pubkey";
-          rightca = "/CN=ipsec-CA/C=FR/ST=IDF/L=Paris/O=firehack/OU=firehack";
+          rightca = "\"/CN=ipsec-CA/C=FR/ST=IDF/L=Paris/O=firehack/OU=firehack\"";
           rightsubnet = "10.30.0.0/28,10.29.100.0/28";
           eap_identity = "%identity";
         };
