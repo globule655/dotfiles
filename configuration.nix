@@ -172,7 +172,7 @@ fonts = {
     pavucontrol
     pciutils # lspci
     python3
-    # strongswanTNC
+    strongswan
     sway
     xdg-desktop-portal-hyprland
     tmux

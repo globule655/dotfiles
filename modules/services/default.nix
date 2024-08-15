@@ -6,7 +6,7 @@
   ];
 
   config.kanata-service.enable = lib.mkDefault true;
-  config.strongswan-service.enable = lib.mkDefault false;
+  config.strongswan-service.enable = lib.mkDefault true;
 
 }
 
