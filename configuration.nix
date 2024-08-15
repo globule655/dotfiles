@@ -173,6 +173,7 @@ fonts = {
     pciutils # lspci
     python3
     sway
+    xdg-desktop-portal-hyprland
     tmux
     tree
     unzip

@@ -18,6 +18,7 @@
       ".config/starship.toml".source = ../starship/starship.toml;
       ".config/sway".source = ../sway;
       ".config/waybar".source = ../waybar;
+      ".config/hypr".source = ../hypr;
     };
     sessionVariables = {
       EDITOR = "nvim";
