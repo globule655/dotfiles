@@ -12,7 +12,6 @@
 
       google-cloud-sdk
       teleport_15
-      sshs
 
     ];
   };

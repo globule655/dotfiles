@@ -17,6 +17,7 @@
     eza
     fzf
     lazygit
+    sshs
     termshark # wireshark in a termUI
     yazi # Terminal file explorer
     zoxide
