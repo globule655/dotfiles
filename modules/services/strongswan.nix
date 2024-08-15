@@ -43,8 +43,10 @@
           also = "default";
           ikelifetime = "8400s";
           lifetime = "3600s";
-          leftauth = "eap-tls";
-          leftcert = "/etc/ipsec.d/certs/globule.crt";
+          leftauth = "eap-mschapv2";
+          leftid = "guillaume";
+          leftsourceip = "%config";
+          # leftcert = "/etc/ipsec.d/certs/globule.crt";
           right = "78.193.216.210";
           rightid = "82.67.241.60";
           rightauth = "pubkey";
