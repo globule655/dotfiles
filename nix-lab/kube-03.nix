@@ -2,21 +2,34 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, modulesPath, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
+      (modulesPath + "/installer/scan/not-detected.nix")
+      (modulesPath + "/profiles/qemu-guest.nix")
       ./hardware-configuration.nix
-      # <home-manager/nixos>
-      ./greetd.nix
+      ../modules/services/k3s-agent.nix
+      ./disko.nix
     ];
+
+  k3s-agent-service.enable = true;
+  services.k3s.token = "imsMbkAV9CuaLWvMy3exaiymYnbVtkFU";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixps13"; # Define your hostname.
+  boot.loader.grub = {
+    # no need to set devices, disko will add all devices that have a EF02 partition to the list already
+    # devices = [ ];
+    efiSupport = true;
+    efiInstallAsRemovable = true;
+  };
+  services.openssh.enable = true;
+
+  networking.hostName = "kube-03"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -25,7 +38,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  programs.openvpn3.enable = true;
   virtualisation.docker.enable = true;
 
   # Set your time zone.
@@ -59,9 +71,7 @@
   #   xkbVariant = "";
   # };
 
-#  programs.sway.enable = true;
   security.polkit.enable = true;
-  hardware.opengl.enable = true;
 
   #----=[ Fonts ]=----#
   fonts = {
@@ -86,30 +96,10 @@
   };
   # console.keyMap = "fr";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # audio
   # sound.enable = true;
   # Enable sound with pipewire.
-  nixpkgs.config.pulseaudio = true;
-  hardware.pulseaudio.enable = true;
   security.rtkit.enable = true;
-#  services.pipewire = {
-#    enable = true;
-#    alsa.enable = true;
-#    alsa.support32Bit = true;
-#    pulse.enable = true;
-#    # If you want to use JACK applications, uncomment this
-#    #jack.enable = true;
-#
-#    # use the example session manager (no others are packaged yet so this is enabled by default,
-#    # no need to redefine it in your config for now)
-#    #media-session.enable = true;
-#  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.globule = {
@@ -117,6 +107,11 @@
     description = "globule";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
+
+  users.users.root.openssh.authorizedKeys.keys = [
+    # change this to your ssh key
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC1tN280vt1pWu4ilvbJIXgWIHzbmOciZ44YA7gTzJBeblusDfbTDFdabHc//SRFEwXUnj8cCKQ9mgsdH5maLh2nKd3+OUwQxTr+UJUqwj8HFnrFVMEZU9ey6GLt0PlEt5N/tVz60WYpogoWGtxOescGMAKeFoYIPm+zyGNt9f4mvxzwQJAxzBNO9d2XhNggdDjOmwZ01gDtokfrx4ciDomMgspiscgcAeEYsjqTI3nTaBkgUOsOvrB+rq3TykzN4uPSQHVouZJ0L72l1fundjNhciehaJGiaiuF1gfZnPi3BpoZpe0YqSRVh/lYdlS9mwOcLCM+2isDoYV9/VAkwBPb8ELFoSDrt5q1IBRePsSySBy5XqgVyF2eHv1p8wIIA6KEgIwmQONzbEjKR0Nn8bSN0AzsCPMGsYc3vbSYnt3n9ooMv9vQf9tlqlDbahbW48Z414ck+Cb7380YKJ0iR+pXP0pnlYuNQHg+3hC/L3gzGM4PrTN0oLiROmyqkEE5stxDfeDHA8yt6nq500uuALwlUUAsGZr/oEa2ePIZYvY361VNDvo7iUtqzjkqnJjf9UnUdEipiBDWenDM8P79KnrK9295QO+JgVI9COU/KAo2efNFLQn0ps3jNhIes6H0XmpvSRtQfW4E/AKgY1nOj7XDi71mj6Nt/VKI26VFjDvlw== globule@DESKTOP-GKNKPA5"
+  ];
 
   security.sudo.extraRules= [
   {  users = [ "globule" ];
@@ -135,13 +130,8 @@
   # };
 
   users.defaultUserShell = pkgs.zsh;
-  home-manager.useUserPackages = true;
-  home-manager.useGlobalPkgs = true;
 
   programs = {
-    firefox = {
-      enable = true;
-    };
     vim = {
       enable = true;
     };
@@ -167,14 +157,11 @@
     git
     iftop
     iotop
+    lvm2
     ncdu
     openssl
-    pavucontrol
     pciutils # lspci
     python3
-    strongswan
-    sway
-    xdg-desktop-portal-hyprland
     tmux
     tree
     unzip
@@ -182,7 +169,6 @@
     vim
     wget
     which
-    wl-clipboard
     xz
     zip
     zsh
@@ -193,31 +179,9 @@
 
   environment.variables.EDITOR = "vim";
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
+
+
+

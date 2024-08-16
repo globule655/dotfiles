@@ -3,9 +3,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: 
+  outputs = inputs@{ self, nixpkgs, disko, home-manager, ... }: 
   let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -47,7 +49,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
           modules = [
-            ./configuration.nix
+            ./home-laptop/configuration.nix
             ./modules/services
             home-manager.nixosModules.home-manager
             {
@@ -59,6 +61,30 @@
               # Optionally, use home-manager.extraSpecialArgs to pass
               # arguments to home.nix
             }
+          ];
+        };
+        kube-01 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            disko.nixosModules.disko
+            ./nix-lab/kube-01.nix
+          ];
+        };
+        kube-02 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            disko.nixosModules.disko
+            ./nix-lab/kube-02.nix
+          ];
+        };
+        kube-03 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            disko.nixosModules.disko
+            ./nix-lab/kube-03.nix
           ];
         };
       };
