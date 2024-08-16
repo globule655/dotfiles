@@ -29,6 +29,12 @@
   };
   services.openssh.enable = true;
 
+  # Fixes for longhorn
+  systemd.tmpfiles.rules = [
+    "L+ /usr/local/bin - - - - /run/current-system/sw/bin/"
+  ];
+  virtualisation.docker.logDriver = "json-file";
+
   networking.hostName = "kube-01"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
