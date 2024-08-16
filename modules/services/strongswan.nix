@@ -41,6 +41,7 @@
         };
         home_remote = {
           also = "default";
+          ike = "aes256-sha256-ecp384,aes256-sha384-ecp384,aes256-sha512-ecp384";
           ikelifetime = "8400s";
           lifetime = "3600s";
           leftauth = "eap-mschapv2";

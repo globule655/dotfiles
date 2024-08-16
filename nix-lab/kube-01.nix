@@ -28,6 +28,7 @@
     efiInstallAsRemovable = true;
   };
   services.openssh.enable = true;
+  networking.firewall.enable = false;
 
   # Fixes for longhorn
   systemd.tmpfiles.rules = [
