@@ -10,6 +10,7 @@
   config = lib.mkIf config.devops-packages.enable {
     home.packages = with pkgs; [
     ansible
+    kubectl
     terraform
     rustup
     ];
