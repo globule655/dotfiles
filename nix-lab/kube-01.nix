@@ -15,7 +15,7 @@
     ];
 
   k3s-server-service.enable = true;
-  services.k3s.token = "imsMbkAV9CuaLWvMy3exaiymYnbVtkFU";
+  services.k3s.tokenFile = /var/lib/rancher/k3s/server/token;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
