@@ -63,22 +63,22 @@
   security.polkit.enable = true;
   hardware.opengl.enable = true;
 
-#----=[ Fonts ]=----#
-fonts = {
-  enableDefaultPackages = true;
-  packages = with pkgs; [ 
-    ubuntu_font_family
-    liberation_ttf
-  ];
+  #----=[ Fonts ]=----#
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [ 
+      ubuntu_font_family
+      liberation_ttf
+    ];
 
-  fontconfig = {
-    defaultFonts = {
-      serif = [  "Liberation Serif" ];
-      sansSerif = [ "Ubuntu" ];
-      monospace = [ "Ubuntu Mono" ];
+    fontconfig = {
+      defaultFonts = {
+        serif = [  "Liberation Serif" ];
+        sansSerif = [ "Ubuntu" ];
+        monospace = [ "Ubuntu Mono" ];
+      };
     };
   };
-};
 
   # Configure console keymap
   console = {
@@ -150,6 +150,12 @@ fonts = {
       enableCompletion = true;
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
+      completionInit = ''
+        autoload -Uz compinit && compinit
+        zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+        zstyle ':completion:*' menu select
+        zstyle ':completion:*' completer _extensions _complete _approximate
+      '';
     };
   };
 
