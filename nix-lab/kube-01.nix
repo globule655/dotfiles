@@ -15,7 +15,7 @@
     ];
 
   k3s-server-service.enable = true;
-  services.k3s.tokenFile = /var/lib/rancher/k3s/server/token;
+  services.k3s.tokenFile = "/var/lib/rancher/k3s/server/token";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -162,6 +162,7 @@
     curl
     file
     git
+    helm
     iftop
     iotop
     lvm2

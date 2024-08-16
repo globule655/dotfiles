@@ -15,7 +15,7 @@
     ];
 
   k3s-agent-service.enable = true;
-  services.k3s.tokenFile = /var/lib/rancher/k3s/server/token;
+  services.k3s.tokenFile = "/var/lib/rancher/k3s/server/token";
   services.k3s.serverAddr = "https://10.11.1.113:6443";
 
   # Bootloader.
@@ -163,6 +163,7 @@
     curl
     file
     git
+    helm
     iftop
     iotop
     lvm2
