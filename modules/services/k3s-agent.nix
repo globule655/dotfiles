@@ -12,6 +12,7 @@
       role = lib.mkDefault "agent";
       token = lib.mkDefault "<randomized common secret>";
       serverAddr = lib.mkDefault "https://<ip of first node>:6443";
+      extraFlags = lib.mkDefault "--disable traefik";
     };
   };
 }
