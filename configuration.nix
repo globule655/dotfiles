@@ -150,12 +150,6 @@
       enableCompletion = true;
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
-      completionInit = ''
-        autoload -Uz compinit && compinit
-        zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-        zstyle ':completion:*' menu select
-        zstyle ':completion:*' completer _extensions _complete _approximate
-      '';
     };
   };
 
