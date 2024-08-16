@@ -13,6 +13,7 @@
     direnv
     dotenvx
     kubectl
+    kubernetes-helm
     terraform
     rustup
     ];

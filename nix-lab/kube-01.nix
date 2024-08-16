@@ -162,7 +162,7 @@
     curl
     file
     git
-    helm
+    kubernetes-helm
     iftop
     iotop
     lvm2
