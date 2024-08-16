@@ -51,7 +51,7 @@
           rightid = "82.67.241.60";
           rightauth = "pubkey";
           rightca = "\"/CN=ipsec-CA/C=FR/ST=IDF/L=Paris/O=firehack/OU=firehack\"";
-          rightsubnet = "10.30.0.0/28,10.29.100.0/28";
+          rightsubnet = "10.30.0.0/28,10.29.100.0/28,10.11.1.0/24,10.10.0.0/27";
           eap_identity = "%identity";
         };
       };
