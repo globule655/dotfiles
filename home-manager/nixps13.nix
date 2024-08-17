@@ -12,6 +12,14 @@
   hyprland-wm.enable = false;
   work-packages.enable = true;
 
+  programs = {
+    zsh = {
+      shellAliases = {
+        k = "kubectl";
+      };
+    };
+  };
+
   home = {
     username = "globule";
     file = {
