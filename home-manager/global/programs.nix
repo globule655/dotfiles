@@ -62,6 +62,11 @@
       userName = lib.mkDefault "Globule";
       userEmail = lib.mkDefault "globule655@gmail.com";
     };
+    direnv = {
+      enable = lib.mkDefault true;
+      enableZshIntegration = lib.mkDefault true;
+      enableBashIntegration = lib.mkDefault true;
+    };
     tmux = {
       enable = lib.mkDefault true;
       shell = lib.mkDefault "${pkgs.zsh}/bin/zsh";
