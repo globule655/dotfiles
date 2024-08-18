@@ -21,6 +21,7 @@
         ls = lib.mkDefault "eza";
         dot = lib.mkDefault "cd ~/.dotfiles; nvim .";
         k = lib.mkDefault "kubectl";
+        ns = lib.mkDefault "config use-context";
       };
     };
     atuin = {
