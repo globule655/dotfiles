@@ -20,7 +20,7 @@
         cat = lib.mkDefault "bat";
         ls = lib.mkDefault "eza";
         dot = lib.mkDefault "cd ~/.dotfiles; nvim .";
-        k = "kubectl";
+        k = lib.mkDefault "kubectl";
       };
     };
     atuin = {
