@@ -11,7 +11,7 @@
     home.packages = with pkgs; [
 
       google-cloud-sdk
-      teleport_15
+      teleport_16
 
     ];
   };
