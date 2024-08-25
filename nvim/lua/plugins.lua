@@ -30,6 +30,7 @@ local plugs = {
     'nvim-lualine/lualine.nvim',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
+      "yavorski/lualine-macro-recording.nvim",
       opt = true,
     },
     opts = function()
