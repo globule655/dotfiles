@@ -1,4 +1,5 @@
 local obsidian_opts = {
+  ui = { enable = false },
   workspaces = {
     {
       name = "perso",
