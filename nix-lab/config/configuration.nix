@@ -172,6 +172,7 @@
     lvm2
     ncdu
     openssl
+    openiscsi
     pciutils # lspci
     python3
     tmux
