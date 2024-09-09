@@ -13,7 +13,10 @@
       role = lib.mkDefault "server";
       token = lib.mkDefault "<randomized common secret>";
       clusterInit = lib.mkDefault true;
-      extraFlags = lib.mkDefault "--disable traefik";
+      extraFlags = lib.mkDefault [
+        "--disable traefik"
+        "--disable servicelb"
+        ];
     };
   };
 }

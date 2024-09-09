@@ -11,12 +11,13 @@
     ];
 
   k3s-server-service.enable = true;
+  services.k3s.serverAddr = "https://10.29.100.5:6443";
   # services.k3s.tokenFile = "/var/lib/rancher/k3s/server/token";
 
   networking = {
-    hostName = "kube-01"; # Define your hostname.
+    hostName = "kube-04"; # Define your hostname.
       interfaces.eth0.ipv4.addresses = [{
-        address = "10.29.100.5";
+        address = "10.29.100.8";
         prefixLength = 28;
       }];
     defaultGateway = "10.29.100.1";

@@ -16,6 +16,7 @@
     ];
 
   services.k3s.tokenFile = lib.mkDefault "/var/lib/rancher/k3s/server/token";
+  # services.k3s.token = "my93LkNXLpotELYWmvJqXCKa44cE3VWW";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -29,6 +30,10 @@
   };
   services.openssh.enable = true;
   networking.firewall.enable = false;
+
+  services.timesyncd.servers = [
+    "10.29.100.1"
+  ];
 
   # Fixes for longhorn
   systemd.tmpfiles.rules = [

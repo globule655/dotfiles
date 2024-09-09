@@ -87,6 +87,14 @@
             ./nix-lab/kube-03.nix
           ];
         };
+        kube-04 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            disko.nixosModules.disko
+            ./nix-lab/kube-04.nix
+          ];
+        };
       };
 
       homeConfigurations = {
