@@ -35,10 +35,15 @@
     "10.29.100.1"
   ];
 
-  # Fixes for longhorn
+  # Fixes for longhorn. Installing and enabling the openiscsi service is important
   systemd.tmpfiles.rules = [
     "L+ /usr/local/bin - - - - /run/current-system/sw/bin/"
   ];
+  services.openiscsi = {
+    enable = true;
+    name = "iqn.2020-08.org.linux-iscsi.initiatorhost:kube";
+  };
+
   virtualisation.docker.logDriver = "json-file";
 
   # Enable networking
