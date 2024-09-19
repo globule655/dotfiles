@@ -19,6 +19,7 @@
     lazygit
     sshs
     termshark # wireshark in a termUI
+    tmate
     yazi # Terminal file explorer
     zoxide
     ];
