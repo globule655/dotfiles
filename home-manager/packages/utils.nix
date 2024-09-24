@@ -14,9 +14,11 @@
     atuin
     bat
     ddrescue
+    diffutils
     eza
     fzf
     lazygit
+    meld
     sshs
     termshark # wireshark in a termUI
     tmate
