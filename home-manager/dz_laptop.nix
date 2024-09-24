@@ -21,7 +21,6 @@
     sessionVariables = {
       EDITOR = "nvim";
       VAULT_PATH = "$HOME/Documents/git_perso/doc.git/main";
-      PATH = "$HOME/bin:$PATH";
     };
   };
 
