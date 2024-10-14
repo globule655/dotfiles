@@ -29,6 +29,9 @@ behind = '🐌'
 ahead = '🏎💨'
 renamed = '👅'
 
+[gcloud]
+disabled = true
+
 [custom.is_folder]
 format = '[ ](bold blue)'
 when = ''' test "$PWD" != "$HOME" '''
