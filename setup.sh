@@ -20,7 +20,7 @@ ln -sf $HOME/.dotfiles $HOME/.config/home-manager
 mv $HOME/.bashrc{,.bkp}
 mv $HOME/.bash_profile{,.bkp}
 # Allows sway to load nix installed binaries
-echo "$HOME/.nix-profile/bin:$PATH" > $HOME/.config/environment.d/sway.conf
+echo "$PATH:$HOME/.nix-profile/bin" > $HOME/.config/environment.d/sway.conf
 
 # Install home-manager
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
