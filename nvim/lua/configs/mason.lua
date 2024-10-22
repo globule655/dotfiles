@@ -27,6 +27,7 @@ local options = {
     "texlab",
     "yaml-language-server",
     "dot-language-server",
+    "salt-lint",
   },
 
   PATH = "append",
