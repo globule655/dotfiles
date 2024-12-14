@@ -2,7 +2,8 @@ local telescope_config = {
   require("telescope").setup({
     pickers = {
       find_files = {
-        hidden = true
+        hidden = true,
+        ignore = true
       }
     },
     defaults = {
