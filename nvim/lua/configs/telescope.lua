@@ -32,6 +32,7 @@ local telescope_config = {
         },
         vertical = {
           mirror = false,
+          prompt_position = "bottom",
         },
         width = 0.87,
         height = 0.80,
