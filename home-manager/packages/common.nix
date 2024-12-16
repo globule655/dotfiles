@@ -9,7 +9,8 @@
 
   config = lib.mkIf config.common-packages.enable {
     home.packages = with pkgs; [
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    # (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono
     cmake
     dnsutils
     ethtool

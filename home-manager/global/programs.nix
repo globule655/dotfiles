@@ -49,7 +49,7 @@
         size = lib.mkDefault 11;
       };
       shellIntegration.enableZshIntegration = lib.mkDefault true;
-      themeFile = lib.mkDefault "Default";
+      # themeFile = lib.mkDefault "Default";
       extraConfig = lib.mkDefault ''
         background_opacity 0.8
         '';
