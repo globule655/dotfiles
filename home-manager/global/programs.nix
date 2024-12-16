@@ -22,6 +22,7 @@
         dot = lib.mkDefault "cd ~/.dotfiles; nvim .";
         k = lib.mkDefault "kubectl";
         kns = lib.mkDefault "kubectl config use-context";
+        on = lib.mkDefault "~/.dotfiles/custom_scripts/new_note.sh";
       };
     };
     atuin = {
