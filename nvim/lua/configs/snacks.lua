@@ -1,9 +1,6 @@
 local snacksconfig = {
 
   opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
     bigfile = { enabled = true },
     input = { enabled = true },
     lazygit = { enabled = true },
