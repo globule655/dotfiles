@@ -2,10 +2,10 @@ local snacksconfig = {
 
   opts = {
     bigfile = { enabled = true },
-    input = { enabled = true },
+    input = { enabled = false },
     lazygit = { enabled = true },
-    notifier = { enabled = true },
-    notify = { enabled = true },
+    notifier = { enabled = false },
+    notify = { enabled = false },
     quickfile = { enabled = true },
     scratch = { enabled = true },
     scroll = { enabled = true },
