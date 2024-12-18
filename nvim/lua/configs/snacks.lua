@@ -3,11 +3,11 @@ local snacksconfig = {
   opts = {
     bigfile = { enabled = true },
     input = { enabled = false },
-    lazygit = { enabled = true },
+    lazygit = { enabled = false },
     notifier = { enabled = false },
     notify = { enabled = false },
     quickfile = { enabled = true },
-    scratch = { enabled = true },
+    scratch = { enabled = false },
     scroll = { enabled = true },
     zen = { enabled = true },
   },
