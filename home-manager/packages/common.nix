@@ -25,6 +25,7 @@
     neovim
     nil
     nodejs_22
+    obsidian
     p7zip
     ripgrep
     rofi
