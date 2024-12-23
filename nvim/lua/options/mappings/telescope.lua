@@ -11,6 +11,7 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Telescope search bu
 vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { desc = "Telescope Open old files"})
 vim.keymap.set('n', '<leader>fz', builtin.current_buffer_fuzzy_find, { desc = "Telescope search current buffer"})
 vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = "Telescope list marks"})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Telescope search help"})
 vim.keymap.set('n', '<leader>ma', '<CMD>Telescope marks<CR>', { desc = "Telescope marks"})
 vim.keymap.set('n', '<leader>cm', '<CMD>Telescope git_commits<CR>', { desc = "Telescope git_commits"})
 vim.keymap.set('n', '<leader>gt', '<CMD>Telescope git_status<CR>', { desc = "Telescope git_status"})
