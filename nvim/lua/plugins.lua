@@ -119,7 +119,7 @@ local plugs = {
     "nvim-treesitter/nvim-treesitter",
     -- opts = overrides.treesitter,
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-    tag = "v0.9.2",
+    tag = "v0.9.3",
     build = ":TSUpdate",
     opts = function()
       return require "configs.treesitter"
@@ -235,7 +235,7 @@ local plugs = {
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
-    tag = "v1.0.0",
+    tag = "v2.3.3",
     config = function()
       require("better_escape").setup()
     end,
