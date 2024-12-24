@@ -162,6 +162,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    nerd-fonts.jetbrains-mono
     curl
     file
     git
@@ -187,7 +188,7 @@
     zip
     zsh
 
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    # (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
   ];
 
