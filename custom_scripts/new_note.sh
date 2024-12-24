@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 VAULT_DIR="$HOME/Documents/git_perso/doc.git/main"
 
