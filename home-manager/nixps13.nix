@@ -22,6 +22,19 @@
     };
     sessionVariables = {
       EDITOR = "nvim";
+      VAULT_PATH = "$HOME/Documents/git_perso/doc.git/main";
+    };
+  };
+
+  programs = {
+    git = {
+      userName = "globule";
+      userEmail = "globule655@gmail.com";
+    };
+    zsh = {
+      shellAliases = {
+        ov = "cd $VAULT_PATH && nvim .";
+      };
     };
   };
 
