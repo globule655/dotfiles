@@ -14,6 +14,7 @@
     cmake
     dnsutils
     ethtool
+    ffmpeg-full
     fontconfig
     gcc
     gnumake
@@ -26,6 +27,7 @@
     nil
     nodejs_22
     obsidian
+    parsec-bin
     p7zip
     ripgrep
     rofi

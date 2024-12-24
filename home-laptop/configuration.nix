@@ -25,6 +25,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
   programs.openvpn3.enable = true;
+  programs.steam.enable = true;
   virtualisation.docker.enable = true;
 
   # Set your time zone.
