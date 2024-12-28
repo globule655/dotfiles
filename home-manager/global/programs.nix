@@ -30,6 +30,11 @@
       enableZshIntegration = lib.mkDefault true;
       enableBashIntegration = lib.mkDefault true;
     };
+    carapace = {
+      enable = lib.mkDefault true;
+      enableZshIntegration = lib.mkDefault true;
+      enableBashIntegration = lib.mkDefault true;
+    };
     starship = {
       enable = lib.mkDefault true;
       enableZshIntegration = lib.mkDefault true;

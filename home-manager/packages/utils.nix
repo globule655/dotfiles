@@ -14,6 +14,7 @@
     age # encrypt/decrypt files
     atuin
     bat
+    carapace
     ddrescue
     diffutils
     eza
