@@ -64,7 +64,8 @@
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-      intel-media-sdk
+      intel-compute-runtime
+      vpl-gpu-rt
     ];
   };
 
