@@ -1,0 +1,5 @@
+theme = iTerm2 Default
+background = 000000
+background-opacity = 0.80
+window-decoration = false
+font-family = JetBrainsMonoNL

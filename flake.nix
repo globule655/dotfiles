@@ -2,13 +2,15 @@
   inputs = {
     nixpkgs.url = "github:globule655/nixpkgs/ndi-tools-obs";
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixgl.url = "github:nix-community/nixGL";
+    nixgl.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, disko, home-manager, ... }: 
+  outputs = inputs@{ self, nixpkgs, disko, home-manager, nixgl, ... }: 
   let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [

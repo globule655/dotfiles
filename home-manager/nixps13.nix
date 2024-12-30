@@ -20,6 +20,7 @@
       ".config/sway".source = ../sway;
       ".config/waybar".source = ../waybar;
       ".config/hypr".source = ../hypr;
+      ".config/ghostty".source = ../ghostty;
     };
     sessionVariables = {
       EDITOR = "nvim";
