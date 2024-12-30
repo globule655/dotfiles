@@ -19,6 +19,7 @@
     diffutils
     eza
     fzf
+    ghostty
     lazygit
     meld
     sshs
