@@ -20,6 +20,7 @@
     eza
     fzf
     ghostty
+    insync
     lazygit
     meld
     sshs
