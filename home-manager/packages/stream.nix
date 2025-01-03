@@ -14,6 +14,7 @@
     (pkgs.wrapOBS {
       plugins = with pkgs.obs-studio-plugins; [
         obs-studio-plugins.distroav
+        obs-studio-plugins.obs-teleport
       ];
     })
     ];

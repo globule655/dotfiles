@@ -65,6 +65,8 @@
     enable = true;
     extraPackages = with pkgs; [
       intel-compute-runtime
+      intel-media-driver
+      intel-vaapi-driver
       vpl-gpu-rt
     ];
   };
@@ -218,7 +220,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
