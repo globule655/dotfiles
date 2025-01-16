@@ -14,6 +14,7 @@
     age # encrypt/decrypt files
     atuin
     bat
+    bashmount
     btop
     carapace
     ddrescue
@@ -27,6 +28,9 @@
     sshs
     termshark # wireshark in a termUI
     tmate
+    usbutils
+    udisks
+    udiskie
     yazi # Terminal file explorer
     zoxide
     ];

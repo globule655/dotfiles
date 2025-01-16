@@ -28,6 +28,10 @@
   programs.steam.enable = true;
   virtualisation.docker.enable = true;
 
+  # Enables usb disks automount
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
