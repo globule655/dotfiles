@@ -12,6 +12,7 @@
 
       google-cloud-sdk
       teleport_16
+      wireshark
 
     ];
   };
