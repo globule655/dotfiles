@@ -66,6 +66,21 @@
             }
           ];
         };
+        fannixos = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./pc_fanny/configuration.nix
+            home-manager.nixosModules.home-manager
+            disko.nixosModules.disko
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.fanny = import ./home-manager/fannixos.nix;
+              home-manager.extraSpecialArgs = { inherit inputs outputs; };
+            }
+          ];
+        };
         kube-01 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
