@@ -26,6 +26,7 @@
     nil
     nodejs_22
     obsidian
+    onlyoffice-desktopeditors
     parsec-bin
     p7zip
     ripgrep
