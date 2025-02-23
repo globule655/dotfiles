@@ -15,6 +15,10 @@
 
   home = {
     username = "fanny";
+    file = {
+      ".config/starship.toml".source = ../starship/starship.toml;
+      ".config/ghostty".source = ../ghostty;
+    };
     sessionVariables = {
       EDITOR = "nvim";
     };
