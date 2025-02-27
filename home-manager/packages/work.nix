@@ -11,6 +11,7 @@
     home.packages = with pkgs; [
 
       google-cloud-sdk
+      minicom
       teleport_16
       wireshark
 
