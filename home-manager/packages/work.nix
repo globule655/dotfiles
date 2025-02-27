@@ -12,6 +12,7 @@
 
       google-cloud-sdk
       minicom
+      putty
       teleport_16
       wireshark
 
