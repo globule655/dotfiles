@@ -24,6 +24,7 @@
       # assuming /boot is the mount point of the  EFI partition in NixOS (as the installation section recommends).
       efiSysMountPoint = "/boot";
     };
+    timeout = 5;
     grub = {
       # despite what the configuration.nix manpage seems to indicate,
       # as of release 17.09, setting device to "nodev" will still call
@@ -45,7 +46,6 @@
           chainloader /EFI/Microsoft/Boot/bootmgfw.efi
         }
       '';
-      version = 2;
     };
   };
 
@@ -141,7 +141,7 @@
   # sound.enable = true;
   # Enable sound with pipewire.
   nixpkgs.config.pulseaudio = true;
-  hardware.pulseaudio.enable = true;
+  services.pulseaudio.enable = true;
   security.rtkit.enable = true;
   services.pipewire.enable = false;
 #  services.pipewire = {
