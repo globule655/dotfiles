@@ -12,7 +12,6 @@
 
       google-cloud-sdk
       minicom
-      postgresql_17
       putty
       teleport_16
       wireshark
