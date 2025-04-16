@@ -15,6 +15,7 @@
     atuin
     bat
     bashmount
+    bitwarden-cli
     btop
     carapace
     ddrescue
