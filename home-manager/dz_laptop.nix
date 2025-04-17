@@ -22,6 +22,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       VAULT_PATH = "$HOME/Documents/git_perso/doc.git/main";
+      TSH_LOGIN_SCRIPT = "$HOME/.dotfiles/custom_scripts/tsh_login.sh";
     };
   };
 
@@ -36,6 +37,7 @@
     zsh = {
       shellAliases = {
         ov = "cd $VAULT_PATH && nvim .";
+        tsh_login = "bash $TSH_LOGIN_SCRIPT";
       };
     };
   };
