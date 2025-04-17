@@ -37,7 +37,7 @@
     zsh = {
       shellAliases = {
         ov = "cd $VAULT_PATH && nvim .";
-        tsh_login = "bash $TSH_LOGIN_SCRIPT";
+        tsh_login = "$HOME/.dotfiles/custom_scripts/tsh_login.sh";
       };
     };
   };
