@@ -15,6 +15,7 @@
     kubectl
     k9s
     kubernetes-helm
+    lima
     terraform
     rustup
     ];
