@@ -21,6 +21,7 @@
     grim
     htop
     jq
+    light
     ncdu
     neovim
     nil
