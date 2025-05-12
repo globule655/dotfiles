@@ -1,7 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "github:globule655/nixpkgs/ndi-tools-obs";
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-nditools.url = "github:globule655/nixpkgs/ndi-tools-obs";
     nixgl.url = "github:nix-community/nixGL";
     nixgl.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";

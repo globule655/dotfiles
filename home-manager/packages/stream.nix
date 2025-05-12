@@ -8,11 +8,11 @@
   };
 
   config = lib.mkIf config.stream-packages.enable {
-    home.packages = with pkgs; [
+    home.packages = with pkgs.nditools; [
     ndi-6
     davinci-resolve
-    (pkgs.wrapOBS {
-      plugins = with pkgs.obs-studio-plugins; [
+    (pkgs.nditools.wrapOBS {
+      plugins = with pkgs.nditools.obs-studio-plugins; [
         obs-studio-plugins.distroav
         obs-studio-plugins.obs-teleport
       ];

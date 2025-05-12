@@ -21,4 +21,13 @@
       config.allowUnfree = true;
     };
   };
+
+  # When applied, the nditools nixpkgs set (declared in the flake inputs) will
+  # be accessible through 'pkgs.nditools'
+  nditools-packages = final: _prev: {
+    nditools = import inputs.nixpkgs-ndi {
+      system = final.system;
+      config.allowUnfree = true;
+    };
+  };
 }
