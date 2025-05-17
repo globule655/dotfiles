@@ -10,7 +10,7 @@
     disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, disko, home-manager, nixgl, ... }: 
+  outputs = inputs@{ self, nixpkgs, nixpkgs-nditools, disko, home-manager, nixgl, ... }: 
   let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -20,8 +20,18 @@
         # "aarch64-darwin"
         # "x86_64-darwin"
       ];
+
+      # Create a nixpkgs instance that allows unfree packages
+      nditoolsPkgsFor = system: import nixpkgs-nditools {
+        inherit system;
+        config = {
+          allowUnfree = true;
+        };
+      };
     in
     rec {
+      # Export the nditoolsPkgsFor function
+      inherit nditoolsPkgsFor;
       # Your custom packages
       # Acessible through 'nix build', 'nix shell', etc
       packages = forAllSystems (system:

@@ -1,11 +1,11 @@
-{ config, lib, pkgs, ...}: {
+{ config, lib, pkgs, nixpkgs-nditools ? pkgs, ...}: {
 
   imports = [
     ./common.nix
     ./devops.nix
     ./utils.nix
     ./work.nix
-    ./stream.nix
+    (import ./stream.nix { inherit config lib pkgs nixpkgs-nditools; })
   ];
 
   common-packages.enable = lib.mkDefault true;

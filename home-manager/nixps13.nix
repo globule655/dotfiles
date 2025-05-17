@@ -4,7 +4,10 @@
   imports = [
     ./global
     ./windowManager
-    ./packages
+    (import ./packages { 
+      inherit config lib pkgs; 
+      nixpkgs-nditools = inputs.self.nditoolsPkgsFor pkgs.system; 
+    })
   ];
 
   nixpkgs_conf.enable = false;

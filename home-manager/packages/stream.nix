@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, nixpkgs-nditools, ... }: {
 
   options = {
     stream-packages = {
@@ -8,13 +8,13 @@
   };
 
   config = lib.mkIf config.stream-packages.enable {
-    home.packages = with pkgs.nditools; [
-    ndi-6
-    davinci-resolve
-    (pkgs.nditools.wrapOBS {
-      plugins = with pkgs.nditools.obs-studio-plugins; [
-        obs-studio-plugins.distroav
-        obs-studio-plugins.obs-teleport
+    home.packages = with pkgs; [
+    nixpkgs-nditools.ndi-6
+    nixpkgs-nditools.davinci-resolve
+    (nixpkgs-nditools.wrapOBS {
+      plugins = with nixpkgs-nditools.obs-studio-plugins; [
+        distroav
+        obs-teleport
       ];
     })
     ];
