@@ -63,6 +63,15 @@
   networking.networkmanager.enable = true;
   virtualisation.docker.enable = true;
 
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+    displayManager.autoLogin.enable = true;
+    displayManager.autoLogin.user = "fanny";
+    xkb.layout = "fr,fr";
+  };
+
   # Enables usb disks automount
   services.gvfs.enable = true;
   services.udisks2.enable = true;

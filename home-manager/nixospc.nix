@@ -11,7 +11,7 @@
   ];
 
   nixpkgs_conf.enable = false;
-  sway-wm.enable = true;
+  sway-wm.enable = false;
   hyprland-wm.enable = false;
   work-packages.enable = true;
   stream-packages.enable = true;
