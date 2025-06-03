@@ -199,6 +199,7 @@
     isNormalUser = true;
     description = "globule";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
+    hashedPassword = "$6$Oz1YWT6ImCyDEtyE$SCrBzrUx/VlN8maxqezwdNH3HF6ZA4r19WZbpVeZjqaFn8Lnyf1bQx.7igjhPv/HkzW0bnInIWMBN7/B7lgXu1";
   };
 
   security.sudo.extraRules= [
