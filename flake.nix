@@ -80,9 +80,10 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
           modules = [
-            ./home-laptop/configuration.nix
+            ./nixospc/configuration.nix
             ./modules/services
             home-manager.nixosModules.home-manager
+            disko.nixosModules.disko
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
