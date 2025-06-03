@@ -76,6 +76,24 @@
             }
           ];
         };
+        nixospc = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./home-laptop/configuration.nix
+            ./modules/services
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.globule = import ./home-manager/nixospc.nix;
+              home-manager.extraSpecialArgs = { inherit inputs outputs; };
+
+              # Optionally, use home-manager.extraSpecialArgs to pass
+              # arguments to home.nix
+            }
+          ];
+        };
         fannixos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
