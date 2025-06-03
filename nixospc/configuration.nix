@@ -184,9 +184,9 @@
   # sound.enable = true;
   # Enable sound with pipewire.
   nixpkgs.config.pulseaudio = true;
-  services.pulseaudio.enable = true;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services.pipewire.enable = false;
+  services.pipewire.enable = true;
 #  services.pipewire = {
 #    enable = false;
 #    alsa.enable = true;
