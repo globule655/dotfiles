@@ -19,7 +19,7 @@
     --time \
     --asterisks \
     --user-menu \
-    --cmd sway --unsupported-gpu
+    --cmd sway
     '';
       };
     };
