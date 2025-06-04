@@ -9,8 +9,11 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./disko.nix
+      ../modules/services
       # <home-manager/nixos>
     ];
+
+  greetd-service.enable = false;
 
   # Bootloader.
   # boot.loader.systemd-boot.enable = true;
@@ -263,9 +266,12 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    adwaita-icon-theme
     curl
     file
+    gamescope
     git
+    gnomeExtensions.appindicator
     iftop
     iotop
     mangohud
@@ -277,7 +283,6 @@
     python3
     strongswan
     sway
-    xdg-desktop-portal-hyprland
     tmux
     tree
     unzip
@@ -286,6 +291,7 @@
     wget
     which
     wl-clipboard
+    xdg-desktop-portal-hyprland
     xz
     zip
     zsh

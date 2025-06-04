@@ -81,7 +81,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./nixospc/configuration.nix
-            ./modules/services
+            # ./modules/services
             home-manager.nixosModules.home-manager
             disko.nixosModules.disko
             {
