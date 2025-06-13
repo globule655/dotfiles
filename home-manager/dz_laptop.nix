@@ -38,6 +38,7 @@
       shellAliases = {
         ov = "cd $VAULT_PATH && nvim .";
         tsh_login = "$HOME/.dotfiles/custom_scripts/tsh_login.sh";
+        asr = "atuin script run";
         ghostty = "nixGL ghostty";
       };
     };
