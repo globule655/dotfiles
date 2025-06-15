@@ -73,6 +73,14 @@
     displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "fanny";
     xkb.layout = "fr,fr";
+    monitorSection = ''
+Modeline "2560x1440_360.00"  2349.61  2560 2808 3096 3632  1440 1441 1444 1797  -HSync +Vsync
+Modeline "1920x1080_360.00"  1319.96  1920 2104 2320 2720  1080 1081 1084 1348  -HSync +Vsync
+Modeline "1280x1024_360.00"  831.82  1280 1400 1544 1808  1024 1025 1028 1278  -HSync +Vsync
+    '';
+    deviceSection = ''
+Option "ModeValidation" "AllowNonEdidModes"
+    '';
   };
 
   # Enables usb disks automount
