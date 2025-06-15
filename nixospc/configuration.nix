@@ -70,8 +70,6 @@
     enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
-    displayManager.autoLogin.enable = true;
-    displayManager.autoLogin.user = "fanny";
     xkb.layout = "fr,fr";
     monitorSection = ''
 Modeline "2560x1440_360.00"  2349.61  2560 2808 3096 3632  1440 1441 1444 1797  -HSync +Vsync
