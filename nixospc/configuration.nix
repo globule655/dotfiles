@@ -79,6 +79,20 @@ Modeline "1280x1024_360.00"  831.82  1280 1400 1544 1808  1024 1025 1028 1278  -
     deviceSection = ''
 Option "ModeValidation" "AllowNonEdidModes"
     '';
+    resolutions = [
+      {
+        x = 2560;
+        y = 1440;
+      }
+      {
+        x = 1920;
+        y = 1080;
+      }
+      {
+        x = 1280;
+        y = 1024;
+      }
+    ];
   };
 
   # Enables usb disks automount

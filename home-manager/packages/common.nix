@@ -12,6 +12,7 @@
     nerd-fonts.jetbrains-mono
     cmake
     dnsutils
+    discord
     ethtool
     ffmpeg-full
     fontconfig
