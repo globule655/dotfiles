@@ -33,6 +33,7 @@
     udisks
     udiskie
     yazi # Terminal file explorer
+    veracrypt
     zoxide
     ];
   };
