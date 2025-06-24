@@ -26,6 +26,7 @@
     insync
     lazygit
     meld
+    pwgen
     sshs
     termshark # wireshark in a termUI
     tmate
