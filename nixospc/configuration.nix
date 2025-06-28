@@ -292,7 +292,6 @@ Option "ModeValidation" "AllowNonEdidModes"
     gamescope
     git
     gnomeExtensions.appindicator
-    gnome-tweaks
     iftop
     iotop
     mangohud
