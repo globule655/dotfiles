@@ -3,7 +3,7 @@
 {
   disko.devices = {
     disk.disk1 = {
-      device = lib.mkDefault "/dev/disk/by-id/ata-SanDisk_Ultra_II_240GB_172561801732";
+      device = lib.mkDefault "/dev/disk/by-id/nvme-Samsung_SSD_990_PRO_1TB_S7HDNF0Y589384W";
       type = "disk";
       content = {
         type = "gpt";
