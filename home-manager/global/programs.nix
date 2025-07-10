@@ -91,20 +91,16 @@
         plugin = tmuxPlugins.catppuccin;
         extraConfig = ''
           #catppuccin config
-          set -g @catppuccin_window_left_separator "█"
-          set -g @catppuccin_window_right_separator "█ "
-          set -g @catppuccin_window_number_position "right"
-          set -g @catppuccin_window_middle_separator "  █"
+          set -g  status-left ""
+          set -g  status-right "#{E:@catppuccin_status_application}"
+          set -ag status-right "#{E:@catppuccin_status_session}"
+          set -ag status-right "#{E:@catppuccin_status_date_time}"
 
           set -g @catppuccin_window_default_fill "number"
 
           set -g @catppuccin_window_current_fill "number"
           set -g @catppuccin_window_current_text "#{pane_current_path}"
 
-          set -g @catppuccin_status_modules_right "application session date_time"
-          set -g @catppuccin_status_left_separator  ""
-          set -g @catppuccin_status_right_separator ""
-          set -g @catppuccin_status_right_separator_inverse "yes"
           set -g @catppuccin_status_fill "all"
           set -g @catppuccin_status_connect_separator "yes"
         '';
@@ -126,6 +122,16 @@
       bind-key -T copy-mode-vi 'y' send -X copy-selection # copy text with "y"
 
       unbind -T copy-mode-vi MouseDragEnd1Pane # don't exit copy mode when dragging with mouse
+
+      #Catpuccin config
+      set -g @catppuccin_window_status_style "none"
+      set -g @catppuccin_status_left_separator  ""
+      set -g @catppuccin_status_right_separator ""
+      set -g @catppuccin_status_right_separator_inverse "yes"
+      set -g @catppuccin_window_left_separator "█"
+      set -g @catppuccin_window_right_separator "█ "
+      set -g @catppuccin_window_number_position "right"
+      set -g @catppuccin_window_middle_separator "  █"
     '';
     };
   };
