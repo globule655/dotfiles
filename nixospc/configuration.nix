@@ -301,7 +301,6 @@ Option "ModeValidation" "AllowNonEdidModes"
     pciutils # lspci
     protonup
     python3
-    strongswan
     sway
     tmux
     tree

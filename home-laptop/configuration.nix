@@ -222,7 +222,6 @@
     pavucontrol
     pciutils # lspci
     python3
-    strongswan
     sway
     xdg-desktop-portal-hyprland
     tmux

@@ -11,7 +11,7 @@
   sway-wm.enable = false;
   hyprland-wm.enable = false;
   work-packages.enable = true;
-  stream-packages.enable = false;
+  stream-packages.enable = true;
 
   home = {
     username = "globule";
