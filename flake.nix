@@ -1,7 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-nditools.url = "github:globule655/nixpkgs/ndi-tools-obs";
     nixgl.url = "github:nix-community/nixGL";
     nixgl.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
@@ -10,7 +9,7 @@
     disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-nditools, disko, home-manager, nixgl, ... }: 
+  outputs = inputs@{ self, nixpkgs, disko, home-manager, nixgl, ... }: 
   let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -21,17 +20,8 @@
         # "x86_64-darwin"
       ];
 
-      # Create a nixpkgs instance that allows unfree packages
-      nditoolsPkgsFor = system: import nixpkgs-nditools {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
-      };
     in
     rec {
-      # Export the nditoolsPkgsFor function
-      inherit nditoolsPkgsFor;
       # Your custom packages
       # Acessible through 'nix build', 'nix shell', etc
       packages = forAllSystems (system:

@@ -45,11 +45,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1752093218,
-        "narHash": "sha256-+3rXu8ewcNDi65/2mKkdSGrivQs5zEZVp5aYszXC0d0=",
+        "lastModified": 1752467539,
+        "narHash": "sha256-4kaR+xmng9YPASckfvIgl5flF/1nAZOplM+Wp9I5SMI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "206ed3c71418b52e176f16f58805c96e84555320",
+        "rev": "1e54837569e0b80797c47be4720fab19e0db1616",
         "type": "github"
       },
       "original": {
@@ -95,29 +95,12 @@
         "type": "github"
       }
     },
-    "nixpkgs-nditools": {
-      "locked": {
-        "lastModified": 1736240445,
-        "narHash": "sha256-OZT6+bW/tlyAN9+cqUQXc52URoy3jERHcG5de4AyCWw=",
-        "owner": "globule655",
-        "repo": "nixpkgs",
-        "rev": "92c9f252eb49dee51558827bae6181a9f5b6c6d3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "globule655",
-        "ref": "ndi-tools-obs",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "disko": "disko",
         "home-manager": "home-manager",
         "nixgl": "nixgl",
-        "nixpkgs": "nixpkgs",
-        "nixpkgs-nditools": "nixpkgs-nditools"
+        "nixpkgs": "nixpkgs"
       }
     },
     "systems": {
