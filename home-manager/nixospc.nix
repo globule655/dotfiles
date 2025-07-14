@@ -4,17 +4,14 @@
   imports = [
     ./global
     ./windowManager
-    (import ./packages { 
-      inherit config lib pkgs; 
-      nixpkgs-nditools = inputs.self.nditoolsPkgsFor pkgs.system; 
-    })
+    ./packages
   ];
 
   nixpkgs_conf.enable = false;
   sway-wm.enable = false;
   hyprland-wm.enable = false;
   work-packages.enable = true;
-  stream-packages.enable = true;
+  stream-packages.enable = false;
 
   home = {
     username = "globule";
