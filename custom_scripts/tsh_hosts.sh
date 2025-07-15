@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 DOMAIN="tlp.digeiz.fr"
 CONF_DIR="$HOME/.ssh/config.d"
@@ -14,8 +14,8 @@ if [ $? == 1 ]; then
   tsh login --proxy=$DOMAIN --user=$USER
 fi
 
-# tsh config
-tsh config > "$CONF_DIR/teleport"
+# Generate tsh config and modify paths
+tsh config | sed -e "s|\"$HOME|\"~|g" -e "s|/nix/[^ ]*/bin/tsh|\$(which tsh)|g" > "$CONF_DIR/teleport"
 chmod 600 "$CONF_DIR/teleport"
 
 # Generate hosts list from Teleport
