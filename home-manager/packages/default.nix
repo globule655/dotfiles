@@ -5,6 +5,7 @@
     ./devops.nix
     ./utils.nix
     ./work.nix
+    ./ghostty_wrapper.nix
     (import ./stream.nix { inherit config lib pkgs nixpkgs-nditools; })
   ];
 

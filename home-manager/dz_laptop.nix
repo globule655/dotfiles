@@ -40,7 +40,6 @@
         tsh_login = "$HOME/.dotfiles/custom_scripts/tsh_login.sh";
         ssh_config = "$HOME/.dotfiles/custom_scripts/tsh_hosts.sh";
         asr = "atuin script run";
-        ghostty = "nixGL ghostty";
       };
     };
   };

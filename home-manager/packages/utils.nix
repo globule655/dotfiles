@@ -22,7 +22,6 @@
     diffutils
     eza
     fzf
-    ghostty
     insync
     lazygit
     meld
