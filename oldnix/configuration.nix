@@ -273,9 +273,6 @@ Option "ModeValidation" "AllowNonEdidModes"
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
     };
-    openvpn3 = {
-      enable = true;
-    };
   };
 
   # Allow unfree packages
