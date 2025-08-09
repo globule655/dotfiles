@@ -15,6 +15,7 @@
     discord
     ethtool
     ffmpeg-full
+    flatpak
     fontconfig
     gcc
     gnumake
