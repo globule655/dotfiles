@@ -486,6 +486,12 @@ local plugs = {
     },
   },
 
+  {
+    -- works with browser extension of the same name to provide vim keybindings in text blocks
+    'glacambre/firenvim',
+    build = ":call firenvim#install(0)"
+  },
+
 }
 
 return plugs
