@@ -22,6 +22,7 @@
     grim
     htop
     jq
+    kdePackages.okular
     light
     ncdu
     neovim
