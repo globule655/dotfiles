@@ -13,6 +13,7 @@
       google-cloud-sdk
       minicom
       putty
+      remmina
       teleport_16
       wireshark
 
