@@ -21,6 +21,7 @@
       ".config/waybar".source = ../waybar;
       ".config/hypr".source = ../hypr;
       ".config/ghostty".source = ../ghostty;
+      ".config/wl-kbptr".source = ../wl-kbptr;
     };
     sessionVariables = {
       EDITOR = "nvim";

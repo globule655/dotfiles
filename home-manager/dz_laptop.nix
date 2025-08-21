@@ -18,6 +18,7 @@
       ".config/sway".source = ../sway;
       ".config/waybar".source = ../waybar;
       ".config/ghostty".source = ../ghostty;
+      ".config/wl-kbptr".source = ../wl-kbptr;
     };
     sessionVariables = {
       EDITOR = "nvim";
