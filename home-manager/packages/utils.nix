@@ -35,6 +35,7 @@
     udiskie
     yazi # Terminal file explorer
     veracrypt
+    wl-kbptr
     zoxide
     ];
   };
