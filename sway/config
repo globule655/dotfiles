@@ -140,8 +140,8 @@ input type:touchpad {
       bindsym l seat seat0 cursor move 15 0
 
       # Left button
-      bindsym Space seat seat0 cursor press button1
-      bindsym --release Space seat seat0 cursor release button1
+      bindsym g seat seat0 cursor press button1
+      bindsym --release g seat seat0 cursor release button1
 
       # Middle button
       bindsym d seat seat0 cursor press button2
