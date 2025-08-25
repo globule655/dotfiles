@@ -9,7 +9,7 @@
 
   nixpkgs_conf.enable = false;
   sway-wm.enable = false;
-  hyprland-wm.enable = false;
+  hyprland-wm.enable = true;
   work-packages.enable = true;
   stream-packages.enable = true;
 
@@ -18,7 +18,7 @@
     file = {
       ".config/starship.toml".source = ../starship/starship.toml;
       ".config/sway".source = ../sway;
-      ".config/waybar".source = ../waybar;
+      ".config/waybar".source = ../hypr-waybar;
       ".config/hypr".source = ../hypr;
       ".config/ghostty".source = ../ghostty;
       ".config/wl-kbptr".source = ../wl-kbptr;
