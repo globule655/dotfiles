@@ -43,6 +43,7 @@
     vlc
     waybar
     wlrctl
+    wlr-randr
     ];
   };
 
