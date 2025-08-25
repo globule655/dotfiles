@@ -8,10 +8,10 @@
   ];
 
   nixpkgs_conf.enable = false;
-  sway-wm.enable = false;
+  sway-wm.enable = true;
   hyprland-wm.enable = true;
   work-packages.enable = true;
-  stream-packages.enable = true;
+  stream-packages.enable = false;
 
   home = {
     username = "globule";
