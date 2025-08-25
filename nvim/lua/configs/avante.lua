@@ -7,6 +7,7 @@ local avante_opts = {
   auto_suggestions_provider = "claude",
   cursor_applying_provider = nil, -- The provider used in the applying phase of Cursor Planning Mode, defaults to nil, when nil uses Config.provider as the provider for the applying phase
   provider = "claude",
+  mode = "legacy",
   providers = {
     claude = {
       endpoint = "https://api.anthropic.com",
