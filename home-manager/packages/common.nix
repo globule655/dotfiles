@@ -42,6 +42,7 @@
     tmux
     vlc
     waybar
+    wlrctl
     ];
   };
 
