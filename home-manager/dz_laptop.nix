@@ -8,7 +8,7 @@
   ];
 
   sway-wm.enable = true;
-  hyprland-wm.enable = false;
+  hyprland-wm.enable = true;
   work-packages.enable = true;
 
   home = {

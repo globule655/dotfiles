@@ -4,8 +4,8 @@
     "height": 24, // Waybar height
     // "width": 1366, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
+    "modules-left": ["hyprland/workspaces", "hyprland/mode"],
+    "modules-center": ["hyprland/window"],
     "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery", "tray", "clock"],
     "sway/workspaces": {
         "disable-scroll": true,
