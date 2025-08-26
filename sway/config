@@ -139,6 +139,12 @@ input type:touchpad {
       bindsym k seat seat0 cursor move 0 -15
       bindsym l seat seat0 cursor move 15 0
 
+      # Mouse move fast
+      bindsym Ctrl+h seat seat0 cursor move -60 0
+      bindsym Ctrl+j seat seat0 cursor move 0 60
+      bindsym Ctrl+k seat seat0 cursor move 0 -60
+      bindsym Ctrl+l seat seat0 cursor move 60 0
+
       # Left button
       bindsym g seat seat0 cursor press button1
       bindsym --release g seat seat0 cursor release button1
