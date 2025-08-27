@@ -44,7 +44,7 @@
     waybar
     wlrctl
     wlr-randr
-    ydotool
+    dotool
     ];
   };
 
