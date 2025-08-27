@@ -158,10 +158,10 @@ input type:touchpad {
       bindsym --release f seat seat0 cursor release button3
 
       # Alternative scroll bindings using Shift + movement keys
-      bindsym Shift+k exec wlrctl pointer scroll -15 0    # Shift+k = scroll up
-      bindsym Shift+j exec wlrctl pointer scroll 15 0     # Shift+j = scroll down
-      bindsym Shift+h exec wlrctl pointer scroll 0 -15    # Shift+h = scroll left
-      bindsym Shift+l exec wlrctl pointer scroll 0 15     # Shift+l = scroll right
+      bindsym Shift+k exec wlrctl pointer scroll -30 0    # Shift+k = scroll up
+      bindsym Shift+j exec wlrctl pointer scroll 30 0     # Shift+j = scroll down
+      bindsym Shift+h exec wlrctl pointer scroll 0 -30    # Shift+h = scroll left
+      bindsym Shift+l exec wlrctl pointer scroll 0 30     # Shift+l = scroll right
 
       bindsym Escape mode default
     }
