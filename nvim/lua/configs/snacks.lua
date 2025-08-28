@@ -3,6 +3,7 @@ local snacksconfig = {
   opts = {
     bigfile = { enabled = true },
     lazygit = { enabled = true },
+    image = { enabled = true },
     quickfile = { enabled = true },
     scroll = { enabled = true },
     zen = { enabled = true },
