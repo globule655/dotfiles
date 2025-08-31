@@ -485,21 +485,22 @@ local plugs = {
         },
         ft = { "markdown", "Avante" },
       },
+    },
+  },
+
+  {
+    'serenevoid/kiwi.nvim',
+    opts = {
       {
-        'serenevoid/kiwi.nvim',
-        opts = {
-          {
-            name = "doc",
-            path = "~/Documents/git_perso/doc"
-          },
-        },
-        keys = {
-          { "<leader>ww", ":lua require(\"kiwi\").open_wiki_index()<cr>", desc = "Open Wiki index" },
-          { "T", ":lua require(\"kiwi\").todo.toggle()<cr>", desc = "Toggle Markdown Task" }
-        },
-        lazy = true
+        name = "doc",
+        path = "~/Documents/git_perso/doc"
       },
     },
+    keys = {
+      { "<leader>ww", ":lua require(\"kiwi\").open_wiki_index()<cr>", desc = "Open Wiki index" },
+      { "T", ":lua require(\"kiwi\").todo.toggle()<cr>", desc = "Toggle Markdown Task" }
+    },
+    lazy = true
   },
 
 }
