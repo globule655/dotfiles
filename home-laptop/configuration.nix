@@ -164,7 +164,7 @@
   users.users.globule = {
     isNormalUser = true;
     description = "globule";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "ydotool" "input" ];
   };
 
   security.sudo.extraRules= [
@@ -199,6 +199,9 @@
       enableCompletion = true;
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
+    };
+    ydotool = {
+      enable = true;
     };
   };
 

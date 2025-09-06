@@ -37,6 +37,7 @@
     zsh = {
       shellAliases = {
         ov = "cd $VAULT_PATH && nvim .";
+        asr = "atuin script run";
       };
     };
   };
