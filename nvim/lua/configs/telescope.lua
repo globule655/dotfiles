@@ -78,7 +78,7 @@ local telescope_config = {
     },
   }),
 
-  require("telescope").load_extension("git_worktree"),
+  -- require("telescope").load_extension("git_worktree"),
   -- require("telescope").load_extension("themes"),
   -- require("telescope").load_extension("terms"),
   require("telescope").load_extension("fzf"),

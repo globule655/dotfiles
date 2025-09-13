@@ -13,16 +13,16 @@ local plugs = {
     end,
   },
 
-  {
-    "oxfist/night-owl.nvim",
-    -- "folke/tokyonight.nvim",
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
-    -- config = function()
-    --   -- load the colorscheme here
-    --   vim.cmd.colorscheme("night-owl")
-    -- end,
-  },
+  -- {
+  --   "oxfist/night-owl.nvim",
+  --   -- "folke/tokyonight.nvim",
+  --   lazy = false, -- make sure we load this during startup if it is your main colorscheme
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   -- config = function()
+  --   --   -- load the colorscheme here
+  --   --   vim.cmd.colorscheme("night-owl")
+  --   -- end,
+  -- },
 
   {
     "folke/tokyonight.nvim",
@@ -266,41 +266,37 @@ local plugs = {
     dependencies = { "nvim-lua/plenary.nvim" },
   },
 
-  {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
-    end,
-  },
+  -- {
+  --   "kylechui/nvim-surround",
+  --   version = "*", -- Use for stability; omit to use `main` branch for the latest features
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("nvim-surround").setup({
+  --       -- Configuration here, or leave empty to use defaults
+  --     })
+  --   end,
+  -- },
 
-  {
-    "saltstack/salt-vim",
-  },
+  -- {
+  --   "ThePrimeagen/git-worktree.nvim",
+  --   config = function()
+  --     require("git-worktree").setup({})
+  --   end,
+  -- },
 
-  {
-    "ThePrimeagen/git-worktree.nvim",
-    config = function()
-      require("git-worktree").setup({})
-    end,
-  },
-
-  {
-    "NeogitOrg/neogit",
-    dependencies = {
-      "sindrets/diffview.nvim",
-    },
-    config = function()
-      require("neogit").setup({
-        integrations = {
-          telescope = true,
-        },
-      })
-    end,
-  },
+  -- {
+  --   "NeogitOrg/neogit",
+  --   dependencies = {
+  --     "sindrets/diffview.nvim",
+  --   },
+  --   config = function()
+  --     require("neogit").setup({
+  --       integrations = {
+  --         telescope = true,
+  --       },
+  --     })
+  --   end,
+  -- },
 
   {
     "folke/which-key.nvim",
@@ -322,35 +318,35 @@ local plugs = {
     end,
   },
 
-  {
-    "Exafunction/codeium.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    config = function()
-      require("codeium").setup({
-      })
-    end
-  },
+  -- {
+  --   "Exafunction/codeium.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "hrsh7th/nvim-cmp",
+  --   },
+  --   config = function()
+  --     require("codeium").setup({
+  --     })
+  --   end
+  -- },
 
-  {
-    "chentoast/marks.nvim",
-    config = function ()
-      require("marks").setup()
-    end,
-  },
+  -- {
+  --   "chentoast/marks.nvim",
+  --   config = function ()
+  --     require("marks").setup()
+  --   end,
+  -- },
 
-  {
-    "ellisonleao/glow.nvim",
-    cmd = "Glow",
-    opts = function ()
-      return require("configs.glow")
-    end,
-    config = function (_, opts)
-      require("glow").setup(opts)
-    end,
-  },
+  -- {
+  --   "ellisonleao/glow.nvim",
+  --   cmd = "Glow",
+  --   opts = function ()
+  --     return require("configs.glow")
+  --   end,
+  --   config = function (_, opts)
+  --     require("glow").setup(opts)
+  --   end,
+  -- },
 
   {
     "christoomey/vim-tmux-navigator",
