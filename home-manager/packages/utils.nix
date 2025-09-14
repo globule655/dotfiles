@@ -18,6 +18,7 @@
     bitwarden-cli
     btop
     carapace
+    claude-code
     ddrescue
     diffutils
     eza
