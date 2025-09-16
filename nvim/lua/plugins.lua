@@ -488,8 +488,20 @@ local plugs = {
     'serenevoid/kiwi.nvim',
     opts = {
       {
-        name = "doc",
-        path = "~/Documents/git_perso/doc"
+        name = "perso",
+        path = "~/Documents/git_perso/doc/perso"
+      },
+      {
+        name = "work",
+        path = "~/Documents/git_perso/doc/digeiz"
+      },
+      {
+        name = "todos",
+        path = "~/Documents/git_perso/doc/todos"
+      },
+      {
+        name = "cr_meetings",
+        path = "~/Documents/git_perso/doc/cr_meetings"
       },
     },
     keys = {
