@@ -485,30 +485,21 @@ local plugs = {
   },
 
   {
-    'serenevoid/kiwi.nvim',
+    "echaya/neowiki.nvim",
     opts = {
-      {
-        name = "perso",
-        path = "~/Documents/git_perso/doc/perso"
-      },
-      {
-        name = "work",
-        path = "~/Documents/git_perso/doc/digeiz"
-      },
-      {
-        name = "todos",
-        path = "~/Documents/git_perso/doc/todos"
-      },
-      {
-        name = "cr_meetings",
-        path = "~/Documents/git_perso/doc/cr_meetings"
+      wiki_dirs = {
+        -- neowiki.nvim supports both absolute and tilde-expanded paths
+        { name = "Personal", path = "~/Documents/git_perso/doc/perso" },
+        { name = "Work", path = "~/Documents/git_perso/doc/digeiz" },
+        { name = "todos", path = "~/Documents/git_perso/doc/todos" },
+        { name = "CR meetings", path = "~/Documents/git_perso/doc/cr_meetings" },
       },
     },
     keys = {
-      { "<leader>ww", ":lua require(\"kiwi\").open_wiki_index()<cr>", desc = "Open Wiki index" },
-      { "T", ":lua require(\"kiwi\").todo.toggle()<cr>", desc = "Toggle Markdown Task" }
+      { "<leader>ww", "<cmd>lua require('neowiki').open_wiki()<cr>", desc = "Open Wiki" },
+      { "<leader>wW", "<cmd>lua require('neowiki').open_wiki_floating()<cr>", desc = "Open Wiki in Floating Window" },
+      { "T", "<cmd>lua require('neowiki').open_wiki_new_tab()<cr>", desc = "Open Wiki in Tab" },
     },
-    lazy = true
   },
 
 }
