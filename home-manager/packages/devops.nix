@@ -12,6 +12,7 @@
     ansible
     direnv
     dotenvx
+    jjui
     jujutsu
     kubectl
     k9s
