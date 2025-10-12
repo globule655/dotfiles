@@ -10,12 +10,14 @@
   config = lib.mkIf config.common-packages.enable {
     home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    bottles
     cmake
     dnsutils
     discord
     ethtool
     ffmpeg-full
     fontconfig
+    freerdp
     gcc
     gnumake
     google-chrome
