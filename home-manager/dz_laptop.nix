@@ -37,6 +37,13 @@
       userEmail = "guillaume.debros@digeiz.com";
     };
     zsh = {
+      initExtra = ''
+        if command -v tmux &>/dev/null; then
+          if [ -z "$TMUX" ] && [ -n "$PS1" ]; then
+            tmux attach -t default || tmux new -s default
+          fi
+        fi
+          '';
       shellAliases = {
         ov = "cd $VAULT_PATH && nvim .";
         tsh_login = "$HOME/.dotfiles/custom_scripts/tsh_login.sh";
