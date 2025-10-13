@@ -37,7 +37,7 @@
       userEmail = "guillaume.debros@digeiz.com";
     };
     zsh = {
-      initExtra = ''
+      initContent = ''
         if command -v tmux &>/dev/null; then
           if [ -z "$TMUX" ] && [ -n "$PS1" ]; then
             tmux attach -t default || tmux new -s default
