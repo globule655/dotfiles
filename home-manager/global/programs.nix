@@ -35,6 +35,12 @@
       enableZshIntegration = lib.mkDefault true;
       enableBashIntegration = lib.mkDefault true;
     };
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+    };
     starship = {
       enable = lib.mkDefault true;
       enableZshIntegration = lib.mkDefault true;

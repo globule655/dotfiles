@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, inputs, ... }: {
 
   options = {
     common-packages = {
@@ -25,7 +25,6 @@
     kdePackages.okular
     light
     ncdu
-    neovim
     nil
     nodejs_22
     obsidian
@@ -45,6 +44,7 @@
     wlrctl
     wlr-randr
     dotool
+    inputs.mcphub-nvim.packages."${system}".default
     ];
   };
 

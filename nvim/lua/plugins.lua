@@ -485,6 +485,20 @@ local plugs = {
   },
 
   {
+    "ravitemer/mcphub.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    -- build = "npm install -g mcp-hub@latest",  -- Installs `mcp-hub` node binary globally
+    conf = function ()
+      require("configs.mcphub")
+    end,
+    config = function(_, conf)
+      require("mcphub").setup(conf)
+    end
+  },
+
+  {
     "echaya/neowiki.nvim",
     opts = {
       wiki_dirs = {
