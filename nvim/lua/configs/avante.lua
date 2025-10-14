@@ -6,6 +6,15 @@ local avante_opts = {
   -- Of course, you can reduce the request frequency by increasing `suggestion.debounce`.
   auto_suggestions_provider = "claude",
   cursor_applying_provider = nil, -- The provider used in the applying phase of Cursor Planning Mode, defaults to nil, when nil uses Config.provider as the provider for the applying phase
+  input = {
+    provider = "snacks", -- "native" | "dressing" | "snacks"
+    provider_opts = {
+      -- Snacks input configuration
+      title = "Avante Input",
+      icon = " ",
+      placeholder = "Enter your API key...",
+    },
+  },
   provider = "claude",
   mode = "legacy",
   system_prompt = function()
