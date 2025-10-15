@@ -46,7 +46,7 @@
     wlrctl
     wlr-randr
     dotool
-    inputs.mcphub-nvim.packages."${system}".default
+    inputs.mcp-hub.packages."${system}".default
     ];
   };
 
