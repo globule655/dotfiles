@@ -505,7 +505,7 @@ local plugs = {
         -- neowiki.nvim supports both absolute and tilde-expanded paths
         { name = "Global", path = "~/Documents/git_perso/doc" },
         { name = "Personal", path = "~/Documents/git_perso/doc/perso" },
-        { name = "Work", path = "~/Documents/git_perso/doc/digeiz" },
+        { name = "Work", path = "~/Documents/git_perso/doc/work" },
         { name = "todos", path = "~/Documents/git_perso/doc/todos" },
         { name = "CR meetings", path = "~/Documents/git_perso/doc/cr_meetings" },
       },
