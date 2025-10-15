@@ -491,7 +491,7 @@ local plugs = {
     },
     -- build = "npm install -g mcp-hub@latest",  -- Installs `mcp-hub` node binary globally
     conf = function ()
-      require("configs.mcphub")
+      require("configs.mcp-hub")
     end,
     config = function(_, conf)
       require("mcphub").setup(conf)
