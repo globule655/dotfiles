@@ -20,6 +20,7 @@
       ".config/hypr".source = ../hypr;
       ".config/ghostty".source = ../ghostty;
       ".config/wl-kbptr".source = ../wl-kbptr;
+      ".config/mcphub".source = ../mcphub;
     };
     sessionVariables = {
       EDITOR = "nvim";

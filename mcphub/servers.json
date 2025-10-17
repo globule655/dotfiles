@@ -1,0 +1,82 @@
+{
+  "mcpServers": {
+    "markdownify": {
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-v",
+        "/local-directory:/local-directory",
+        "mcp/markdownify"
+      ],
+      "command": "docker"
+    },
+    "sequentialthinking": {
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "mcp/sequentialthinking"
+      ],
+      "command": "docker"
+    },
+    "terraform": {
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "hashicorp/terraform-mcp-server"
+      ],
+      "command": "docker"
+    },
+    "time": {
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "mcp/time"
+      ],
+      "command": "docker"
+    },
+    "youtube_transcript": {
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "mcp/youtube-transcript"
+      ],
+      "command": "docker"
+    },
+    "memory": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-v",
+        "/local-directory:/local-directory",
+        "mcp/memory"
+      ]
+    },
+    "duckduckgo": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "mcp/duckduckgo"
+      ]
+    },
+    "nixos": {
+      "command": "docker",
+      "args": ["run", "--rm", "-i", "ghcr.io/utensils/mcp-nixos"]
+    }
+  },
+  "nativeMCPServers": {
+    "mcphub": {
+      "custom_instructions": {
+        "disabled": false
+      }
+    }
+  }
+}
