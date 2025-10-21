@@ -319,18 +319,6 @@ local plugs = {
   },
 
   -- {
-  --   "Exafunction/codeium.nvim",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "hrsh7th/nvim-cmp",
-  --   },
-  --   config = function()
-  --     require("codeium").setup({
-  --     })
-  --   end
-  -- },
-
-  -- {
   --   "chentoast/marks.nvim",
   --   config = function ()
   --     require("marks").setup()
