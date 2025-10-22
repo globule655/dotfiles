@@ -13,17 +13,6 @@ local plugs = {
     end,
   },
 
-  -- {
-  --   "oxfist/night-owl.nvim",
-  --   -- "folke/tokyonight.nvim",
-  --   lazy = false, -- make sure we load this during startup if it is your main colorscheme
-  --   priority = 1000, -- make sure to load this before all the other start plugins
-  --   -- config = function()
-  --   --   -- load the colorscheme here
-  --   --   vim.cmd.colorscheme("night-owl")
-  --   -- end,
-  -- },
-
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -222,17 +211,6 @@ local plugs = {
   },
 
   {
-    "nvim-tree/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    opts = function()
-      return require "configs.nvimtree"
-    end,
-    config = function(_, opts)
-      require("nvim-tree").setup(opts)
-    end,
-  },
-
-  {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
     tag = "v2.3.3",
@@ -293,27 +271,6 @@ local plugs = {
     end,
   },
 
-  -- {
-  --   "ThePrimeagen/git-worktree.nvim",
-  --   config = function()
-  --     require("git-worktree").setup({})
-  --   end,
-  -- },
-
-  -- {
-  --   "NeogitOrg/neogit",
-  --   dependencies = {
-  --     "sindrets/diffview.nvim",
-  --   },
-  --   config = function()
-  --     require("neogit").setup({
-  --       integrations = {
-  --         telescope = true,
-  --       },
-  --     })
-  --   end,
-  -- },
-
   {
     "folke/which-key.nvim",
     keys = { "<leader>", "<c-r>", '"', "'", "`", "c", "v", "g" },
@@ -333,24 +290,6 @@ local plugs = {
       require("toggleterm").setup(opts)
     end,
   },
-
-  -- {
-  --   "chentoast/marks.nvim",
-  --   config = function ()
-  --     require("marks").setup()
-  --   end,
-  -- },
-
-  -- {
-  --   "ellisonleao/glow.nvim",
-  --   cmd = "Glow",
-  --   opts = function ()
-  --     return require("configs.glow")
-  --   end,
-  --   config = function (_, opts)
-  --     require("glow").setup(opts)
-  --   end,
-  -- },
 
   {
     "christoomey/vim-tmux-navigator",
@@ -391,7 +330,7 @@ local plugs = {
   {
     'MeanderingProgrammer/render-markdown.nvim',
     opts = {},
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' }, -- if you use the mini.nvim suite
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
   },

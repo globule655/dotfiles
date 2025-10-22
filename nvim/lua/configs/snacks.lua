@@ -2,7 +2,7 @@ local snacksconfig = {
 
   opts = {
     bigfile = { enabled = true },
-    lazygit = { enabled = true },
+    lazygit = { enabled = false },
     image = { enabled = true },
     quickfile = { enabled = true },
     scroll = { enabled = true },
@@ -10,7 +10,6 @@ local snacksconfig = {
   },
 
   keys = {
-    { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
     { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
   }
 
