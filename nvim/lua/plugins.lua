@@ -262,6 +262,22 @@ local plugs = {
   },
 
   {
+    'nvim-mini/mini.files',
+    version = '*',
+    config = function ()
+      require('mini.files').setup()
+    end,
+  },
+
+  {
+    'nvim-mini/mini.icons',
+    version = '*',
+    config = function ()
+      require('mini.icons').setup()
+    end,
+  },
+
+  {
     "ThePrimeagen/harpoon",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
