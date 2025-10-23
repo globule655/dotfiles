@@ -27,21 +27,21 @@ M.capabilities.textDocument.completion.completionItem = {
 
 local capabilities = M.capabilities
 
-local lspconfig = require "lspconfig"
-
--- if you just want default config for the servers then put them in a table
+-- List of LSP servers to configure
 local servers = { "marksman", "html", "cssls", "ts_ls", "clangd", "terraformls", "bashls", "dockerls", "docker_compose_language_service", "jsonls", "pyright", "salt_ls", "texlab", "yamlls", "tflint", "dotls", "ansiblels", "nil_ls" }
 
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+-- Configure servers using vim.lsp.config (Neovim 0.11+)
+for _, server_name in ipairs(servers) do
+  vim.lsp.config(server_name, {
     on_attach = on_attach,
     capabilities = capabilities,
-  }
+  })
 end
 
--- 
--- lspconfig.pyright.setup { blabla}
-lspconfig.lua_ls.setup {
+-- Configure lua_ls with custom settings
+vim.lsp.config("lua_ls", {
+  on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     Lua = {
       diagnostics = {
@@ -56,5 +56,9 @@ lspconfig.lua_ls.setup {
       },
     },
   },
-}
+})
+
+-- Enable the configured LSP servers
+vim.lsp.enable(servers)
+vim.lsp.enable("lua_ls")
 
