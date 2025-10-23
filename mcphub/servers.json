@@ -70,8 +70,7 @@
     "nixos": {
       "command": "docker",
       "args": ["run", "--rm", "-i", "ghcr.io/utensils/mcp-nixos"]
-    }
-  },
+    },
   "fetch": {
       "command": "docker",
       "args": [
@@ -81,6 +80,10 @@
         "mcp/fetch"
       ]
     },
+    "notion": {
+      "url": "https://mcp.notion.com/mcp"
+    }
+  },
   "nativeMCPServers": {
     "mcphub": {
       "custom_instructions": {
