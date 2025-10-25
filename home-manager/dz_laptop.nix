@@ -1,4 +1,7 @@
 { inputs, outputs, lib, config, pkgs, ... }:
+let
+  username = "gdebros";
+in
 {
 
   imports = [
@@ -12,7 +15,7 @@
   work-packages.enable = true;
 
   home = {
-    username = "gdebros";
+    username = username;
     file = {
       ".config/starship.toml".source = ../starship/starship.toml;
       ".config/sway".source = ../sway;
@@ -20,7 +23,7 @@
       ".config/hypr".source = ../hypr;
       ".config/ghostty".source = ../ghostty;
       ".config/wl-kbptr".source = ../wl-kbptr;
-      ".config/mcphub".source = ../mcphub;
+      ".config/mcphub".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/mcphub";
     };
     sessionVariables = {
       EDITOR = "nvim";
@@ -47,8 +50,8 @@
           '';
       shellAliases = {
         ov = "cd $VAULT_PATH && nvim .";
-        tsh_login = "$HOME/.dotfiles/custom_scripts/tsh_login.sh";
-        ssh_config = "$HOME/.dotfiles/custom_scripts/tsh_hosts.sh";
+        tsh_login = "/home/${username}/.dotfiles/custom_scripts/tsh_login.sh";
+        ssh_config = "/home/${username}/.dotfiles/custom_scripts/tsh_hosts.sh";
         asr = "atuin script run";
       };
     };

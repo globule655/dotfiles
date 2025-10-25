@@ -1,4 +1,7 @@
 { inputs, outputs, lib, config, pkgs, ... }:
+let
+  username = "globule";
+in
 {
 
   imports = [
@@ -14,7 +17,7 @@
   stream-packages.enable = true;
 
   home = {
-    username = "globule";
+    username = username;
     file = {
       ".config/starship.toml".source = ../starship/starship.toml;
       ".config/sway".source = ../sway;
@@ -22,7 +25,7 @@
       ".config/hypr".source = ../hypr;
       ".config/ghostty".source = ../ghostty;
       ".config/wl-kbptr".source = ../wl-kbptr;
-      ".config/mcphub".source = ../mcphub;
+      ".config/mcphub".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/mcphub";
     };
     sessionVariables = {
       EDITOR = "nvim";

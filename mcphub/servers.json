@@ -1,5 +1,25 @@
 {
   "mcpServers": {
+    "duckduckgo": {
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "mcp/duckduckgo"
+      ],
+      "command": "docker",
+      "disabled": false
+    },
+    "fetch": {
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "mcp/fetch"
+      ],
+      "command": "docker",
+      "disabled": false
+    },
     "markdownify": {
       "args": [
         "run",
@@ -9,7 +29,34 @@
         "/local-directory:/local-directory",
         "mcp/markdownify"
       ],
-      "command": "docker"
+      "command": "docker",
+      "disabled": false
+    },
+    "memory": {
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-v",
+        "/local-directory:/local-directory",
+        "mcp/memory"
+      ],
+      "command": "docker",
+      "disabled": false
+    },
+    "nixos": {
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "ghcr.io/utensils/mcp-nixos"
+      ],
+      "command": "docker",
+      "disabled": false
+    },
+    "notion": {
+      "disabled": false,
+      "url": "https://mcp.notion.com/mcp"
     },
     "sequentialthinking": {
       "args": [
@@ -18,7 +65,8 @@
         "-i",
         "mcp/sequentialthinking"
       ],
-      "command": "docker"
+      "command": "docker",
+      "disabled": false
     },
     "terraform": {
       "args": [
@@ -27,7 +75,8 @@
         "--rm",
         "hashicorp/terraform-mcp-server"
       ],
-      "command": "docker"
+      "command": "docker",
+      "disabled": false
     },
     "time": {
       "args": [
@@ -36,7 +85,8 @@
         "--rm",
         "mcp/time"
       ],
-      "command": "docker"
+      "command": "docker",
+      "disabled": false
     },
     "youtube_transcript": {
       "args": [
@@ -45,43 +95,8 @@
         "--rm",
         "mcp/youtube-transcript"
       ],
-      "command": "docker"
-    },
-    "memory": {
       "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-v",
-        "/local-directory:/local-directory",
-        "mcp/memory"
-      ]
-    },
-    "duckduckgo": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "mcp/duckduckgo"
-      ]
-    },
-    "nixos": {
-      "command": "docker",
-      "args": ["run", "--rm", "-i", "ghcr.io/utensils/mcp-nixos"]
-    },
-  "fetch": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "mcp/fetch"
-      ]
-    },
-    "notion": {
-      "url": "https://mcp.notion.com/mcp"
+      "disabled": false
     }
   },
   "nativeMCPServers": {
