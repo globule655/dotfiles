@@ -26,6 +26,7 @@ in
       ".config/ghostty".source = ../ghostty;
       ".config/wl-kbptr".source = ../wl-kbptr;
       ".config/mcphub".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/mcphub";
+      ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/nvim";
     };
     sessionVariables = {
       EDITOR = "nvim";
