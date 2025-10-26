@@ -43,11 +43,11 @@
     tmux
     vlc
     waybar
+    winboat
     wlrctl
     wlr-randr
     dotool
     inputs.mcp-hub.packages."${system}".default
-    inputs.winboat.packages."${system}".winboat
     ];
   };
 

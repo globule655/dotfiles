@@ -299,7 +299,7 @@ Option "ModeValidation" "AllowNonEdidModes"
     openssl
     pavucontrol
     pciutils # lspci
-    protonup
+    protonup-ng
     python3
     sway
     tmux

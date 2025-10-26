@@ -8,7 +8,6 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
     mcp-hub.url = "github:ravitemer/mcp-hub";
-    winboat.url = "github:TibixDev/winboat";
   };
 
   outputs = inputs@{ self, nixpkgs, disko, home-manager, nixgl, ... }: 

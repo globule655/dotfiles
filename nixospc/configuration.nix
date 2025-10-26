@@ -66,34 +66,40 @@
   networking.networkmanager.enable = true;
   virtualisation.docker.enable = true;
 
-  services.xserver = {
-    enable = true;
+  services = {
+    xserver.enable = true;
+    xserver.xkb.layout = "fr,fr";
     displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    xkb.layout = "fr,fr";
-    monitorSection = ''
-Modeline "2560x1440_360.00"  2349.61  2560 2808 3096 3632  1440 1441 1444 1797  -HSync +Vsync
-Modeline "1920x1080_360.00"  1319.96  1920 2104 2320 2720  1080 1081 1084 1348  -HSync +Vsync
-Modeline "1280x1024_360.00"  831.82  1280 1400 1544 1808  1024 1025 1028 1278  -HSync +Vsync
-    '';
-    deviceSection = ''
-Option "ModeValidation" "AllowNonEdidModes"
-    '';
-    resolutions = [
-      {
-        x = 2560;
-        y = 1440;
-      }
-      {
-        x = 1920;
-        y = 1080;
-      }
-      {
-        x = 1280;
-        y = 1024;
-      }
-    ];
+    desktopManager = {
+      # gnome.enable = true;
+      plasma6.enable = true;
+    };
   };
+
+#   services.xserver = {
+#     monitorSection = ''
+# Modeline "2560x1440_360.00"  2349.61  2560 2808 3096 3632  1440 1441 1444 1797  -HSync +Vsync
+# Modeline "1920x1080_360.00"  1319.96  1920 2104 2320 2720  1080 1081 1084 1348  -HSync +Vsync
+# Modeline "1280x1024_360.00"  831.82  1280 1400 1544 1808  1024 1025 1028 1278  -HSync +Vsync
+#     '';
+#     deviceSection = ''
+# Option "ModeValidation" "AllowNonEdidModes"
+#     '';
+#     resolutions = [
+#       {
+#         x = 2560;
+#         y = 1440;
+#       }
+#       {
+#         x = 1920;
+#         y = 1080;
+#       }
+#       {
+#         x = 1280;
+#         y = 1024;
+#       }
+#     ];
+#   };
 
   # Enables usb disks automount
   services.gvfs.enable = true;
@@ -181,7 +187,7 @@ Option "ModeValidation" "AllowNonEdidModes"
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [ 
-      ubuntu_font_family
+      ubuntu-classic
       liberation_ttf
     ];
 
@@ -300,7 +306,7 @@ Option "ModeValidation" "AllowNonEdidModes"
     openssl
     pavucontrol
     pciutils # lspci
-    protonup
+    protonup-ng
     python3
     sway
     tmux
