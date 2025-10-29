@@ -34,7 +34,7 @@ local avante_opts = {
       timeout = 30000, -- Timeout in milliseconds
       extra_request_body = {
         temperature = 0.75,
-        max_tokens = 4096,
+        max_tokens = 20480,
       },
     },
   },
