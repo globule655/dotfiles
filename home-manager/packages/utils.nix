@@ -29,6 +29,7 @@
     papers
     pwgen
     sshs
+    sslscan
     termshark # wireshark in a termUI
     tmate
     usbutils
