@@ -14,7 +14,7 @@
       minicom
       putty
       remmina
-      teleport_16
+      teleport_17
       wireshark
 
     ];
