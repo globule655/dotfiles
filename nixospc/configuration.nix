@@ -13,7 +13,7 @@
       # <home-manager/nixos>
     ];
 
-  greetd-service.enable = true;
+  # greetd-service.enable = true;
 
   # Bootloader.
   # boot.loader.systemd-boot.enable = true;
@@ -66,15 +66,15 @@
   networking.networkmanager.enable = true;
   virtualisation.docker.enable = true;
 
-  # services = {
-  #   xserver.enable = true;
-  #   xserver.xkb.layout = "fr,fr";
-  #   displayManager.gdm.enable = true;
-  #   desktopManager = {
-  #     # gnome.enable = true;
-  #     plasma6.enable = true;
-  #   };
-  # };
+  services = {
+    xserver.enable = true;
+    xserver.xkb.layout = "fr,fr";
+    displayManager.gdm.enable = true;
+    desktopManager = {
+      # gnome.enable = true;
+      plasma6.enable = true;
+    };
+  };
 
 #   services.xserver = {
 #     monitorSection = ''
