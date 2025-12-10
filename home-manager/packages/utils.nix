@@ -26,6 +26,7 @@
     insync
     lazygit
     meld
+    pandoc
     papers
     pwgen
     sshs
