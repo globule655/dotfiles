@@ -32,6 +32,7 @@
     sshs
     sslscan
     termshark # wireshark in a termUI
+    texliveFull
     tmate
     usbutils
     udisks
