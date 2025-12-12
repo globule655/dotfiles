@@ -271,6 +271,9 @@
     gamemode = {
       enable = true;
     };
+    ydotool = {
+      enable = true;
+    };
     vim = {
       enable = true;
     };
