@@ -17,6 +17,14 @@ local avante_opts = {
   },
   provider = "claude",
   mode = "legacy",
+  dual_boost = {
+    enabled = true,
+    first_provider = "gemini",
+    second_provider = "claude",
+    -- Optional: customize the prompt for the second provider
+    second_provider_prompt = "Review and enhance the previous response",
+    timeout = 60000, -- Total timeout for both providers in milliseconds
+  },
   system_prompt = function()
     local hub = require("mcphub").get_hub_instance()
     return hub and hub:get_active_servers_prompt() or ""
@@ -36,6 +44,11 @@ local avante_opts = {
         temperature = 0.75,
         max_tokens = 20480,
       },
+    },
+    gemini = {
+      model = "gemini-2.5-flash", -- Or "gemini-1.5-pro"
+      temperature = 0,
+      max_tokens = 4096,
     },
   },
 }

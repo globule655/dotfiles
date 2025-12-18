@@ -23,6 +23,7 @@
     google-chrome
     grim
     htop
+    hyprpaper
     jq
     kdePackages.okular
     light
