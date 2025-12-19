@@ -12,8 +12,10 @@
     nerd-fonts.jetbrains-mono
     bottles
     cmake
-    dnsutils
     discord
+    dnsutils
+    dotool
+    easyeffects
     ethtool
     ffmpeg-full
     fontconfig
@@ -32,8 +34,8 @@
     nodejs_22
     obsidian
     onlyoffice-desktopeditors
-    parsec-bin
     p7zip
+    parsec-bin
     ripgrep
     rofi
     rustup
@@ -45,9 +47,8 @@
     vlc
     waybar
     winboat
-    wlrctl
     wlr-randr
-    dotool
+    wlrctl
     inputs.mcp-hub.packages."${system}".default
     ];
   };
