@@ -25,6 +25,7 @@ in
       ".config/hypr".source = ../hypr;
       ".config/ghostty".source = ../ghostty;
       ".config/wl-kbptr".source = ../wl-kbptr;
+      ".config/wallpaper/wallpaper.jpg".source = ../wallpaper/samurai.jpg;
       ".config/mcphub".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/mcphub";
       ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/nvim";
     };
