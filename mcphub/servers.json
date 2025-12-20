@@ -8,7 +8,7 @@
         "mcp/duckduckgo"
       ],
       "command": "docker",
-      "disabled": false
+      "disabled": true
     },
     "fetch": {
       "args": [
@@ -18,7 +18,7 @@
         "mcp/fetch"
       ],
       "command": "docker",
-      "disabled": false
+      "disabled": true
     },
     "markdownify": {
       "args": [
@@ -30,7 +30,7 @@
         "mcp/markdownify"
       ],
       "command": "docker",
-      "disabled": false
+      "disabled": true
     },
     "memory": {
       "args": [
@@ -42,7 +42,7 @@
         "mcp/memory"
       ],
       "command": "docker",
-      "disabled": false
+      "disabled": true
     },
     "nixos": {
       "args": [
@@ -52,10 +52,10 @@
         "ghcr.io/utensils/mcp-nixos"
       ],
       "command": "docker",
-      "disabled": false
+      "disabled": true
     },
     "notion": {
-      "disabled": false,
+      "disabled": true,
       "url": "https://mcp.notion.com/mcp"
     },
     "sequentialthinking": {
@@ -66,7 +66,7 @@
         "mcp/sequentialthinking"
       ],
       "command": "docker",
-      "disabled": false
+      "disabled": true
     },
     "terraform": {
       "args": [
@@ -76,7 +76,7 @@
         "hashicorp/terraform-mcp-server"
       ],
       "command": "docker",
-      "disabled": false
+      "disabled": true
     },
     "time": {
       "args": [
@@ -86,7 +86,7 @@
         "mcp/time"
       ],
       "command": "docker",
-      "disabled": false
+      "disabled": true
     },
     "youtube_transcript": {
       "args": [
@@ -96,13 +96,13 @@
         "mcp/youtube-transcript"
       ],
       "command": "docker",
-      "disabled": false
+      "disabled": true
     }
   },
   "nativeMCPServers": {
     "mcphub": {
       "custom_instructions": {
-        "disabled": false
+        "disabled": true
       }
     }
   }
