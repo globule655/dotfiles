@@ -15,7 +15,8 @@ local avante_opts = {
       placeholder = "Enter your API key...",
     },
   },
-  provider = "gemini",
+  instructions_file = "avante.md",
+  provider = "claude",
   mode = "legacy",
   -- dual_boost = {
   --   enabled = true,
