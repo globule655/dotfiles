@@ -16,6 +16,7 @@
     dnsutils
     dotool
     easyeffects
+    edk2
     ethtool
     ffmpeg-full
     fontconfig
@@ -36,6 +37,7 @@
     onlyoffice-desktopeditors
     p7zip
     parsec-bin
+    qemu
     ripgrep
     rofi
     rustup
