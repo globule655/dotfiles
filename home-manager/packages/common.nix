@@ -38,6 +38,7 @@
     p7zip
     parsec-bin
     qemu
+    qutebrowser
     ripgrep
     rofi
     rustup
