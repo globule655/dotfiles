@@ -29,6 +29,7 @@
     hyprpaper
     jq
     kdePackages.okular
+    librewolf
     light
     ncdu
     nil
@@ -38,7 +39,6 @@
     p7zip
     parsec-bin
     qemu
-    qutebrowser
     ripgrep
     rofi
     rustup
