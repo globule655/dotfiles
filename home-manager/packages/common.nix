@@ -49,6 +49,7 @@
     tmux
     vlc
     waybar
+    wdisplays
     winboat
     wlr-randr
     wlrctl
