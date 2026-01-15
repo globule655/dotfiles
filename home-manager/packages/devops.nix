@@ -18,6 +18,7 @@
     k9s
     kubernetes-helm
     lima
+    opencode
     terraform
     rustup
     ];
