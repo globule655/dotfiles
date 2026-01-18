@@ -27,6 +27,7 @@ in
       ".config/wallpaper/screenlock.jpg".source = ../wallpaper/Fantasy-Autumn.jpg;
       ".config/mcphub".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/mcphub";
       ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/nvim";
+      ".config/opencode".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/opencode";
     };
     sessionVariables = {
       EDITOR = "nvim";

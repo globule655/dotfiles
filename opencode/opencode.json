@@ -1,0 +1,71 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "duckduckgo": {
+      "type": "local",
+      "command": ["docker", "run", "-i", "--rm", "mcp/duckduckgo"],
+      "enabled": true
+    },
+    "fetch": {
+      "type": "local",
+      "command": ["docker", "run", "-i", "--rm", "mcp/fetch"],
+      "enabled": true
+    },
+    "markdownify": {
+      "type": "local",
+      "command": [
+        "docker",
+        "run",
+        "-i",
+        "--rm",
+        "-v",
+        "/local-directory:/local-directory",
+        "mcp/markdownify"
+      ],
+      "enabled": true
+    },
+    "memory": {
+      "type": "local",
+      "command": [
+        "docker",
+        "run",
+        "-i",
+        "--rm",
+        "-v",
+        "/local-directory:/local-directory",
+        "mcp/memory"
+      ],
+      "enabled": true
+    },
+    "nixos": {
+      "type": "local",
+      "command": ["docker", "run", "--rm", "-i", "ghcr.io/utensils/mcp-nixos"],
+      "enabled": true
+    },
+    "notion": {
+      "type": "remote",
+      "url": "https://mcp.notion.com/mcp",
+      "enabled": true
+    },
+    "sequentialthinking": {
+      "type": "local",
+      "command": ["docker", "run", "--rm", "-i", "mcp/sequentialthinking"],
+      "enabled": true
+    },
+    "terraform": {
+      "type": "local",
+      "command": ["docker", "run", "-i", "--rm", "hashicorp/terraform-mcp-server"],
+      "enabled": true
+    },
+    "time": {
+      "type": "local",
+      "command": ["docker", "run", "-i", "--rm", "mcp/time"],
+      "enabled": true
+    },
+    "youtube_transcript": {
+      "type": "local",
+      "command": ["docker", "run", "-i", "--rm", "mcp/youtube-transcript"],
+      "enabled": true
+    }
+  }
+}
