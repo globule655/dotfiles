@@ -27,6 +27,7 @@
     grim
     htop
     hyprpaper
+    iptables
     jq
     kdePackages.okular
     librewolf
