@@ -27,6 +27,7 @@
     grim
     htop
     hyprpaper
+    hyprlauncher
     iptables
     jq
     kdePackages.okular
