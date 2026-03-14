@@ -32,7 +32,6 @@
     jq
     kdePackages.okular
     librewolf
-    light
     ncdu
     nil
     nodejs_22
