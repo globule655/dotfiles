@@ -26,6 +26,7 @@
     google-chrome
     grim
     htop
+    xdg-desktop-portal-hyprland
     hyprpaper
     hyprlauncher
     iptables
