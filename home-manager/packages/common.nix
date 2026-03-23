@@ -52,7 +52,6 @@
     vlc
     waybar
     wdisplays
-    winboat
     wlr-randr
     wlrctl
     inputs.mcp-hub.packages."${system}".default

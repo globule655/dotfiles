@@ -29,6 +29,8 @@ in
       ".config/mcphub".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/mcphub";
       ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/nvim";
       ".config/opencode".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/opencode";
+      ".claude/skills".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/opencode/skills";
+      ".claude/.mcp.json".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/opencode/claude-mcp.json";
     };
     sessionVariables = {
       EDITOR = "nvim";

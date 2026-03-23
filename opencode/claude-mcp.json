@@ -1,0 +1,57 @@
+{
+  "mcpServers": {
+    "excalidraw": {
+      "type": "sse",
+      "url": "https://mcp.excalidraw.com"
+    },
+    "drawio": {
+      "type": "sse",
+      "url": "https://mcp.draw.io/mcp"
+    },
+    "duckduckgo": {
+      "type": "stdio",
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "mcp/duckduckgo"]
+    },
+    "fetch": {
+      "type": "stdio",
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "mcp/fetch"]
+    },
+    "markdownify": {
+      "type": "stdio",
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-v", "/local-directory:/local-directory", "mcp/markdownify"]
+    },
+    "memory": {
+      "type": "stdio",
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-v", "/local-directory:/local-directory", "mcp/memory"]
+    },
+    "nixos": {
+      "type": "stdio",
+      "command": "docker",
+      "args": ["run", "--rm", "-i", "ghcr.io/utensils/mcp-nixos"]
+    },
+    "sequentialthinking": {
+      "type": "stdio",
+      "command": "docker",
+      "args": ["run", "--rm", "-i", "mcp/sequentialthinking"]
+    },
+    "terraform": {
+      "type": "stdio",
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "hashicorp/terraform-mcp-server"]
+    },
+    "time": {
+      "type": "stdio",
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "mcp/time"]
+    },
+    "youtube_transcript": {
+      "type": "stdio",
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "mcp/youtube-transcript"]
+    }
+  }
+}
