@@ -44,7 +44,27 @@ in
     zsh = {
       shellAliases = {
         ov = "cd $VAULT_PATH && nvim .";
+        asr = "atuin script run";
+        jjf = "jj git fetch";
+        jjp = "jj git push";
+        jjr = "jj rebase -d";
       };
+      initContent = ''
+        jjb() {
+          if [ $# -eq 0 ]; then
+            jj bookmark list
+          else
+            jj bookmark set "$@"
+          fi
+        }
+        jjd() {
+          if [ $# -eq 0 ]; then
+            jj describe
+          else
+            jj describe -m "$@"
+          fi
+        }
+      '';
     };
   };
 
