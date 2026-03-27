@@ -166,6 +166,10 @@ label:focus {
   background-color: #eb4d4b;
 }
 
+#idle_inhibitor.deactivated {
+  color: #888888;
+}
+
 #idle_inhibitor.activated {
   background-color: #ecf0f1;
   color: #2d3436;
