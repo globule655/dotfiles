@@ -93,6 +93,7 @@ in
         asr = "atuin script run";
         jjf = "jj git fetch";
         jjp = "jj git push";
+        jjr = "jj rebase -d";
       };
       initContent = ''
         jjb() {
