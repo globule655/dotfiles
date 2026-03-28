@@ -13,7 +13,7 @@
       # <home-manager/nixos>
     ];
 
-  greetd-service.enable = false;
+  # greetd-service.enable = true;
 
   # Bootloader.
   # boot.loader.systemd-boot.enable = true;
@@ -66,32 +66,14 @@
   networking.networkmanager.enable = true;
   virtualisation.docker.enable = true;
 
-  services.xserver = {
-    enable = true;
+  services = {
+    xserver.enable = true;
+    xserver.xkb.layout = "fr,fr";
     displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    xkb.layout = "fr,fr";
-    monitorSection = ''
-Modeline "1920x1080_360.00"  1319.96  1920 2104 2320 2720  1080 1081 1084 1348  -HSync +Vsync
-Modeline "1280x1024_360.00"  831.82  1280 1400 1544 1808  1024 1025 1028 1278  -HSync +Vsync
-    '';
-    deviceSection = ''
-Option "ModeValidation" "AllowNonEdidModes"
-    '';
-    resolutions = [
-      {
-        x = 2560;
-        y = 1440;
-      }
-      {
-        x = 1920;
-        y = 1080;
-      }
-      {
-        x = 1280;
-        y = 1024;
-      }
-    ];
+    desktopManager = {
+      # gnome.enable = true;
+      plasma6.enable = true;
+    };
   };
 
   # Enables usb disks automount
@@ -229,7 +211,7 @@ Option "ModeValidation" "AllowNonEdidModes"
   users.users.globule = {
     isNormalUser = true;
     description = "globule";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "ydotool" "kvm" ];
     hashedPassword = "$6$Oz1YWT6ImCyDEtyE$SCrBzrUx/VlN8maxqezwdNH3HF6ZA4r19WZbpVeZjqaFn8Lnyf1bQx.7igjhPv/HkzW0bnInIWMBN7/B7lgXu1";
   };
 
@@ -262,6 +244,9 @@ Option "ModeValidation" "AllowNonEdidModes"
       gamescopeSession.enable = true;
     };
     gamemode = {
+      enable = true;
+    };
+    ydotool = {
       enable = true;
     };
     vim = {
