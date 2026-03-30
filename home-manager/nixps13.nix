@@ -38,7 +38,32 @@
       shellAliases = {
         ov = "cd $VAULT_PATH && nvim .";
         asr = "atuin script run";
+        jjf = "jj git fetch";
+        jjp = "jj git push";
       };
+      initContent = ''
+        jjb() {
+          if [ $# -eq 0 ]; then
+            jj bookmark list
+          else
+            jj bookmark set "$@"
+          fi
+        }
+        jjd() {
+          if [ $# -eq 0 ]; then
+            jj describe
+          else
+            jj describe -m "$@"
+          fi
+        }
+        jjr() {
+          if [ $# -eq 0 ]; then
+            jj rebase -d main
+          else
+            jj rebase -d "$@"
+          fi
+        }
+      '';
     };
   };
 

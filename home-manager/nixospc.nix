@@ -47,7 +47,6 @@ in
         asr = "atuin script run";
         jjf = "jj git fetch";
         jjp = "jj git push";
-        jjr = "jj rebase -d";
       };
       initContent = ''
         jjb() {
@@ -62,6 +61,13 @@ in
             jj describe
           else
             jj describe -m "$@"
+          fi
+        }
+        jjr() {
+          if [ $# -eq 0 ]; then
+            jj rebase -d main
+          else
+            jj rebase -d "$@"
           fi
         }
       '';
