@@ -13,7 +13,7 @@
     direnv
     jjui
     jujutsu
-    # kubectl
+    kubectl
     k9s
     kubernetes-helm
     lima
