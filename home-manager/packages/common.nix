@@ -51,6 +51,7 @@
     tmux
     vlc
     waybar
+    wf-recorder
     wdisplays
     wlr-randr
     wlrctl
