@@ -45,7 +45,7 @@ local plugs = {
 
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
+    tag = "v0.2.1",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "debugloop/telescope-undo.nvim",
@@ -108,7 +108,7 @@ local plugs = {
     "nvim-treesitter/nvim-treesitter",
     -- opts = overrides.treesitter,
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-    tag = "v0.9.3",
+    tag = "v0.10.0",
     build = ":TSUpdate",
     opts = function()
       return require "configs.treesitter"
@@ -428,19 +428,19 @@ local plugs = {
   --   },
   -- },
 
-  {
-    "ravitemer/mcphub.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    -- build = "npm install -g mcp-hub@latest",  -- Installs `mcp-hub` node binary globally
-    conf = function ()
-      require("configs.mcp-hub")
-    end,
-    config = function(_, conf)
-      require("mcphub").setup(conf)
-    end
-  },
+  -- {
+  --   "ravitemer/mcphub.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --   },
+  --   -- build = "npm install -g mcp-hub@latest",  -- Installs `mcp-hub` node binary globally
+  --   conf = function ()
+  --     require("configs.mcp-hub")
+  --   end,
+  --   config = function(_, conf)
+  --     require("mcphub").setup(conf)
+  --   end
+  -- },
 
   {
     "echaya/neowiki.nvim",
