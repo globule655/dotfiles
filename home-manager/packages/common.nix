@@ -36,13 +36,10 @@
     ncdu
     nil
     nodejs_22
-    obsidian
     onlyoffice-desktopeditors
     p7zip
-    parsec-bin
     qemu
     ripgrep
-    rofi
     rustup
     slurp
     starship
