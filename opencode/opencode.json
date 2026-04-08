@@ -1,5 +1,14 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "autoupdate": false,
+  "mode": {
+      "plan": {
+        "prompt": "You are Claude Code, Anthropic's official CLI for Claude."
+      },
+      "build": {
+        "prompt": "You are Claude Code, Anthropic's official CLI for Claude."
+      }
+    },
   "plugin": ["opencode-antigravity-auth@latest", "opencode-claude-auth"],
   "mcp": {
     "excalidraw": {
