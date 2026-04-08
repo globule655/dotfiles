@@ -19,8 +19,8 @@ It stores information such as hostnames, IP addresses, groups, NAT addresses whe
 
 ## How to use
 
-* The command `nix run . -- ipam -l` outputs the whole inventory in json format.
-* `nix run . -- ipam --group <group name> -a` outputs a list of host in the group defined by `<group name>`.
-* `nix run . -- ipam --group <group name>` outputs a list of groups nested under `<group name>`. For instance, the group `all` would output all groups in the inventory. Nested groups are idented.
-* `nix run . -- ipam --host <hostname>` outputs a json with the host related variable values.
-* `nix run . -- ipam --host <hostname> --belong` outputs a list of groups the host belongs to.
+* The command `nix run .#ipam -- -l` outputs the whole inventory in json format.
+* `nix run .#ipam -- --group <group name> -a` outputs a list of host in the group defined by `<group name>`.
+* `nix run .#ipam -- --group <group name>` outputs a list of groups nested under `<group name>`. For instance, the group `all` would output all groups in the inventory. Nested groups are idented.
+* `nix run .#ipam -- --host <hostname>` outputs a json with the host related variable values.
+* `nix run .#ipam -- --host <hostname> --belong` outputs a list of groups the host belongs to.
