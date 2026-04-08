@@ -106,14 +106,31 @@ local plugs = {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    -- opts = overrides.treesitter,
-    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+    branch = "main",
+    lazy = false,
     build = ":TSUpdate",
-    opts = function()
-      return require "configs.treesitter"
-    end,
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+    config = function()
+      -- Minimal setup: only override install_dir if needed, defaults are fine
+      require("nvim-treesitter").setup()
+
+      -- Install any parsers from our list that are not yet installed
+      local ts = require("nvim-treesitter")
+      local parsers = require("configs.treesitter").parsers
+      local installed = require("nvim-treesitter.config").get_installed()
+      local to_install = vim.tbl_filter(function(p)
+        return not vim.tbl_contains(installed, p)
+      end, parsers)
+      if #to_install > 0 then
+        ts.install(to_install)
+      end
+
+      -- Enable treesitter highlighting and indentation for all filetypes
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function()
+          pcall(vim.treesitter.start)
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
     end,
   },
 

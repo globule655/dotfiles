@@ -38,7 +38,7 @@
       # We provide it as a thin wrapper around nixGLIntel.
       home.packages =
         let
-          nixGLIntel = inputs.nixgl.packages.${pkgs.system}.nixGLIntel;
+          nixGLIntel = inputs.nixgl.packages.${pkgs.stdenv.hostPlatform.system}.nixGLIntel;
           nixGL = pkgs.writeShellScriptBin "nixGL" ''
             exec ${nixGLIntel}/bin/nixGLIntel "$@"
           '';

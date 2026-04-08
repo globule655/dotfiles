@@ -26,9 +26,8 @@
     google-chrome
     grim
     htop
-    xdg-desktop-portal-hyprland
-    hyprpaper
     hyprlauncher
+    hyprpaper
     iptables
     jq
     kdePackages.okular
@@ -46,13 +45,15 @@
     swappy
     swaynotificationcenter
     tmux
+    tree-sitter
     vlc
     waybar
-    wf-recorder
     wdisplays
+    wf-recorder
     wlr-randr
     wlrctl
-    inputs.mcp-hub.packages."${system}".default
+    xdg-desktop-portal-hyprland
+    inputs.mcp-hub.packages."${pkgs.stdenv.hostPlatform.system}".default
     ];
   };
 

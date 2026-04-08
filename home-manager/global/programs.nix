@@ -73,8 +73,8 @@
     };
     git = {
       enable = lib.mkDefault true;
-      userName = lib.mkDefault "Globule";
-      userEmail = lib.mkDefault "globule655@gmail.com";
+      settings.user.name = lib.mkDefault "Globule";
+      settings.user.email = lib.mkDefault "globule655@gmail.com";
     };
     direnv = {
       enable = lib.mkDefault true;
@@ -142,4 +142,3 @@
     };
   };
 }
-

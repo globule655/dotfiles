@@ -3,7 +3,7 @@
 let
   # Utiliser directement pkgs.nixgl si disponible, sinon essayer de l'obtenir depuis inputs
   nixglPackage = if pkgs ? nixgl then pkgs.nixgl else
-                 if inputs ? nixgl then inputs.nixgl.packages.${pkgs.system} else
+                 if inputs ? nixgl then inputs.nixgl.packages.${pkgs.stdenv.hostPlatform.system} else
                  throw "nixgl package not found. Please make sure it's available in pkgs or inputs.";
                  
   ghosttyWrapper = pkgs.writeShellScriptBin "ghostty" ''
@@ -21,4 +21,3 @@ in {
     ghosttyWrapper
   ];
 }
-

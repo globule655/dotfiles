@@ -82,8 +82,8 @@ in
 
   programs = {
     git = {
-      userName = "gdebros";
-      userEmail = "guillaume.debros@digeiz.com";
+      settings.user.name = "gdebros";
+      settings.user.email = "guillaume.debros@digeiz.com";
     };
     zsh = {
       shellAliases = {
@@ -121,4 +121,3 @@ in
   };
 
 }
-

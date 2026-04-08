@@ -38,8 +38,8 @@ in
 
   programs = {
     git = {
-      userName = "globule";
-      userEmail = "globule655@gmail.com";
+      settings.user.name = "globule";
+      settings.user.email = "globule655@gmail.com";
     };
     zsh = {
       shellAliases = {
@@ -69,4 +69,3 @@ in
   };
 
 }
-
