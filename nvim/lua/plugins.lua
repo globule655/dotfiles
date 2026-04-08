@@ -108,7 +108,6 @@ local plugs = {
     "nvim-treesitter/nvim-treesitter",
     -- opts = overrides.treesitter,
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-    tag = "v0.10.0",
     build = ":TSUpdate",
     opts = function()
       return require "configs.treesitter"
