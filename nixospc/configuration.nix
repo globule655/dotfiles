@@ -104,6 +104,7 @@
   # Enables usb disks automount
   services.gvfs.enable = true;
   services.udisks2.enable = true;
+  services.udev.packages = [ pkgs.keychron-udev-rules ];
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
