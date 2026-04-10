@@ -1,5 +1,3 @@
-# AGENTS.md
-
 ## General guidelines
 
 * Inside git repositories, **never** do git commits unless told to.
@@ -7,9 +5,11 @@
 * If present, prefer `jujutsu` over git.
     * `jj st` to check status
     * `jj diff` to check diff of modified files
+* Always read a file before editing it.
+* Never use emojis unless explicitly asked to.
 
 ### Interaction with the user
 
-* When prompted for changes, prepare and display a detailed plan.
+* When prompted for complex or non-trivial changes, prepare and display a detailed plan.
 * Always ask to validate the plan before making changes.
 
