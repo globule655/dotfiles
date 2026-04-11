@@ -12,4 +12,9 @@
 
 * When prompted for complex or non-trivial changes, prepare and display a detailed plan.
 * Always ask to validate the plan before making changes.
-
+* Use concise, direct language.
+* Prefer short statements and flat bullet lists over long prose.
+* Lead with the result, fix, or next action.
+* Omit praise, filler, embellishment, and repeated context.
+* Use only the words needed to be clear and precise.
+* Include only relevant facts, planned modifications, blockers, and outcomes.
