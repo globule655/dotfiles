@@ -96,27 +96,57 @@
         {
         plugin = tmuxPlugins.catppuccin;
         extraConfig = ''
-          #catppuccin config
-          set -g  status-left ""
-          set -g  status-right "#{E:@catppuccin_status_application}"
-          set -ag status-right "#{E:@catppuccin_status_session}"
-          set -ag status-right "#{E:@catppuccin_status_date_time}"
+          # Catppuccin theme adapted from catppuccin/tmux discussion #317.
+          set -g @catppuccin_flavor "macchiato"
+          set -g @catppuccin_status_background "none"
+          set -g @catppuccin_window_status_style "none"
+          set -g @catppuccin_pane_status_enabled "off"
+          set -g @catppuccin_pane_border_status "off"
 
-          set -g @catppuccin_window_default_fill "number"
+          set -g status-left-length 100
+          set -g status-left ""
+          set -ga status-left "#{?client_prefix,#{#[bg=#{@thm_red},fg=#{@thm_bg},bold]  PREFIX },#{#[bg=#{@thm_bg},fg=#{@thm_green}]  NORMAL }}"
+          set -ga status-left "#[bg=#{@thm_bg},fg=#{@thm_overlay_0},none]│"
+          set -ga status-left "#[bg=#{@thm_bg},fg=#{@thm_maroon}]  #{pane_current_command} "
+          set -ga status-left "#[bg=#{@thm_bg},fg=#{@thm_overlay_0},none]│"
+          set -ga status-left "#[bg=#{@thm_bg},fg=#{@thm_blue}]  #{=/-32/...:#{s|$USER|~|:#{b:pane_current_path}}} "
+          set -ga status-left "#[bg=#{@thm_bg},fg=#{@thm_overlay_0},none]#{?window_zoomed_flag,│,}"
+          set -ga status-left "#[bg=#{@thm_bg},fg=#{@thm_yellow}]#{?window_zoomed_flag,  zoom ,}"
 
-          set -g @catppuccin_window_current_fill "number"
-          set -g @catppuccin_window_current_text "#{pane_current_path}"
+          set -g status-right-length 100
+          set -g status-right ""
+          set -ga status-right "#[bg=#{@thm_bg},fg=#{@thm_green}] #H "
+          set -ga status-right "#[bg=#{@thm_bg},fg=#{@thm_overlay_0},none]│"
+          set -ga status-right "#[bg=#{@thm_bg},fg=#{@thm_mauve}] #S "
+          set -ga status-right "#[bg=#{@thm_bg},fg=#{@thm_overlay_0},none]│"
+          set -ga status-right "#[bg=#{@thm_bg},fg=#{@thm_blue}] 󰭦 %Y-%m-%d 󰅐 %H:%M "
 
-          set -g @catppuccin_status_fill "all"
-          set -g @catppuccin_status_connect_separator "yes"
+          set -wg automatic-rename on
+          set -g automatic-rename-format "Window"
+          set -g window-status-format " #I#{?#{!=:#{window_name},Window},: #W,} "
+          set -g window-status-style "bg=#{@thm_bg},fg=#{@thm_rosewater}"
+          set -g window-status-last-style "bg=#{@thm_bg},fg=#{@thm_peach}"
+          set -g window-status-activity-style "bg=#{@thm_red},fg=#{@thm_bg}"
+          set -g window-status-bell-style "bg=#{@thm_red},fg=#{@thm_bg},bold"
+          set -gF window-status-separator "#[bg=#{@thm_bg},fg=#{@thm_overlay_0}]│"
+          set -g window-status-current-format " #I#{?#{!=:#{window_name},Window},: #W,} "
+          set -g window-status-current-style "bg=#{@thm_peach},fg=#{@thm_bg},bold"
         '';
         }
       ];
     extraConfig = lib.mkDefault ''
       set-option -sa terminal-overrides ",xterm*:Tc"
+      set -g status-position bottom
+      set -g status-style "bg=#{@thm_bg}"
+      set -g status-justify "absolute-centre"
       set -g mouse on
       bind '"' split-window -v -c "#{pane_current_path}"
       bind '%' split-window -h -c "#{pane_current_path}"
+
+      setw -g pane-border-status off
+      setw -g pane-active-border-style "bg=#{@thm_bg},fg=#{@thm_overlay_0}"
+      setw -g pane-border-style "bg=#{@thm_bg},fg=#{@thm_surface_0}"
+      setw -g pane-border-lines single
 
       # Allow resize with vim nav keys
       bind -r j resize-pane -D 5
@@ -128,16 +158,6 @@
       bind-key -T copy-mode-vi 'y' send -X copy-selection # copy text with "y"
 
       unbind -T copy-mode-vi MouseDragEnd1Pane # don't exit copy mode when dragging with mouse
-
-      #Catpuccin config
-      set -g @catppuccin_window_status_style "none"
-      set -g @catppuccin_status_left_separator  ""
-      set -g @catppuccin_status_right_separator ""
-      set -g @catppuccin_status_right_separator_inverse "yes"
-      set -g @catppuccin_window_left_separator "█"
-      set -g @catppuccin_window_right_separator "█ "
-      set -g @catppuccin_window_number_position "right"
-      set -g @catppuccin_window_middle_separator "  █"
     '';
     };
   };

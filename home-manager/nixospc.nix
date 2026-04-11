@@ -29,15 +29,18 @@ in
       ".config/mcphub".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/mcphub";
       ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/nvim";
       ".config/opencode".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/opencode";
-      ".config/autostart/steam.desktop".text = ''
-        [Desktop Entry]
-        Name=Steam
-        Exec=${pkgs.steam}/bin/steam -silent %U
-        Icon=steam
-        Terminal=false
-        Type=Application
-        Categories=Game;
-      '';
+      ".config/autostart/steam.desktop" = {
+        force = true;
+        text = ''
+          [Desktop Entry]
+          Name=Steam
+          Exec=${pkgs.steam}/bin/steam -silent %U
+          Icon=steam
+          Terminal=false
+          Type=Application
+          Categories=Game;
+        '';
+      };
     };
     sessionVariables = {
       EDITOR = "nvim";
