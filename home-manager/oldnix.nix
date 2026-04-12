@@ -22,31 +22,32 @@ in
       ".config/starship.toml".source = ../starship/starship.toml;
       ".config/sway".source = ../sway;
       ".config/waybar".source = ../hypr-waybar;
-      ".config/hypr".source = ../hypr;
+      ".config/hypr/hypridle.conf".source = ../hypr/hypridle.conf;
+      ".config/hypr/hyprlock.conf".source = ../hypr/hyprlock.conf;
+      ".config/hypr/hyprpaper.conf".source = ../hypr/hyprpaper.conf;
+      ".config/hypr/autostart-local.conf" = {
+        force = true;
+        text = ''
+          exec-once = steam -silent
+        '';
+      };
       ".config/ghostty".source = ../ghostty;
       ".config/wl-kbptr".source = ../wl-kbptr;
       ".config/wallpaper/wallpaper.jpg".source = ../wallpaper/Fantasy-Landscape3.jpg;
       ".config/mcphub".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/mcphub";
       ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/nvim";
       ".config/opencode".source = config.lib.file.mkOutOfStoreSymlink "/home/${username}/.dotfiles/opencode";
-      ".config/autostart/steam.desktop" = {
-        force = true;
-        text = ''
-          [Desktop Entry]
-          Name=Steam
-          Exec=${pkgs.steam}/bin/steam -silent %U
-          Icon=steam
-          Terminal=false
-          Type=Application
-          Categories=Game;
-        '';
-      };
     };
     sessionVariables = {
       EDITOR = "nvim";
       VAULT_PATH = "$HOME/Documents/git_perso/doc.git/main";
     };
   };
+
+  wayland.windowManager.hyprland.extraConfig = ''
+    source = /home/${username}/.dotfiles/hypr/hyprland.conf
+    source = /home/${username}/.config/hypr/autostart-local.conf
+  '';
 
   programs = {
     git = {

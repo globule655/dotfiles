@@ -78,6 +78,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
               home-manager.users.globule = import ./home-manager/nixospc.nix;
               home-manager.extraSpecialArgs = { inherit inputs outputs; };
 
@@ -97,6 +98,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
               home-manager.users.globule = import ./home-manager/oldnix.nix;
               home-manager.extraSpecialArgs = { inherit inputs outputs; };
 
