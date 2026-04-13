@@ -75,6 +75,9 @@ local telescope_config = {
           preview_height = 0.8,
         },
       },
+      ["ui-select"] = {
+        require("telescope.themes").get_dropdown({}),
+      },
     },
   }),
 
@@ -85,6 +88,7 @@ local telescope_config = {
   require("telescope").load_extension("undo"),
   require("telescope").load_extension("harpoon"),
   require("telescope").load_extension("ssh-config"),
+  require("telescope").load_extension("ui-select"),
 
 }
 

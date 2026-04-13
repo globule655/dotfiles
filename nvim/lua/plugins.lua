@@ -51,6 +51,7 @@ local plugs = {
       "debugloop/telescope-undo.nvim",
       "nvim-treesitter/nvim-treesitter",
       "jsongerber/telescope-ssh-config",
+      "nvim-telescope/telescope-ui-select.nvim",
       {
         "nvim-telescope/telescope-fzf-native.nvim", build = "make"
       },
