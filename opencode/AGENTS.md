@@ -16,40 +16,40 @@
 * Prefer short statements and flat bullet lists over long prose.
 * Lead with the result, fix, or next action.
 * Omit praise, filler, embellishment, and repeated context.
-* Use only the words needed to be clear and precise.
-    * Wrong example:
-    ```
-    Looking at your configuration, I can see you have windowrulev2 declarations on lines 109-115 for flameshot and xdg-desktop-portal-gtk windows.
-    Let me search for the current Hyprland syntax to understand how window rules have changed.
-    ◇ Exa Code Search "Hyprland windowrule windowrulev2 deprecated migration syntax 2024 2025" 
-    Based on my research, I can now explain what's happening and how to fix it.
-    What Changed
-    In Hyprland 0.48+ (released March 2025), the window rule syntax was completely overhauled:
-    - The old windowrule (v1) syntax is gone
-    - windowrulev2 is now deprecated and just silently redirects to the new windowrule syntax
-    - Since Hyprland 0.53+, windowrulev2 may not work correctly or throws warnings
-    New Syntax
-    The new windowrule syntax uses a different format with match: prefixes for targeting windows:
-    Old syntax (your current config):
-    windowrulev2 = float, class:^(flameshot)$
-    windowrulev2 = move 0 0, class:^(flameshot)$
-    windowrulev2 = noborder, class:^(flameshot)$
-    New syntax:
-    windowrule = float on, match:class ^(flameshot)$
-    windowrule = move 0 0, match:class ^(flameshot)$
-    windowrule = no_border on, match:class ^(flameshot)$
-    Or combined into fewer lines:
-    windowrule = match:class ^(flameshot)$, float on, move 0 0, no_border on
-    windowrule = match:class ^(xdg-desktop-portal-gtk)$, float on, size 700 800
+* Use only the words needed to be clear and precise:
+    * Wrong formulation example:
+        ```
+        Looking at your configuration, I can see you have windowrulev2 declarations on lines 109-115 for flameshot and xdg-desktop-portal-gtk windows.
+        Let me search for the current Hyprland syntax to understand how window rules have changed.
+        ◇ Exa Code Search "Hyprland windowrule windowrulev2 deprecated migration syntax 2024 2025" 
+        Based on my research, I can now explain what's happening and how to fix it.
+        What Changed
+        In Hyprland 0.48+ (released March 2025), the window rule syntax was completely overhauled:
+        - The old windowrule (v1) syntax is gone
+        - windowrulev2 is now deprecated and just silently redirects to the new windowrule syntax
+        - Since Hyprland 0.53+, windowrulev2 may not work correctly or throws warnings
+        New Syntax
+        The new windowrule syntax uses a different format with match: prefixes for targeting windows:
+        Old syntax (your current config):
+        windowrulev2 = float, class:^(flameshot)$
+        windowrulev2 = move 0 0, class:^(flameshot)$
+        windowrulev2 = noborder, class:^(flameshot)$
+        New syntax:
+        windowrule = float on, match:class ^(flameshot)$
+        windowrule = move 0 0, match:class ^(flameshot)$
+        windowrule = no_border on, match:class ^(flameshot)$
+        Or combined into fewer lines:
+        windowrule = match:class ^(flameshot)$, float on, move 0 0, no_border on
+        windowrule = match:class ^(xdg-desktop-portal-gtk)$, float on, size 700 800
 
-    ```
-    * Correct example:
-    ```
-    Deprecated windowsrule v1 configuration on lines 109-115.
-    Correct current syntax for Hyprland 0.53+ with windowrulev2:
-    windowrule = match:class ^(flameshot)$, float on, move 0 0, no_border on
-    windowrule = match:class ^(xdg-desktop-portal-gtk)$, float on, size 700 800
-    ```
+        ```
+    * Correct formulation example:
+        ```
+        Deprecated windowsrule v1 configuration on lines 109-115.
+        Correct current syntax for Hyprland 0.53+ with windowrulev2:
+        windowrule = match:class ^(flameshot)$, float on, move 0 0, no_border on
+        windowrule = match:class ^(xdg-desktop-portal-gtk)$, float on, size 700 800
+        ```
 * Include only relevant facts, planned modifications, blockers, and outcomes.
 
 # General workflow and thinking
