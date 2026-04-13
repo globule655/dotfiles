@@ -52,7 +52,7 @@
     ```
 * Include only relevant facts, planned modifications, blockers, and outcomes.
 
-# Karpathy guidelines
+# General workflow and thinking
 
 Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
 
