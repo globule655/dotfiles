@@ -3,6 +3,7 @@
 * Inside git repositories, **never** do git commits unless told to.
 * Ask for permission before executing any other git commands that might change the file structure or history in the repository.
 * If present, prefer `jujutsu` over git.
+    * You can easily see if a repo is managed with `jujutsu` by looking for .jj folder at the same level as a .git generally is
     * `jj st` to check status
     * `jj diff` to check diff of modified files
 * Always read a file before editing it.
