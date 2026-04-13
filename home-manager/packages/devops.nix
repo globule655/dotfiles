@@ -11,6 +11,7 @@
     home.packages = with pkgs; [
     ansible
     direnv
+    dotenv-cli
     jjui
     jujutsu
     kubectl
