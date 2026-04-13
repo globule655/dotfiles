@@ -36,6 +36,9 @@
           UV_LINK_MODE = "copy";
           # Workaround for CUBLAS_STATUS_INVALID_VALUE with BF16 on CUDA 12.9+
           CUBLAS_WORKSPACE_CONFIG = ":4096:8";
+          # NixOS: Triton hardcodes /sbin/ldconfig (FHS) to locate libcuda.so.
+          # This env var bypasses that call entirely.
+          TRITON_LIBCUDA_PATH = "/run/opengl-driver/lib";
           LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
             "/run/opengl-driver"
             cuda.cudatoolkit
