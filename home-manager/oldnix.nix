@@ -42,6 +42,20 @@ in
       EDITOR = "nvim";
       VAULT_PATH = "$HOME/Documents/git_perso/doc.git/main";
     };
+
+    activation.cloneWikiRepo = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      WIKI_DIR="$HOME/Documents/git_perso/doc"
+      if [ ! -d "$WIKI_DIR" ]; then
+        if [ -S "''${SSH_AUTH_SOCK:-}" ]; then
+          mkdir -p "$HOME/Documents/git_perso"
+          ${pkgs.jujutsu}/bin/jj git clone --colocate git@gitlab.com:globule655/doc.git "$WIKI_DIR" \
+            && echo "Wiki repo cloned to $WIKI_DIR" \
+            || echo "WARNING: Failed to clone wiki repo — run manually: jj git clone --colocate git@gitlab.com:globule655/doc.git $WIKI_DIR"
+        else
+          echo "INFO: No SSH agent available, skipping wiki clone. Run manually: jj git clone --colocate git@gitlab.com:globule655/doc.git $WIKI_DIR"
+        fi
+      fi
+    '';
   };
 
   wayland.windowManager.hyprland.extraConfig = ''
