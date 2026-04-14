@@ -105,6 +105,10 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   services.udev.packages = [ pkgs.keychron-udev-rules ];
+  services.udev.extraRules = ''
+    # Epomaker HE30
+    KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="19f5", MODE="0660", TAG+="uaccess"
+  '';
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
