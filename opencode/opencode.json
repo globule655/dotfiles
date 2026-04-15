@@ -2,7 +2,10 @@
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": false,
   "plugin": ["opencode-antigravity-auth@latest", "opencode-claude-auth"],
-  "instructions": ["rules/general.md", "rules/thinking.md"],
+  "instructions": [
+    "~/.dotfiles/opencode/rules/general.md",
+    "~/.dotfiles/opencode/rules/thinking.md"
+  ],
   "mcp": {
     "excalidraw": {
       "type": "remote",
