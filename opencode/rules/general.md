@@ -52,3 +52,8 @@
         windowrule = match:class ^(xdg-desktop-portal-gtk)$, float on, size 700 800
         ```
 * Include only relevant facts, planned modifications, blockers, and outcomes.
+
+# Wiki projects
+
+* When working in `~/Documents/git_perso/doc`, follow the wiki schema in `AGENTS.md` at repo root.
+* When asked to "add to ppp" or similar, read `~/.dotfiles/opencode/rules/ppp.md` to know what to do.
