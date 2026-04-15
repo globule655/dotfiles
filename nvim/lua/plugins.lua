@@ -301,7 +301,7 @@ local plugs = {
     'akinsho/toggleterm.nvim',
     version = "*",
     opts = function ()
-      require("configs.toggleterm")
+      return require("configs.toggleterm")
     end,
     config = function (_, opts)
       require("toggleterm").setup(opts)
@@ -346,22 +346,19 @@ local plugs = {
   {
     'MeanderingProgrammer/render-markdown.nvim',
     opts = {},
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' }, -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' }, -- if you use the mini.nvim suite
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' }, -- if you use standalone mini plugins
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
   },
 
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {
-      -- add any options here
-    },
-    conf = function ()
-      require("configs.noice")
+    opts = function ()
+      return require("configs.noice")
     end,
-    config = function (_, conf)
-      require("noice").setup(conf)
+    config = function (_, opts)
+      require("noice").setup(opts)
     end,
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries

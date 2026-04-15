@@ -1,1 +1,1 @@
-require("options.functions.obsidian_organize")
+-- require("options.functions.obsidian_organize")

@@ -24,6 +24,6 @@ local sources = {
 }
 
 null_ls.setup {
-  debug = true,
+  debug = false,
   sources = sources,
 }
