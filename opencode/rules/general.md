@@ -57,3 +57,6 @@
 
 * When working in `~/Documents/git_perso/doc`, follow the wiki schema in `AGENTS.md` at repo root.
 * When asked to "add to ppp" or similar, read `~/.dotfiles/opencode/rules/ppp.md` to know what to do.
+* If asked to "add to wiki" or similar, the current issue/task needs to be documented in the wiki.
+    * Follow the wiki schema in `AGENTS.md` at the wiki repo root.
+    * Add documentation of the problem, solutions found and general recommandation to existing related pages or create a new one if necessary
