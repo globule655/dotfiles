@@ -4,18 +4,19 @@
   "plugin": ["opencode-antigravity-auth@latest", "opencode-claude-auth"],
   "instructions": [
     "~/.dotfiles/opencode/rules/general.md",
-    "~/.dotfiles/opencode/rules/thinking.md"
+    "~/.dotfiles/opencode/rules/thinking.md",
+    "~/.dotfiles/opencode/rules/memory.md",
   ],
   "mcp": {
     "excalidraw": {
       "type": "remote",
       "url": "https://mcp.excalidraw.com",
-      "enabled": true
+      "enabled": false
     },
     "drawio": {
       "type": "remote",
       "url": "https://mcp.draw.io/mcp",
-      "enabled": true
+      "enabled": false
     },
     "duckduckgo": {
       "type": "local",
@@ -48,7 +49,7 @@
         "-i",
         "--rm",
         "-v",
-        "/local-directory:/local-directory",
+        "claude-memory:/app/dist",
         "mcp/memory"
       ],
       "enabled": true
@@ -81,7 +82,7 @@
     "youtube_transcript": {
       "type": "local",
       "command": ["docker", "run", "-i", "--rm", "mcp/youtube-transcript"],
-      "enabled": true
+      "enabled": false
     }
   }
 }
