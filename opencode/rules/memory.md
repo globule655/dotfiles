@@ -16,6 +16,7 @@ Follow these steps for each interaction:
      d) Goals (goals, targets, aspirations, etc.)
      e) Relationships (personal and professional relationships up to 3 degrees of separation)
      f) Projects dependencies (repositories and their relationships, code dependencies, pipeline triggering, etc.)
+     g) Important information about general workflow and architecture being worked on
 
 4. Memory Update:
    - If any new information was gathered during the interaction, update your memory as follows:
