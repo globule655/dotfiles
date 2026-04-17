@@ -57,7 +57,7 @@
     "nixos": {
       "type": "local",
       "command": ["docker", "run", "--rm", "-i", "ghcr.io/utensils/mcp-nixos"],
-      "enabled": true
+      "enabled": false
     },
     "notion": {
       "type": "remote",
@@ -72,7 +72,7 @@
     "terraform": {
       "type": "local",
       "command": ["docker", "run", "-i", "--rm", "hashicorp/terraform-mcp-server"],
-      "enabled": true
+      "enabled": false
     },
     "time": {
       "type": "local",
