@@ -53,6 +53,12 @@
     };
   };
 
+  # Kernel module options to hide VRR capability and enable ULMB-2
+  # This prevents NVIDIA from forcing G-SYNC/VRR mode on the monitor
+  boot.extraModprobeConfig = ''
+    options nvidia-modeset conceal_vrr_caps=1
+  '';
+
   time.hardwareClockInLocalTime = true;
 
   networking.hostName = "nixospc"; # Define your hostname.
