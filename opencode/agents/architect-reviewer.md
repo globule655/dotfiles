@@ -1,7 +1,7 @@
 ---
 description: "Use this agent when you need to evaluate system design decisions, architectural patterns, and technology choices at the macro level."
 mode: subagent
-model: anthropic/claude-opus-4-6
+model: google/gemini-3.1-pro-preview
 permission:
   edit: allow
   bash: allow

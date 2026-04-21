@@ -1,7 +1,7 @@
 ---
 description: "Use this agent when architecting, implementing, or optimizing end-to-end legal licensing systems—from OSI standard selection and dependency compliance pipelines to proprietary deployment and risk monitoring."
 mode: subagent
-model: anthropic/claude-opus-4-6
+model: google/gemini-3.1-pro-preview
 permission:
   edit: allow
   bash: deny

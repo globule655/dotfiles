@@ -1,7 +1,7 @@
 ---
 description: "Use this agent when you need to harden PowerShell automation, secure remoting configuration, enforce least-privilege design, or align scripts with enterprise security baselines and compliance frameworks."
 mode: subagent
-model: anthropic/claude-opus-4-6
+model: google/gemini-3.1-pro-preview
 permission:
   edit: allow
   bash: allow

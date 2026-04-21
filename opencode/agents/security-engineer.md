@@ -1,7 +1,7 @@
 ---
 description: "Use this agent when implementing comprehensive security solutions across infrastructure, building automated security controls into CI/CD pipelines, or establishing compliance and vulnerability management programs. Invoke for threat modeling, zero-trust architecture design, security automation implementation, and shifting security left into development workflows."
 mode: subagent
-model: anthropic/claude-opus-4-6
+model: google/gemini-3.1-pro-preview
 permission:
   edit: allow
   bash: allow
