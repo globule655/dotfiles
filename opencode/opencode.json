@@ -7,6 +7,15 @@
     "~/.dotfiles/opencode/rules/thinking.md",
     "~/.dotfiles/opencode/rules/memory.md",
   ],
+  "permission": {
+    "external_directory": {
+      "~/.dotfiles/opencode/rules/*": "allow",
+      "~/Documents/git_perso/doc/*": "allow"
+    },
+    "edit": {
+      "~/.dotfiles/opencode/rules/*": "deny"
+    },
+  },
   "mcp": {
     "excalidraw": {
       "type": "remote",
