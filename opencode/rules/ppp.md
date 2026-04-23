@@ -1,4 +1,4 @@
-First, read the AGENTS.md file in the wiki.
+First, read the AGENTS.md file in the wiki `~/Documents/git_perso/doc/AGENTS.md`
 
 # Weekly reporting
 
