@@ -12,6 +12,15 @@
 
   config = lib.mkMerge [
     {
+      home.pointerCursor = lib.mkIf (config.sway-wm.enable || config.hyprland-wm.enable) {
+        package = pkgs.catppuccin-cursors.mochaDark;
+        name = "catppuccin-mocha-dark-cursors";
+        size = 24;
+        gtk.enable = true;
+        x11.enable = true;
+        hyprcursor.enable = true;
+      };
+
       wayland.windowManager = {
         sway = {
           enable = config.sway-wm.enable;
