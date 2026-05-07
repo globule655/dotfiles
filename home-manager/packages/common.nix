@@ -10,7 +10,6 @@
   config = lib.mkIf config.common-packages.enable {
     home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-    bottles
     cmake
     discord
     dnsutils

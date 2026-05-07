@@ -161,4 +161,22 @@
     '';
     };
   };
+
+  # We manage the neovim configuration entirely out-of-store via a symlink
+  # to avoid home-manager writing its own files directly over ours
+  # or failing with "outside $HOME" errors.
+  xdg.configFile."nvim/init.lua".enable = lib.mkForce false;
+  xdg.configFile."nvim/plugin".enable = lib.mkForce false;
+  xdg.configFile."nvim/lua".enable = lib.mkForce false;
+  xdg.configFile."nvim/spell".enable = lib.mkForce false;
+  xdg.configFile."nvim/ftplugin".enable = lib.mkForce false;
+  xdg.configFile."nvim/after".enable = lib.mkForce false;
+  xdg.configFile."nvim/colors".enable = lib.mkForce false;
+  xdg.configFile."nvim/compiler".enable = lib.mkForce false;
+  xdg.configFile."nvim/doc".enable = lib.mkForce false;
+  xdg.configFile."nvim/indent".enable = lib.mkForce false;
+  xdg.configFile."nvim/keymap".enable = lib.mkForce false;
+  xdg.configFile."nvim/pack".enable = lib.mkForce false;
+  xdg.configFile."nvim/syntax".enable = lib.mkForce false;
+
 }

@@ -25,6 +25,8 @@
           package = lib.mkIf (!config.hyprland-wm.nixgl) (lib.mkDefault pkgs.hyprland);
         };
       };
+      
+      xdg.configFile."sway/config".enable = lib.mkIf config.sway-wm.enable (lib.mkForce false);
     }
 
     (lib.mkIf config.hyprland-wm.nixgl {
