@@ -53,12 +53,6 @@
     };
   };
 
-  # Kernel module options to hide VRR capability and enable ULMB-2
-  # This prevents NVIDIA from forcing G-SYNC/VRR mode on the monitor
-  boot.extraModprobeConfig = ''
-    options nvidia-modeset conceal_vrr_caps=1
-  '';
-
   time.hardwareClockInLocalTime = true;
 
   networking.hostName = "nixospc"; # Define your hostname.
@@ -223,6 +217,7 @@
   # audio
   # sound.enable = true;
   # Enable sound with pipewire.
+  powerManagement.cpuFreqGovernor = "performance";
   nixpkgs.config.pulseaudio = true;
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -277,10 +272,15 @@
     };
     steam = {
       enable = true;
-      gamescopeSession.enable = true;
+      gamescopeSession.enable = false;
     };
     gamemode = {
       enable = true;
+      settings.general = {
+        desiredgov = "performance";
+        renice = 10;
+        ioprio = 0;
+      };
     };
     ydotool = {
       enable = true;
@@ -309,7 +309,6 @@
     adwaita-icon-theme
     curl
     file
-    gamescope
     git
     gnomeExtensions.appindicator
     gnome-tweaks
