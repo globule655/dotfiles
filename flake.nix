@@ -7,10 +7,14 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     mcp-hub.url = "github:ravitemer/mcp-hub";
   };
 
-  outputs = inputs@{ self, nixpkgs, disko, home-manager, nixgl, ... }: 
+  outputs = inputs@{ self, nixpkgs, disko, home-manager, lanzaboote, nixgl, ... }: 
   let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -71,6 +75,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
           modules = [
+            lanzaboote.nixosModules.lanzaboote
             ./nixospc/configuration.nix
             # ./modules/services
             home-manager.nixosModules.home-manager

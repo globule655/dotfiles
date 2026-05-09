@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports =
@@ -13,15 +13,6 @@
       # <home-manager/nixos>
     ];
 
-  # greetd-service.enable = true;
-
-  # Bootloader.
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
-  # boot.loader.grub.enable = true;
-  # boot.loader.grub.device = "nodev";
-  # boot.loader.grub.useOSProber = true;
-
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
@@ -29,28 +20,18 @@
       efiSysMountPoint = "/boot";
     };
     timeout = 10;
-    grub = {
-      # despite what the configuration.nix manpage seems to indicate,
-      # as of release 17.09, setting device to "nodev" will still call
-      # `grub-install` if efiSupport is true
-      # (the devices list is not used by the EFI grub install,
-      # but must be set to some value in order to pass an assert in grub.nix)
-      devices = [ "nodev" ];
-      efiSupport = true;
-      enable = true;
-      useOSProber = true;
-      # set $FS_UUID to the UUID of the EFI partition
-      # extraEntries = ''
-      #   menuentry "Windows" {
-      #     insmod part_gpt
-      #     insmod fat
-      #     insmod search_fs_uuid
-      #     insmod chain
-      #     search --fs-uuid --set=root fcca9390-acea-4d5c-9eb1-84a56c84da61
-      #     chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-      #   }
-      # '';
-    };
+  };
+
+  boot.loader.grub.enable = lib.mkForce false;
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+  boot.loader.systemd-boot.configurationLimit = 3;
+  boot.loader.systemd-boot.extraEntries."windows.conf" = ''
+    title Windows
+    efi /EFI/Microsoft/Boot/bootmgfw.efi
+  '';
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/var/lib/sbctl";
   };
 
   time.hardwareClockInLocalTime = true;
@@ -307,6 +288,7 @@
   environment.systemPackages = with pkgs; [
     nerd-fonts.jetbrains-mono
     adwaita-icon-theme
+    sbctl
     curl
     file
     git
