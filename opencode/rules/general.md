@@ -1,7 +1,7 @@
 # General guidelines
 
-* Inside git repositories, **never** do git commits unless told to.
-* Ask for permission before executing any other git commands that might change the file structure or history in the repository.
+* Inside git repositories, **NEVER** do git commits unless explicitly told to.
+* Always ask for permission before executing any other git commands that might change the file structure or history in the repository.
 * If present, prefer `jujutsu` over git.
     * You can easily see if a repo is managed with `jujutsu` by looking for .jj folder at the same level as a .git generally is
     * `jj st` to check status
@@ -60,3 +60,7 @@
 * If asked to "add to wiki" or similar, the current issue/task needs to be documented in the wiki.
     * Follow the wiki schema in `AGENTS.md` at the wiki repo root.
     * Add documentation of the problem, solutions found and general recommandation to existing related pages or create a new one if necessary
+
+# Memory
+
+* Use the memory MCP server
