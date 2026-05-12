@@ -11,6 +11,7 @@
     home.packages = with pkgs; [
     ansible
     direnv
+    distrobox
     dotenv-cli
     jjui
     jujutsu
@@ -20,7 +21,9 @@
     lima
     opencode
     opencode-desktop
+    podman
     terraform
+    trivy
     rustup
     ];
   };
