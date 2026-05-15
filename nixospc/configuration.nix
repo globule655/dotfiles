@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./disko.nix
       ../modules/services
+      ../modules/nixos/op1w-battery.nix
       # <home-manager/nixos>
     ];
 
@@ -46,6 +47,11 @@
   # Enable networking
   networking.networkmanager.enable = true;
   virtualisation.docker.enable = true;
+
+  services.op1w-battery = {
+    enable = true;
+    user = "globule";
+  };
 
   services = {
     xserver.enable = true;

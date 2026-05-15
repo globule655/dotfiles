@@ -4,4 +4,5 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
+  op1w-battery = import ./op1w-battery.nix;
 }

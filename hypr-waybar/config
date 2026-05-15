@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad", "custom/media"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "battery", "tray", "clock"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "battery", "custom/op1w-battery", "tray", "clock"],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
@@ -84,5 +84,11 @@
             "default": ["", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/op1w-battery": {
+        "exec": "op1w-battery",
+        "interval": 60,
+        "return-type": "json",
+        "format": "Mouse: {}"
     },
 }
