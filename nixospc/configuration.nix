@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       ./disko.nix
       ../modules/services
-      ../modules/nixos/op1w-battery.nix
+      ../modules/nixos/mouse-battery.nix
       # <home-manager/nixos>
     ];
 
@@ -48,10 +48,7 @@
   networking.networkmanager.enable = true;
   virtualisation.docker.enable = true;
 
-  services.op1w-battery = {
-    enable = true;
-    user = "globule";
-  };
+  services.mouse-battery.enable = true;
 
   services = {
     xserver.enable = true;

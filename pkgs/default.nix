@@ -3,5 +3,5 @@
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
   # example = pkgs.callPackage ./example { };
-  op1w-battery = pkgs.callPackage ./op1w-battery { };
+  mouse-battery = pkgs.callPackage ./mouse-battery { };
 }

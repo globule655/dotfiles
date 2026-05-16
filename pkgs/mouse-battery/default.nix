@@ -1,7 +1,7 @@
 { lib, python3Packages }:
 
 python3Packages.buildPythonApplication {
-  pname = "op1w-battery";
+  pname = "mouse-battery";
   version = "0.1.0";
 
   src = ./.;
@@ -13,14 +13,14 @@ python3Packages.buildPythonApplication {
   ];
 
   installPhase = ''
-    install -Dm755 op1w-battery.py $out/bin/op1w-battery
+    install -Dm755 mouse-battery.py $out/bin/mouse-battery
   '';
 
   meta = {
-    description = "System tray battery monitor for Endgame Gear OP1w 4k wireless mouse";
+    description = "Waybar battery monitor for supported wireless mice";
     license = lib.licenses.mit;
     maintainers = [];
     platforms = lib.platforms.linux;
-    mainProgram = "op1w-battery";
+    mainProgram = "mouse-battery";
   };
 }
